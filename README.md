@@ -1,4 +1,7 @@
-# FoundationPress
+# Button Poetry
+Button Poetry is committed to developing a coherent and effective system of production, distribution, promotion and fundraising for performance poetry. This WordPress theme is for the Button Poetry website and is based on FoundationPress.
+
+# About FoundationPress
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/olefredrik/foundationpress?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![GitHub version](https://badge.fury.io/gh/olefredrik%2Ffoundationpress.svg)](https://github.com/olefredrik/FoundationPress/releases)
