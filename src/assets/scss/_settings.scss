@@ -64,27 +64,41 @@
 @import 'util/util';
 @import 'global/colors';
 
+// 0. Button Poetry Customizations
+// ============================
+
+// A. Google Fonts Import
+// ----------------------
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif|Rubik');
+
+// B. Color Overrides
+// ------------------
+
+$dark-nav-color: #1e1c1c; 
+$tan: #caaa77;
+
 // 1. Global
 // ---------
 
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
-$foundation-palette: (
-  primary: #1779ba,
-  secondary: #767676,
-  success: #3adb76,
-  warning: #ffae00,
-  alert: #cc4b37,
-);
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
+$foundation-palette: (
+  primary: $black, // #1779ba,
+  secondary: $tan, // #767676,
+  success: #3adb76,
+  warning: #ffae00,
+  alert: #cc4b37,
+);
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$body-font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -132,7 +146,7 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
+$header-font-family: 'Noto Serif', $body-font-family;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
@@ -848,9 +862,9 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0;
-$topbar-background: $dark-nav-color;
+$topbar-background: $white;
 $topbar-submenu-background: $topbar-background;
-$topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
+$topbar-title-spacing: 0; //0.5rem 1rem 0.5rem 0;
 $topbar-input-width: 200px;
 $topbar-unstack-breakpoint: medium;
 
