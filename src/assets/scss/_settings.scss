@@ -65,18 +65,12 @@
 @import 'global/colors';
 
 // 0. Button Poetry Customizations
-// ============================
+// ===============================
 
 // A. Google Fonts Import
 // ----------------------
 
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif|Rubik');
-
-// B. Color Overrides
-// ------------------
-
-$dark-nav-color: #1e1c1c; 
-$tan: #caaa77;
 
 // 1. Global
 // ---------
@@ -87,11 +81,11 @@ $global-lineheight: 1.5;
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
-$black: #0a0a0a;
+$black: #010101;
 $white: #fefefe;
 $foundation-palette: (
   primary: $black, // #1779ba,
-  secondary: $tan, // #767676,
+  secondary: $buttontan, // #767676,
   success: #3adb76,
   warning: #ffae00,
   alert: #cc4b37,

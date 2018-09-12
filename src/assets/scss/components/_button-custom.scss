@@ -1,0 +1,35 @@
+// Button Poetry Custom CSS
+// ========================
+
+// 1. Navigation customization
+// ---------------------------
+
+// 1.A Desktop/Tablet Navigation
+.top-bar {
+    padding:0;
+}
+
+.top-bar .top-bar-title a {
+    color: $white;    
+    background-color: $black;
+    height: 100%;
+}
+
+.top-bar .menu a {
+    color: $black;
+}
+
+// 1.B Mobile Navigation
+// ---------------------
+
+$titlebar-icon-color: $black;
+$titlebar-icon-color-hover: $buttonred;
+
+.title-bar {
+    background-color: $white;
+    color: $black;
+}
+
+.title-bar-title a {
+    color: $black;
+}
