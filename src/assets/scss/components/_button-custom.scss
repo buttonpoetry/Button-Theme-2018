@@ -1,10 +1,21 @@
 // Button Poetry Custom CSS
 // ========================
+// 1. Navigation Customization
 
 // 1. Navigation customization
 // ---------------------------
 
-// 1.A Desktop/Tablet Navigation
+// 1.A Title Text Font/Size for all screens
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+.top-bar .site-desktop-title a, .title-bar-title a {
+    font-weight: bold;
+    letter-spacing: .05rem;
+}
+  
+// 1.B Desktop/Tablet Navigation
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
 .top-bar {
     padding:0;
 }
@@ -12,18 +23,16 @@
 .top-bar .top-bar-title a {
     color: $white;    
     background-color: $black;
-    height: 100%;
+    display: inline-block;
+    padding: $topbar-title-padding-vertical $topbar-title-padding-horizontal;
 }
 
 .top-bar .menu a {
     color: $black;
 }
 
-// 1.B Mobile Navigation
-// ---------------------
-
-$titlebar-icon-color: $black;
-$titlebar-icon-color-hover: $buttonred;
+// 1.C Mobile Navigation
+// -=-=-=-=-=-=-=-=-=-=-
 
 .title-bar {
     background-color: $white;
@@ -32,4 +41,12 @@ $titlebar-icon-color-hover: $buttonred;
 
 .title-bar-title a {
     color: $black;
+}
+
+// 2 Additional Typography Helpers
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+.lead {
+    font-family: $header-font-family;
+    font-weight: bold;
 }

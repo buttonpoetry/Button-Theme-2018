@@ -70,22 +70,22 @@
 // A. Google Fonts Import
 // ----------------------
 
-@import url('https://fonts.googleapis.com/css?family=Noto+Serif|Rubik');
+@import url('https://fonts.googleapis.com/css?family=Amiri:400,700|Rubik');
 
 // 1. Global
 // ---------
 
-$global-font-size: 100%;
+$global-font-size: 140%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
-$dark-gray: #8a8a8a;
-$black: #010101;
+$dark-gray: #4f504d;
+$black: #1d1b1b;
 $white: #fefefe;
 $foundation-palette: (
-  primary: $black, // #1779ba,
-  secondary: $buttontan, // #767676,
+  primary: $button-red, // #1779ba,
+  secondary: $button-tan, // #767676,
   success: #3adb76,
   warning: #ffae00,
   alert: #cc4b37,
@@ -140,7 +140,7 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: 'Noto Serif', $body-font-family;
+$header-font-family: 'Amiri', $body-font-family;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
@@ -210,7 +210,8 @@ $abbr-underline: 1px dotted $black;
 // ---------------------
 
 $lead-font-size: $global-font-size * 1.25;
-$lead-lineheight: 1.6;
+$lead-font-family: $header-font-family;
+$lead-lineheight: 1.25;
 $subheader-lineheight: 1.4;
 $subheader-color: $dark-gray;
 $subheader-font-weight: $global-weight-normal;
@@ -482,10 +483,10 @@ $menu-margin: 0;
 $menu-nested-margin: $global-menu-nested-margin;
 $menu-items-padding: $global-menu-padding;
 $menu-simple-margin: 1rem;
-$menu-item-color-active: $white;
+$menu-item-color-active: $black;
 $menu-item-background-active: get-color(primary);
 $menu-icon-spacing: 0.25rem;
-$menu-item-background-hover: $light-gray;
+$menu-item-background-hover: get-color(primary);
 $menu-state-back-compat: true;
 $menu-centered-back-compat: true;
 $menu-icons-back-compat: true;
@@ -833,8 +834,8 @@ $titlebar-background: $dark-nav-color;
 $titlebar-color: $white;
 $titlebar-padding: 0.5rem;
 $titlebar-text-font-weight: bold;
-$titlebar-icon-color: $white;
-$titlebar-icon-color-hover: $medium-gray;
+$titlebar-icon-color: $black;
+$titlebar-icon-color-hover: $black;
 $titlebar-icon-spacing: 0.25rem;
 
 // 54. Tooltip
@@ -858,9 +859,11 @@ $tooltip-radius: $global-radius;
 $topbar-padding: 0;
 $topbar-background: $white;
 $topbar-submenu-background: $topbar-background;
-$topbar-title-spacing: 0; //0.5rem 1rem 0.5rem 0;
 $topbar-input-width: 200px;
 $topbar-unstack-breakpoint: medium;
+$topbar-title-spacing: 0;
+$topbar-title-padding-vertical: 1.5rem;
+$topbar-title-padding-horizontal: 1.7rem;
 
 // 56. Xy Grid
 // -----------
