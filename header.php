@@ -21,15 +21,17 @@
 	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
 		<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
 	<?php endif; ?>
+	<div class="limit-width-wrap">
 
 	<header class="site-header" role="banner">
 		<div class="site-title-bar title-bar" <?php foundationpress_title_bar_responsive_toggle(); ?>>
-			<div class="title-bar-left">				
+			<div class="title-bar-title">				
 				<span class="site-mobile-title title-bar-title">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 				</span>
 			</div>
 			<div class="title-bar-right">
+				<a href="#"><img aria-label="Cart" class="title-bar-cart" src="<? echo get_stylesheet_directory_uri() ?>/dist/assets/images/theme/cart.svg"></a>
 				<button aria-label="<?php _e( 'Main Menu', 'foundationpress' ); ?>" class="menu-icon" type="button" data-toggle="<?php foundationpress_mobile_menu_id(); ?>"></button>
 			</div>
 		</div>

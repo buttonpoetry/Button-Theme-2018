@@ -70,12 +70,13 @@
 // A. Google Fonts Import
 // ----------------------
 
-@import url('https://fonts.googleapis.com/css?family=Amiri:400,700|Rubik');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Amiri:400,700|Rubik:400');
+//@import url("https://use.typekit.net/ydl2mvk.css");
 
 // 1. Global
 // ---------
 
-$global-font-size: 140%;
+$global-font-size: 143.750%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $light-gray: #e6e6e6;
@@ -84,13 +85,13 @@ $dark-gray: #4f504d;
 $black: #1d1b1b;
 $white: #fefefe;
 $foundation-palette: (
-  primary: $button-red, // #1779ba,
+  primary: $black, // #1779ba,
   secondary: $button-tan, // #767676,
   success: #3adb76,
   warning: #ffae00,
   alert: #cc4b37,
 );
-$body-background: $white;
+$body-background: black; //white;
 $body-font-color: $black;
 $body-font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 $body-antialiased: true;
@@ -100,7 +101,7 @@ $global-position: 1rem;
 $global-weight-normal: normal;
 $global-weight-bold: bold;
 $global-radius: 0;
-$global-menu-padding: 0.7rem 1rem;
+$global-menu-padding: 0.7rem .5rem;
 $global-menu-nested-margin: 1rem;
 $global-text-direction: ltr;
 $global-flexbox: true;
@@ -116,9 +117,9 @@ $print-transparent-backgrounds: true;
 
 $breakpoints: (
   small: 0,
-  medium: 640px,
-  large: 1024px,
-  xlarge: 1200px,
+  medium: 600, // 640px, 
+  large: 1200, // 1024px,
+  xlarge: 1440px,
   xxlarge: 1440px,
 );
 $print-breakpoint: large;
@@ -141,7 +142,7 @@ $block-grid-max: 8;
 // ------------------
 
 $header-font-family: 'Amiri', $body-font-family;
-$header-font-weight: $global-weight-normal;
+$header-font-weight: $global-weight-bold;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: inherit;
@@ -178,7 +179,7 @@ $code-background: $light-gray;
 $code-border: 1px solid $medium-gray;
 $code-padding: rem-calc(2 5 1);
 $anchor-color: $primary-color;
-$anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
+$anchor-color-hover: scale-color($anchor-color, $lightness: 15%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
@@ -193,9 +194,9 @@ $list-nested-side-margin: 1.25rem;
 $defnlist-margin-bottom: 1rem;
 $defnlist-term-weight: $global-weight-bold;
 $defnlist-term-margin-bottom: 0.3rem;
-$blockquote-color: $dark-gray;
+$blockquote-color: $black;
 $blockquote-padding: rem-calc(9 20 0 19);
-$blockquote-border: 1px solid $medium-gray;
+$blockquote-border: 2px solid $button-tan;
 $cite-font-size: rem-calc(13);
 $cite-color: $dark-gray;
 $cite-pseudo-content: '\2014 \0020';
@@ -290,20 +291,21 @@ $breadcrumbs-item-separator-color: $medium-gray;
 // ----------
 
 $button-font-family: inherit;
-$button-padding: 0.85em 1em;
+$button-padding: 0.85em 2em;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;
-$button-background-hover: scale-color($button-background, $lightness: -15%);
+$button-background-hover: scale-color($button-background, $lightness: 15%);
 $button-color: $white;
 $button-color-alt: $black;
 $button-radius: $global-radius;
 $button-hollow-border-width: 1px;
 $button-sizes: (
-  tiny: 0.6rem,
-  small: 0.75rem,
-  default: 0.9rem,
-  large: 1.25rem,
+  tiny: 0.45rem,
+  small: 0.6rem,
+  default: 0.75rem,
+  large: .9rem,
+  xlarge: 1.15rem,
 );
 $button-palette: $foundation-palette;
 $button-opacity-disabled: 0.25;
@@ -383,7 +385,7 @@ $drilldown-arrow-size: 6px;
 
 $dropdown-padding: 1rem;
 $dropdown-background: $body-background;
-$dropdown-border: 1px solid $medium-gray;
+$dropdown-border: 1px solid $black;
 $dropdown-font-size: 1rem;
 $dropdown-width: 300px;
 $dropdown-radius: $global-radius;
@@ -407,8 +409,8 @@ $dropdownmenu-padding: $global-menu-padding;
 $dropdownmenu-nested-margin: 0;
 $dropdownmenu-submenu-padding: $dropdownmenu-padding;
 $dropdownmenu-border: 1px solid $medium-gray;
-$dropdown-menu-item-color-active: $light-gray;
-$dropdown-menu-item-background-active: transparent;
+$dropdown-menu-item-color-active: $black;
+$dropdown-menu-item-background-active: darken($dropdownmenu-background, 5%);
 
 // 19. Flexbox Utilities
 // ---------------------
@@ -856,14 +858,15 @@ $tooltip-radius: $global-radius;
 // 55. Top Bar
 // -----------
 
+$topbar-height: 100px;
 $topbar-padding: 0;
 $topbar-background: $white;
 $topbar-submenu-background: $topbar-background;
 $topbar-input-width: 200px;
 $topbar-unstack-breakpoint: medium;
 $topbar-title-spacing: 0;
-$topbar-title-padding-vertical: 1.5rem;
-$topbar-title-padding-horizontal: 1.7rem;
+$topbar-title-padding-vertical: 1.51rem;
+$topbar-title-padding-horizontal: 2.35rem;
 
 // 56. Xy Grid
 // -----------

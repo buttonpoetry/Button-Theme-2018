@@ -7,7 +7,7 @@
 
 @include foundation-global-styles;
 //@include foundation-grid;
-//@include foundation-flex-grid;
+@include foundation-flex-grid;
 
 @include foundation-xy-grid-classes;
 @include foundation-typography;
@@ -71,7 +71,6 @@
 @import "modules/editor-style";
 
 // Components
-@import "components/buttons";
 @import "components/cards";
 @import "components/featured-image";
 @import "components/dividers";

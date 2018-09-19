@@ -9,11 +9,6 @@
   @include show-for(medium);
 }
 
-// Site title
-.site-desktop-title a {
-  font-weight: bold;
-}
-
 // Mobile menu
 .mobile-menu {
   display: none; // prevents repaint caused by JS hiding menu onload
@@ -25,20 +20,20 @@
     padding: 1rem;
 
     a {
-      color: $white;
+      //color: $white;
       font-weight: 600;
       font-size: rem-calc(15);
     }
   }
 
-  .menu .active > a { background-color: #ccc; }
+  //.menu .active > a { background-color: #ccc; }
 
 }
 
 .title-bar-title {
   a {
     font-size: 1rem;
-    color: #B9B9B9;
+    //color: #B9B9B9;
   }
 }
 
@@ -46,7 +41,7 @@
 .mobile-off-canvas-menu {
 
   .menu .is-active > a {
-    background-color: lighten($dark-nav-color, 5%);
+    //background-color: lighten($dark-nav-color, 5%);
   }
 }
 
@@ -56,28 +51,30 @@
 
   .top-bar-title a {
     font-size: 1rem;
-    color: #B9B9B9;
     padding-left: 1rem;
-    line-height: 1.8;
+    //color: #B9B9B9;
+    //line-height: 1.8;
   }
 
   .menu a {
-    color: #e6e6e6;
     padding-top: 0;
-    padding-bottom: 0;
+    padding-bottom: $topbar-title-padding-vertical;
     font-weight: bold;
-    font-size: 0.8rem;
-    line-height: 1;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.13rem;
 
     &:hover:not(.button) {
-      background-color: #42525D;
+      //background-color: #42525D;
     }
   }
 
-  .menu .active > a { background-color: #ccc; }
+  .menu .active > a { 
+    text-decoration: underline;
+  }
 
-  .menu>li:not(.menu-text)>a { padding: 1rem; }
-  .menu li:not(:last-child) { border-right: 1px solid #4e4e4e; }
+  .menu>li:not(.menu-text)>a { padding: 0.63rem; }
+  //.menu li:not(:last-child) { border-right: 1px solid #4e4e4e; }
 
   .dropdown.menu .submenu { border: 0; }
   .dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
