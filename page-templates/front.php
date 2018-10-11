@@ -4,6 +4,9 @@ Template Name: Front
 */
 get_header(); ?>
 
+<div class="main-container">
+	<div class="main-grid">
+
 <section class="showcase main-content-full-width">
 <p class="lead"><?php 
 	if( get_theme_mod( 'bp_front_page_showcase_lead' ) ) 
@@ -89,6 +92,7 @@ get_header(); ?>
 		data-cta-text="Shop Now"
 		data-cta-color="#2f84ed"></div>
 </section>
+</div></div>
 
 <div id="y-badges" class="yotpo yotpo-badge badge-init">&nbsp;</div>
 
