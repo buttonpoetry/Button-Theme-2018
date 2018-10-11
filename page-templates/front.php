@@ -6,7 +6,7 @@ get_header(); ?>
 
 <div class="main-container"><div class="main-grid">
 	<section class="showcase main-content-full-width">
-	<p class="lead"><? echo get_post_meta(get_the_ID(), "Lead Paragraph", true); ?></p>
+	<p class="lead"><?php echo get_theme_mod( 'bp_front_page_showcase_lead' ) ?></p>
 	<div class="grid-container">
 		<div class="grid-x">
 			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/156x240/EBE9DD?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
