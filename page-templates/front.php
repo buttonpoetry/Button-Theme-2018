@@ -4,24 +4,29 @@ Template Name: Front
 */
 get_header(); ?>
 
-<div class="main-container"><div class="main-grid">
-	<section class="showcase main-content-full-width">
-	<p class="lead"><?php echo get_theme_mod( 'bp_front_page_showcase_lead' ) ?></p>
-	<div class="grid-container">
-		<div class="grid-x">
-			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/156x240/EBE9DD?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
-			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/156x240/000/fff?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
-			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/156x240/17272E?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
-			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/156x240/E4DED1?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">A Love Song A Death Rattle A Battle Cry</h3><h4 class="author">Kyle "Guante" Tran Myhre</h4></a></div>
-			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/156x240/F1F0EF?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
-			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/156x240/666/fff?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
-		</div>
+<section class="showcase main-content-full-width">
+<p class="lead"><?php 
+	if( get_theme_mod( 'bp_front_page_showcase_lead' ) ) 
+	{
+		echo get_theme_mod( 'bp_front_page_showcase_lead' );
+	}
+	else {
+		_e( 'We showcase the power and diversity of voices in our community because we believe that poetry is for everyone.', 'foundationpress' );
+	} ?></p>
+<div class="grid-container">
+	<div class="grid-x">
+		<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/156x240/EBE9DD?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
+		<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/156x240/000/fff?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
+		<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/156x240/17272E?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
+		<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/156x240/E4DED1?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">A Love Song A Death Rattle A Battle Cry</h3><h4 class="author">Kyle "Guante" Tran Myhre</h4></a></div>
+		<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/156x240/F1F0EF?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
+		<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/156x240/666/fff?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
 	</div>
-	<a class="button" href="#">Shop all books</a>
-	</section>
-</div></div>
+</div>
+<a class="button" href="#">Shop all books</a>
+</section>
 
-<section class="feature-row wide">
+<section class="feature-row main-content-full-width">
 	<div class="grid-x align-middle">
 		<div class="cell medium-6 large-shrink small-order-1 medium-order-2">
 			<a class="feature-link" href="#"><img class="feature-hero" src="https://via.placeholder.com/800/74B6B8/EBE9DD?text=Feature"></a>
@@ -37,7 +42,7 @@ get_header(); ?>
 	</div>
 </section>
 
-<section class="bulletin-row wide">
+<section class="bulletin-row main-content-full-width">
 	<div class="grid-x">	
 		<div class="cell medium-7 large-6 small-order-1 medium-order-2 latest-news">
 			<h2>Latest News</h2>
@@ -58,7 +63,7 @@ get_header(); ?>
 	</div>
 </section>
 
-<section class="instagram-row wide">
+<section class="instagram-row main-content-full-width">
 	<h2>Instagram</h2>
 	<div class="row collapse small-up-2 medium-up-4 large-up-5 wide">
 	<div class="column"><img src="https://via.placeholder.com/350/000/ffffff?text=%20"></div>
@@ -72,18 +77,17 @@ get_header(); ?>
 	<div class="column"><img src="https://via.placeholder.com/350/000/ffffff?text=%20"></div>
 	<div class="column"><img src="https://via.placeholder.com/350/DBCC3B/000000?text=%20"></div>
 	</div>
-	<!-- div class="yotpo yotpo-pictures-widget"
-data-album-id="5b333b8dc3eb964c0b2acb79"
-data-layout="num_of_rows"
-data-layout-rows="2"
-data-spacing="0"
-data-title="0"
-data-hover-color="#ffffff"
-data-hover-opacity="0.8"
-data-hover-icon="true"
-data-cta-text="Shop Now"
-data-cta-color="#2f84ed"
-></div -->
+	<div class="yotpo yotpo-pictures-widget"
+		data-album-id="5b333b8dc3eb964c0b2acb79"
+		data-layout="num_of_rows"
+		data-layout-rows="2"
+		data-spacing="0"
+		data-title="0"
+		data-hover-color="#ffffff"
+		data-hover-opacity="0.8"
+		data-hover-icon="true"
+		data-cta-text="Shop Now"
+		data-cta-color="#2f84ed"></div>
 </section>
 
 <div id="y-badges" class="yotpo yotpo-badge badge-init">&nbsp;</div>

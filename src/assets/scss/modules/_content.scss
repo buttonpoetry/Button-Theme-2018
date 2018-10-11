@@ -9,12 +9,6 @@
   background-color: $white;
 }
 
-.wide {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
 .main-grid {
   @include xy-grid();
   margin-top: 1rem;
