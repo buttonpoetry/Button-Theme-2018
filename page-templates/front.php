@@ -6,8 +6,8 @@ get_header(); ?>
 
 <div class="main-container">
 	<div class="main-grid">
-
-<section class="showcase main-content-full-width">
+		<div class="main-content-full-width">
+<section class="showcase">
 <p class="lead"><?php 
 	if( get_theme_mod( 'bp_front_page_showcase_lead' ) ) 
 	{
@@ -17,19 +17,21 @@ get_header(); ?>
 		_e( 'We showcase the power and diversity of voices in our community because we believe that poetry is for everyone.', 'foundationpress' );
 	} ?></p>
 <div class="grid-container">
-	<div class="grid-x">
-		<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/156x240/EBE9DD?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
-		<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/156x240/000/fff?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
-		<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/156x240/17272E?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
-		<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/156x240/E4DED1?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">A Love Song A Death Rattle A Battle Cry</h3><h4 class="author">Kyle "Guante" Tran Myhre</h4></a></div>
-		<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/156x240/F1F0EF?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
-		<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/156x240/666/fff?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
+	<div class="grid-x grid-margin-x">
+		<div class="row expanded">
+			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/160x240/EBE9DD?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
+			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/160x240/000/fff?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
+			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/160x240/17272E?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
+			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/160x240/E4DED1?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">A Love Song A Death Rattle A Battle Cry</h3><h4 class="author">Kyle "Guante" Tran Myhre</h4></a></div>
+			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/160x240/F1F0EF?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
+			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/160x240/666/fff?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
+		</div>
 	</div>
 </div>
-<a class="button" href="#">Shop all books</a>
+<a class="button large" href="#">Shop all books</a>
 </section>
 
-<section class="feature-row main-content-full-width">
+<section class="feature-row">
 	<div class="grid-x align-middle">
 		<div class="cell medium-6 large-shrink small-order-1 medium-order-2">
 			<a class="feature-link" href="#"><img class="feature-hero" src="https://via.placeholder.com/800/74B6B8/EBE9DD?text=Feature"></a>
@@ -45,7 +47,7 @@ get_header(); ?>
 	</div>
 </section>
 
-<section class="bulletin-row main-content-full-width">
+<section class="bulletin-row">
 	<div class="grid-x">	
 		<div class="cell medium-7 large-6 small-order-1 medium-order-2 latest-news">
 			<h2>Latest News</h2>
@@ -66,7 +68,7 @@ get_header(); ?>
 	</div>
 </section>
 
-<section class="instagram-row main-content-full-width">
+<section class="instagram-row">
 	<h2>Instagram</h2>
 	<div class="row collapse small-up-2 medium-up-4 large-up-5 wide">
 	<div class="column"><img src="https://via.placeholder.com/350/000/ffffff?text=%20"></div>
@@ -92,7 +94,7 @@ get_header(); ?>
 		data-cta-text="Shop Now"
 		data-cta-color="#2f84ed"></div>
 </section>
-</div></div>
+</div></div></div>
 
 <div id="y-badges" class="yotpo yotpo-badge badge-init">&nbsp;</div>
 

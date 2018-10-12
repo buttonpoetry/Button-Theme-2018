@@ -12,12 +12,13 @@
 
 // Mobile Navigation
 // -=-=-=-=-=-=-=-=-
-.title-bar {
-  padding-top: 2rem;
+$titlebar-title-font-size: 1.5rem;
 
+.title-bar {
+  
   .title-bar-title {
     a {
-      font-size: 1.5rem;
+      font-size: $titlebar-title-font-size;
     }
   }
 
@@ -37,17 +38,32 @@
 
 .off-canvas {
   > ul.menu {
-    height: 100vh;
-    padding: 1rem;
+    //height: 100vh;
+    padding:0;
 
     a {
+      padding-left: 1rem;
       color: $white;
       font-weight: 600;
       font-size: rem-calc(15);
+      letter-spacing: rem-calc(2);
+      &:hover {
+        background-color: rgba(255,255,255,.25);
+      } 
     }
   }
 
   .menu .active > a { background-color: #ccc; }
+}
+
+.off-canvas-logo-container {
+  padding: $titlebar-padding;
+  width: 100%;
+  font-size: $titlebar-title-font-size;
+  
+  .off-canvas-logo {
+    width: 2rem;
+  }
 }
 
 .mobile-menu,

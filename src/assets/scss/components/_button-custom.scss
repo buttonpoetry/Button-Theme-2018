@@ -20,18 +20,6 @@
 // 2 Additional Typography Helpers
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-.lead {
-    @include breakpoint(small only) {
-        font-family: $body-font-family;
-        font-size: 1rem;
-        font-weight: normal;
-    }
-    @include breakpoint(medium) {
-        font-family: $header-font-family;
-        font-weight: bolder;
-    }
-}
-
 .button {
     text-transform: uppercase;
     letter-spacing: 0.1rem;

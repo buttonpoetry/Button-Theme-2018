@@ -1,5 +1,7 @@
 .main-container {
   @include xy-grid-container;
+  padding-left:0;
+  padding-right:0;
 }
 
 .limit-width-wrap {
@@ -34,6 +36,8 @@
   // Full width template
   .main-content-full-width {
     @include xy-cell(12);
+    width: 100%;
+    margin: 0;
   }
 
   // Default template

@@ -76,7 +76,7 @@
 // 1. Global
 // ---------
 
-$global-font-size: 16px; //143.750%;
+$global-font-size: 100%; // Should be 16px on most devices. 143.750% was being used for sizing initially.
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $light-gray: #e6e6e6;
@@ -209,9 +209,9 @@ $abbr-underline: 1px dotted $black;
 
 // 5. Typography Helpers
 // ---------------------
+.lead { font-family: $header-font-family; }
 
-$lead-font-size: $global-font-size * 1.25;
-$lead-font-family: $header-font-family;
+$lead-font-size: $global-font-size * 1.5;
 $lead-lineheight: 1.25;
 $subheader-lineheight: 1.4;
 $subheader-color: $dark-gray;
@@ -291,7 +291,7 @@ $breadcrumbs-item-separator-color: $medium-gray;
 // ----------
 
 $button-font-family: inherit;
-$button-padding: 0.85em 2em;
+$button-padding: 0.85em 2.25em;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;
@@ -301,11 +301,11 @@ $button-color-alt: $black;
 $button-radius: $global-radius;
 $button-hollow-border-width: 1px;
 $button-sizes: (
-  tiny: 0.45rem,
-  small: 0.6rem,
-  default: 0.75rem,
-  large: .9rem,
-  xlarge: 1.15rem,
+  tiny: 0.7rem,
+  small: 0.85rem,
+  default: 1rem,
+  large: 1.15rem,
+  xlarge: 1.3rem,
 );
 $button-palette: $foundation-palette;
 $button-opacity-disabled: 0.25;
@@ -507,7 +507,7 @@ $meter-fill-bad: $alert-color;
 // --------------
 
 $offcanvas-sizes: (
-  small: 250px,
+  small: 150px,
 );
 $offcanvas-vertical-sizes: (
   small: 250px,
@@ -834,7 +834,7 @@ $thumbnail-radius: $global-radius;
 
 $titlebar-background: $white;
 $titlebar-color: $black;
-$titlebar-padding: 0.75rem;
+$titlebar-padding: rem-calc(38) rem-calc(20) 1rem rem-calc(20);
 $titlebar-text-font-weight: bold;
 $titlebar-icon-color: $black;
 $titlebar-icon-color-hover: $black;
