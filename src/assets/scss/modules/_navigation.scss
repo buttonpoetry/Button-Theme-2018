@@ -1,4 +1,5 @@
 // Navigation breakpoints
+// -=-=-=-=-=-=-=-=-=-=-=
 .mobile-menu,
 .site-title-bar {
   @include hide-for(medium);
@@ -9,7 +10,27 @@
   @include show-for(medium);
 }
 
-// Mobile menu
+// Mobile Navigation
+// -=-=-=-=-=-=-=-=-
+.title-bar {
+  padding-top: 2rem;
+
+  .title-bar-title {
+    a {
+      font-size: 1.5rem;
+    }
+  }
+
+  .title-bar-cart {
+    height: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  .menu-icon {
+    @include hamburger($color: $titlebar-icon-color, $color-hover: $titlebar-icon-color-hover, $height: 22px, $width: 24px, $weight: 2px, $bars: 3);
+  }
+}
+
 .mobile-menu {
   display: none; // prevents repaint caused by JS hiding menu onload
 }
@@ -20,32 +41,82 @@
     padding: 1rem;
 
     a {
-      //color: $white;
+      color: $white;
       font-weight: 600;
       font-size: rem-calc(15);
     }
   }
 
-  //.menu .active > a { background-color: #ccc; }
-
-}
-
-.title-bar-title {
-  a {
-    font-size: 1rem;
-    //color: #B9B9B9;
-  }
+  .menu .active > a { background-color: #ccc; }
 }
 
 .mobile-menu,
 .mobile-off-canvas-menu {
-
   .menu .is-active > a {
-    //background-color: lighten($dark-nav-color, 5%);
+    background-color: lighten($dark-nav-color, 5%);
   }
 }
 
-// Tablet and desktop menu
+//Fix horizontal/vertical scrollbar on off-canvas menu bug
+.offcanvas {
+  overflow-x: hidden;
+}
+
+//Fix blue highlight on off-canvas exit bug
+.js-off-canvas-overlay {
+  outline: none;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    overflow: hidden;
+}
+
+// Desktop/Tablet Navigation
+// -=-=-=-=-=-=-=-=-=-=-=-=-
+
+.top-bar {
+  padding:0;
+  line-height: 4.34;
+}
+
+.top-bar .top-bar-title a {
+  
+  color: $white;    
+  background-color: $black;
+  display: inline-block;
+  padding: 0 2.2rem;
+  white-space: nowrap;
+}
+
+.top-bar .menu a {
+  color: $black;
+  line-height: 1rem;
+  transform: scaleY(1.05);
+  display: inline;
+  vertical-align: middle;
+}
+
+.top-bar .menu .nav-unweighted {
+  
+  @include breakpoint(medium) {
+      font-weight: normal;
+      margin-left:10px;
+  }
+}
+
+.top-bar .menu li a.nav-cart {
+  padding-right: 1.5rem;
+  display: inline;
+  vertical-align: text-bottom;
+  line-height: 1.5rem;
+  img {
+      width: 1rem;
+  }
+}
 
 .top-bar {
 
@@ -65,7 +136,7 @@
     letter-spacing: 0.13rem;
 
     &:hover:not(.button) {
-      //background-color: #42525D;
+      background-color: #42525D;
     }
   }
 

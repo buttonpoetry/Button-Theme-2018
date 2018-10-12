@@ -523,7 +523,7 @@ $offcanvas-reveal-zindex: 12;
 $offcanvas-transition-length: 0.5s;
 $offcanvas-transition-timing: ease;
 $offcanvas-fixed-reveal: true;
-$offcanvas-exit-background: rgba($white, 0.25);
+$offcanvas-exit-background: rgba($white, 0.5);
 $maincontent-class: 'off-canvas-content';
 
 // 26. Orbit
@@ -832,13 +832,13 @@ $thumbnail-radius: $global-radius;
 // 53. Title Bar
 // -------------
 
-$titlebar-background: $dark-nav-color;
-$titlebar-color: $white;
-$titlebar-padding: 0.5rem;
+$titlebar-background: $white;
+$titlebar-color: $black;
+$titlebar-padding: 0.75rem;
 $titlebar-text-font-weight: bold;
 $titlebar-icon-color: $black;
 $titlebar-icon-color-hover: $black;
-$titlebar-icon-spacing: 0.25rem;
+$titlebar-icon-spacing: 0;
 
 // 54. Tooltip
 // -----------

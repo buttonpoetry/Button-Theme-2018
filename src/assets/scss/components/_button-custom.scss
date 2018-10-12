@@ -14,74 +14,8 @@
     letter-spacing: .05rem;
 }
 
-// 1.B Desktop/Tablet Navigation
-// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-.top-bar {
-    padding:0;
-    line-height: 4.34;
-}
 
-.top-bar .top-bar-title a {
-    
-    color: $white;    
-    background-color: $black;
-    display: inline-block;
-    padding: 0 2.2rem;
-    white-space: nowrap;
-}
-
-.top-bar .menu a {
-    color: $black;
-    line-height: 1rem;
-    transform: scaleY(1.05);
-    display: inline;
-    vertical-align: middle;
-}
-
-.top-bar .menu .nav-unweighted {
-    
-    @include breakpoint(medium) {
-        font-weight: normal;
-        margin-left:10px;
-    }
-}
-
-.top-bar .menu li a.nav-cart {
-    padding-right: 1.5rem;
-    display: inline;
-    vertical-align: text-bottom;
-    line-height: 1.5rem;
-    img {
-        width: 1rem;
-    }
-}
-
-// 1.C Mobile Navigation
-// -=-=-=-=-=-=-=-=-=-=-
-@mixin foundation-menu-icon {
-    .menu-icon {
-      @include hamburger($color: $titlebar-icon-color, $color-hover: $titlebar-icon-color-hover, $width: 1.5rem, $height: 1rem);
-    }
-  
-    .menu-icon.dark {
-      @include hamburger($width: 1.5rem, $height: 1rem);
-    }
-}
-
-.title-bar {
-    background-color: $white;
-    color: $black;
-}
-
-.title-bar-title a {
-    color: $black;
-}
-
-.title-bar-cart {
-    width: 1.2rem;
-    margin-right: 0.5rem;
-}
 
 // 2 Additional Typography Helpers
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-

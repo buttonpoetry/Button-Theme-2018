@@ -31,8 +31,7 @@
 				</span>
 			</div>
 			<div class="title-bar-right">
-				<a href="#"><img aria-label="Cart" class="title-bar-cart" src="<?php echo get_stylesheet_directory_uri() ?>/dist/assets/images/theme/cart.svg"></a>
-				<button aria-label="<?php _e( 'Main Menu', 'foundationpress' ); ?>" class="menu-icon" type="button" data-toggle="<?php foundationpress_mobile_menu_id(); ?>"></button>
+				<a href="#"><img aria-label="Cart" class="title-bar-cart" src="<?php echo get_stylesheet_directory_uri() ?>/dist/assets/images/theme/cart.svg"></a><button aria-label="<?php _e( 'Main Menu', 'foundationpress' ); ?>" class="menu-icon" type="button" data-toggle="<?php foundationpress_mobile_menu_id(); ?>"></button>
 			</div>
 		</div>
 
