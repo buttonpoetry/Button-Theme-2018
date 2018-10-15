@@ -16,15 +16,15 @@ get_header(); ?>
 	else {
 		_e( 'We showcase the power and diversity of voices in our community because we believe that poetry is for everyone.', 'foundationpress' );
 	} ?></p>
-<div class="grid-container">
+<div class="showcase-shelf grid-container">
 	<div class="grid-x grid-margin-x">
 		<div class="row expanded">
-			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/160x240/EBE9DD?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
-			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/160x240/000/fff?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
-			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/160x240/17272E?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
-			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/160x240/E4DED1?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">A Love Song A Death Rattle A Battle Cry</h3><h4 class="author">Kyle "Guante" Tran Myhre</h4></a></div>
-			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/160x240/F1F0EF?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
-			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/160x240/666/fff?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h3 class="title">Book Title</h3><h4 class="author">Author Name</h4></a></div>
+			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/160x240/EBE9DD?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h2 class="title">Book Title</h2><p class="author">Author Name</p></a></div>
+			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/160x240/000/fff?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h2 class="title">Book Title</h2><p class="author">Author Name</p></a></div>
+			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/160x240/17272E?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h2 class="title">Book Title</h2><p class="author">Author Name</p></a></div>
+			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/160x240/E4DED1?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h2 class="title">A Love Song A Death Rattle A Battle Cry</h2><p class="author">Kyle "Guante" Tran Myhre</p></a></div>
+			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/160x240/F1F0EF?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h2 class="title">Book Title</h2><p class="author">Author Name</p></a></div>
+			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/160x240/666/fff?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h2 class="title">Book Title</h2><p class="author">Author Name</p></a></div>
 		</div>
 	</div>
 </div>
