@@ -96,63 +96,40 @@ $titlebar-title-font-size: 1.5rem;
 
 .top-bar {
   padding:0;
-  line-height: 4.34;
-}
-
-.top-bar .top-bar-title a {
-  
-  color: $white;    
-  background-color: $black;
-  display: inline-block;
-  padding: 0 2.2rem;
-  white-space: nowrap;
-}
-
-.top-bar .menu a {
-  color: $black;
-  line-height: 1rem;
-  transform: scaleY(1.05);
-  display: inline;
-  vertical-align: middle;
-}
-
-.top-bar .menu .nav-unweighted {
-  
-  @include breakpoint(medium) {
-      font-weight: normal;
-      margin-left:10px;
-  }
-}
-
-.top-bar .menu li a.nav-cart {
-  padding-right: 1.5rem;
-  display: inline;
-  vertical-align: text-bottom;
-  line-height: 1.5rem;
-  img {
-      width: 1rem;
-  }
-}
-
-.top-bar {
 
   .top-bar-title a {
-    font-size: 1rem;
-    padding-left: 1rem;
-    //color: #B9B9B9;
-    //line-height: 1.8;
+    height: rem-calc(100);
+    line-height: rem-calc(100);
+    color: $white;    
+    background-color: $black;
+    font-size: 1.4rem;
+    padding: 0 rem-calc(55);
+    display: inline-block;
+    vertical-align: middle;
+    white-space: nowrap;  
+  }
+
+  .menu {
+    padding-right: 2rem;
+  }
+
+  .menu .nav-unweighted {
+  
+    @include breakpoint(medium) {
+        font-weight: normal;
+        margin-left: 10px;
+    }
   }
 
   .menu a {
-    padding-top: 0;
-    padding-bottom: $topbar-title-padding-vertical;
+    line-height: rem-calc(100);
     font-weight: bold;
-    font-size: 0.68rem;
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.13rem;
 
     &:hover:not(.button) {
-      background-color: #42525D;
+      text-decoration: underline;
     }
   }
 
@@ -160,14 +137,25 @@ $titlebar-title-font-size: 1.5rem;
     text-decoration: underline;
   }
 
-  .menu>li:not(.menu-text)>a { padding: 0.63rem; }
+  .menu>li:not(.menu-text)>a { padding: 0 1rem; }
   //.menu li:not(:last-child) { border-right: 1px solid #4e4e4e; }
 
   .dropdown.menu .submenu { border: 0; }
   .dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
   .dropdown.menu .has-submenu.is-down-arrow > a::after { border: 0; }
   .dropdown.menu:first-child > li.is-dropdown-submenu-parent > a::after { display: none; }
+
+  .menu .nav-cart {
+    display: inline-block;
+    line-height: rem-calc(100);
+    height: inherit;
+    img {
+        width: 1.5rem;
+        vertical-align: text-bottom;    
+    }
+  }
 }
+
 
 .site-navigation {
   @include breakpoint(small only) {
