@@ -33,7 +33,7 @@ get_header(); ?>
 
 <section class="feature-row orbit" role="region" aria-label="Button Poetry Featured Content" data-orbit>
 	<div class="orbit-wrapper">
-		<div class="orbit-controls hide">
+		<div class="orbit-controls">
 		<button class="orbit-previous"><span class="show-for-sr">Previous Feature</span>&#9664;&#xFE0E;</button>
 		<button class="orbit-next"><span class="show-for-sr">Next Feature</span>&#9654;&#xFE0E;</button>
 		</div>
