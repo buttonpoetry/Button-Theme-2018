@@ -45,3 +45,13 @@ p a:active,
 p a:focus {
     color: $button-red;
 }
+
+.quote {
+    quotes: "“" "”" "‘" "’";
+  }
+  .quote:before {
+      content: open-quote;
+  }
+  .quote:after {
+      content: close-quote;
+}
