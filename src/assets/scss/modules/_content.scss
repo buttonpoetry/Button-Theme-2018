@@ -1,7 +1,12 @@
 .main-container {
   @include xy-grid-container;
-  padding-left:0;
-  padding-right:0;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+.main-container.front-page {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .limit-width-wrap {
