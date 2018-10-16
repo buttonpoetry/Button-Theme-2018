@@ -112,50 +112,55 @@ $titlebar-title-font-size: 1.5rem;
   }
 
   .menu {
-    padding-right: 2rem;
-  }
+    line-height: rem-calc(50);
 
-  .menu .nav-unweighted {
-  
-    @include breakpoint(medium) {
+    @include breakpoint(xlarge)
+    {
+      line-height: rem-calc(100);
+      padding-right: 2rem;
+    }
+
+    a {
+      line-height:inherit;
+      font-weight: bold;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.13rem;
+
+      &:hover:not(.button) {
+        text-decoration: underline;
+      }
+    }
+
+    .is-active {
+      background-color: $button-light-tan;
+    }
+
+    .nav-unweighted {
+      @include breakpoint(medium) {
         font-weight: normal;
+      }
+
+      @include breakpoint(xlarge) {
         margin-left: 10px;
+      }
     }
-  }
 
-  .menu a {
-    line-height: rem-calc(100);
-    font-weight: bold;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.13rem;
-
-    &:hover:not(.button) {
-      text-decoration: underline;
+    .nav-cart {
+      img {
+        width: 1.5rem;
+        vertical-align: text-bottom;    
+      }
     }
-  }
-
-  .menu .is-active > a {
-    background-color: $button-light-tan;
   }
 
   .menu>li:not(.menu-text)>a { padding: 0 1rem; }
-  //.menu li:not(:last-child) { border-right: 1px solid #4e4e4e; }
-
-  .dropdown.menu .submenu { border: 0; }
+  .dropdown.menu .has-submenu a:hover {border: 3px solid $button-light-tan; background-color: $white; }
+  .dropdown.menu .submenu { border: 3px solid $button-light-tan; line-height: 2rem; }
   .dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
   .dropdown.menu .has-submenu.is-down-arrow > a::after { border: 0; }
-  .dropdown.menu:first-child > li.is-dropdown-submenu-parent > a::after { display: none; }
-
-  .menu .nav-cart {
-    display: inline-block;
-    line-height: rem-calc(100);
-    height: inherit;
-    img {
-        width: 1.5rem;
-        vertical-align: text-bottom;    
-    }
-  }
+  .dropdown.menu:first-child > li.is-dropdown-submenu-parent > a::after { display: none; } 
+  
 }
 
 
