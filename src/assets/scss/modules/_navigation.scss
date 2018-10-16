@@ -112,7 +112,11 @@ $titlebar-title-font-size: 1.5rem;
   }
 
   .menu {
-    line-height: rem-calc(50);
+    line-height: rem-calc(33);
+    @include breakpoint(720px)
+    {
+      line-height: rem-calc(50);
+    }
 
     @include breakpoint(xlarge)
     {
