@@ -39,11 +39,11 @@ get_header(); ?>
 		</div>
 		<ul class="orbit-container">
 			<li class="orbit-slide">
-				<div class="grid-x align-middle feature-slide">
-					<div class="cell medium-6 large-shrink small-order-1 medium-order-2">
+				<div class="grid-x align-middle feature-slide" data-equalizer data-equalize-on="medium">
+					<div class="cell medium-6 large-shrink small-order-1 medium-order-2" data-equalizer-watch>
 						<a class="feature-link" href="#"><img class="feature-hero" src="https://via.placeholder.com/800/74B6B8/EBE9DD?text=Feature"></a>
 					</div>
-					<div class="cell medium-6 large-auto small-order-2 medium-order-1">
+					<div class="cell medium-6 large-auto small-order-2 medium-order-1" data-equalizer-watch>
 						<div class="feature-text">
 							<h2 class="feature-section-title">Featured</h2>
 							<p class="lead quote">I have kissed love on the lips & it did not fill me with anything other than smoke.</p>
@@ -54,11 +54,11 @@ get_header(); ?>
 				</div>
 			</li>
 			<li class="orbit-slide">
-				<div class="grid-x align-middle feature-slide">
-					<div class="cell medium-6 large-shrink small-order-1 medium-order-2">
+				<div class="grid-x align-middle feature-slide" data-equalizer data-equalize-on="medium">
+					<div class="cell medium-6 large-shrink small-order-1 medium-order-2" data-equalizer-watch>
 						<a class="feature-link" href="#"><img class="feature-hero" src="https://via.placeholder.com/800/444668/EBE9DD?text=Feature 2"></a>
 					</div>
-					<div class="cell medium-6 large-auto small-order-2 medium-order-1">
+					<div class="cell medium-6 large-auto small-order-2 medium-order-1" data-equalizer-watch>
 						<div class="feature-text">
 							<h2 class="feature-section-title">Featured</h2>
 							<p class="lead">Rudy Franscisco on The Tonight Show</p>
