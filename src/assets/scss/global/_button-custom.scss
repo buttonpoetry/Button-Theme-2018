@@ -56,20 +56,21 @@ p a:focus {
 
 // 3. Custom Motion-UI Animations
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-$bp-feature-slide-speed: 0.25;
-
-.bp-feature-slide-in-left {
-    @include mui-slide(in, $direction : left, $duration: $bp-feature-slide-speed, $timing ease-out);
-}
-  
-.bp-feature-slide-out-left {
-    @include mui-slide(out, $direction : left, $duration: $bp-feature-slide-speed, $timing ease-out);
-}
+$bp-feature-slide-speed: 0.5;
+$bp-feature-side-timing: default;
 
 .bp-feature-slide-in-right {
-    @include mui-slide(in, $direction : right, $duration: $bp-feature-slide-speed, $timing ease-out);
+    @include mui-slide(in, $direction : left, $duration: $bp-feature-slide-speed, $timing: $bp-feature-side-timing);
 }
   
 .bp-feature-slide-out-right {
-    @include mui-slide(out, $direction : right, $duration: $bp-feature-slide-speed, $timing ease-out);
+    @include mui-slide(out, $direction : right, $duration: $bp-feature-slide-speed, $timing: $bp-feature-side-timing);
+}
+
+.bp-feature-slide-in-left {
+    @include mui-slide(in, $direction : right, $duration: $bp-feature-slide-speed, $timing: $bp-feature-side-timing);
+}
+  
+.bp-feature-slide-out-left {
+    @include mui-slide(out, $direction : left, $duration: $bp-feature-slide-speed, $timing: $bp-feature-side-timing);
 }
