@@ -19,13 +19,17 @@
     @include breakpoint(medium) {
       display: inline-block;
       color: $black;
-      min-width:100px;
-      max-width:185px;
-      padding: 0 1rem;
-   }
+      padding: 0;
+    }
   
     @include breakpoint(large) {
       margin-top: 1rem;
+      padding: 0 1rem;
+    }
+
+    img {
+      width: 100%;
+      max-width: 160px;
     }
   }
 
