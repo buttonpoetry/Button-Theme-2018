@@ -10,7 +10,7 @@
 if ( ! function_exists( 'wpt_register_theme_customizer' ) ) :
 	function wpt_register_theme_customizer( $wp_customize ) {
 
-		// Create custom panels
+		/* Create custom panels. Moved these controls under the default 'Menu' Customizer panel.
 		$wp_customize->add_panel(
 			'mobile_menu_settings', array(
 				'priority'       => 1000,
@@ -18,13 +18,13 @@ if ( ! function_exists( 'wpt_register_theme_customizer' ) ) :
 				'title'          => __( 'Mobile Menu Settings', 'foundationpress' ),
 				'description'    => __( 'Controls the mobile menu', 'foundationpress' ),
 			)
-		);
+		);*/
 
 		// Create custom field for mobile navigation layout
 		$wp_customize->add_section(
 			'mobile_menu_layout', array(
 				'title'    => __( 'Mobile navigation layout', 'foundationpress' ),
-				'panel'    => 'mobile_menu_settings',
+				'panel'    => 'nav_menus',
 				'priority' => 1000,
 			)
 		);

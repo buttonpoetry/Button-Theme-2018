@@ -1,4 +1,5 @@
 // Navigation breakpoints
+// -=-=-=-=-=-=-=-=-=-=-=
 .mobile-menu,
 .site-title-bar {
   @include hide-for(medium);
@@ -9,78 +10,155 @@
   @include show-for(medium);
 }
 
-// Mobile menu
+// Mobile Navigation
+// -=-=-=-=-=-=-=-=-
+$titlebar-title-font-size: 1.5rem;
+
+.title-bar {
+  
+  .title-bar-title {
+    a {
+      font-size: $titlebar-title-font-size;
+    }
+  }
+
+  .title-bar-cart {
+    height: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  .menu-icon {
+    @include hamburger($color: $titlebar-icon-color, $color-hover: $titlebar-icon-color-hover, $height: 22px, $width: 24px, $weight: 2px, $bars: 3);
+  }
+}
+
 .mobile-menu {
   display: none; // prevents repaint caused by JS hiding menu onload
 }
 
 .off-canvas {
   > ul.menu {
-    height: 100vh;
-    padding: 1rem;
+    //height: 100vh;
+    padding:0;
 
     a {
-      //color: $white;
+      padding-left: 1rem;
+      color: $white;
       font-weight: 600;
       font-size: rem-calc(15);
+      letter-spacing: rem-calc(2);
+      &:hover {
+        background-color: rgba(255,255,255,.25);
+      } 
     }
   }
 
-  //.menu .active > a { background-color: #ccc; }
-
+  .menu .active > a { 
+    background-color: #ccc; 
+  }
 }
 
-.title-bar-title {
-  a {
-    font-size: 1rem;
-    //color: #B9B9B9;
+.off-canvas-logo-container {
+  padding: $titlebar-padding;
+  width: 100%;
+  font-size: $titlebar-title-font-size;
+  
+  .off-canvas-logo {
+    width: 2rem;
   }
 }
 
 .mobile-menu,
 .mobile-off-canvas-menu {
-
   .menu .is-active > a {
-    //background-color: lighten($dark-nav-color, 5%);
+    background-color: lighten($dark-nav-color, 5%);
   }
 }
 
-// Tablet and desktop menu
+//Fix horizontal/vertical scrollbar on off-canvas menu bug
+.offcanvas {
+  overflow-x: hidden;
+}
+
+//Fix blue highlight on off-canvas exit bug
+.js-off-canvas-overlay {
+    user-select: none;
+}
+
+// Desktop/Tablet Navigation
+// -=-=-=-=-=-=-=-=-=-=-=-=-
 
 .top-bar {
+  padding:0;
 
   .top-bar-title a {
-    font-size: 1rem;
-    padding-left: 1rem;
-    //color: #B9B9B9;
-    //line-height: 1.8;
+    height: rem-calc(100);
+    line-height: rem-calc(100);
+    color: $white;    
+    background-color: $black;
+    font-size: 1.4rem;
+    padding: 0 rem-calc(55);
+    display: inline-block;
+    vertical-align: middle;
+    white-space: nowrap;  
   }
 
-  .menu a {
-    padding-top: 0;
-    padding-bottom: $topbar-title-padding-vertical;
-    font-weight: bold;
-    font-size: 0.68rem;
-    text-transform: uppercase;
-    letter-spacing: 0.13rem;
+  .menu {
+    line-height: rem-calc(33);
+    @include breakpoint(720px)
+    {
+      line-height: rem-calc(50);
+    }
 
-    &:hover:not(.button) {
-      //background-color: #42525D;
+    @include breakpoint(xlarge)
+    {
+      line-height: rem-calc(100);
+      padding-right: 2rem;
+    }
+
+    a {
+      line-height:inherit;
+      font-weight: bold;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.13rem;
+
+      &:hover:not(.button) {
+        text-decoration: underline;
+      }
+    }
+
+    .is-active {
+      background-color: $button-light-tan;
+    }
+
+    .nav-unweighted {
+      @include breakpoint(medium) {
+        font-weight: normal;
+      }
+
+      @include breakpoint(xlarge) {
+        margin-left: 10px;
+      }
+    }
+
+    .nav-cart {
+      img {
+        width: 1.5rem;
+        vertical-align: text-bottom;    
+      }
     }
   }
 
-  .menu .active > a { 
-    text-decoration: underline;
-  }
-
-  .menu>li:not(.menu-text)>a { padding: 0.63rem; }
-  //.menu li:not(:last-child) { border-right: 1px solid #4e4e4e; }
-
-  .dropdown.menu .submenu { border: 0; }
+  .menu>li:not(.menu-text)>a { padding: 0 1rem; }
+  .dropdown.menu .has-submenu a:hover {border: 3px solid $button-light-tan; background-color: $white; }
+  .dropdown.menu .submenu { border: 3px solid $button-light-tan; line-height: 2rem; }
   .dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
   .dropdown.menu .has-submenu.is-down-arrow > a::after { border: 0; }
-  .dropdown.menu:first-child > li.is-dropdown-submenu-parent > a::after { display: none; }
+  .dropdown.menu:first-child > li.is-dropdown-submenu-parent > a::after { display: none; } 
+  
 }
+
 
 .site-navigation {
   @include breakpoint(small only) {
