@@ -1,10 +1,10 @@
 {
-  "name": "foundationpress",
-  "title": "FoundationPress",
-  "version": "2.10.4",
-  "description": "FoundationPress is a WordPress starter theme based on Foundation 6 by Zurb",
-  "homepage": "https://foundationpress.olefredrik.com",
-  "license": "MIT",
+  "name": "button-theme-2018",
+  "title": "Button Poetry Theme 2018" ,
+  "version": "0.1.0",
+  "description": "Button Poetry's 2018 theme is based on FoundationPress. FoundationPress is a WordPress starter theme based on Foundation 6 by Zurb",
+  "homepage": "https://buttonpoetry.com",
+  "license": "UNLICENSED",
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
@@ -27,8 +27,8 @@
   "dependencies": {
     "foundation-sites": "6.4.3",
     "jquery": "~3.0.0",
-    "what-input": "^4.1.3",
-    "motion-ui": "~1.2.2"
+    "motion-ui": "~1.2.2",
+    "what-input": "^4.1.3"
   },
   "devDependencies": {
     "ansi-colors": "^1.0.1",
@@ -39,7 +39,7 @@
     "browser-sync": "^2.10.0",
     "dateformat": "^3.0.2",
     "fancy-log": "^1.3.2",
-    "gulp": "gulpjs/gulp#4.0",
+    "gulp": "^4.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-babel": "^6.1.2",
     "gulp-clean-css": "^3.3.1",
@@ -67,7 +67,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/olefredrik/foundationpress.git"
+    "url": "git+https://github.com/olefredrik/foundationpress.git"
   },
   "bugs": {
     "url": "https://github.com/olefredrik/foundationpress/issues"
@@ -76,5 +76,6 @@
     "presets": [
       "es2015"
     ]
-  }
+  },
+  "author": "Lionel Di Giacomo"
 }
