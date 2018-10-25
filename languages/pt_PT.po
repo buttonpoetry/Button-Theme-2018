@@ -244,7 +244,7 @@ msgstr "Widgets do rodapé"
 msgid "Drag widgets to this footer container"
 msgstr "Arraste widgets para este rodapé."
 
-#: page-templates/front.php:38 page-templates/page-full-width.php:22
+#: page-templates/page-full-width.php:22
 #: page-templates/page-sidebar-left.php:22 page.php:30 single.php:32
 #: woocommerce.php:26
 msgid "Pages:"

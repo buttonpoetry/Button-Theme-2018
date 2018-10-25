@@ -243,7 +243,7 @@ msgstr "Widgety v patičce"
 msgid "Drag widgets to this footer container"
 msgstr "Přetáhněte widgety na tuto oblast pro zápatí."
 
-#: page-templates/front.php:38 page-templates/page-full-width.php:22
+#: page-templates/page-full-width.php:22
 #: page-templates/page-sidebar-left.php:22 page.php:31 single.php:33
 #: woocommerce.php:26
 msgid "Pages:"
