@@ -111,7 +111,7 @@ $top-bar-active-border: 2px solid $button-tan;
 
   .desktop-menu.menu {
     line-height: rem-calc(33);
-    @include breakpoint(720px)
+    @include breakpoint(730px)
     {
       line-height: rem-calc(50);
     }
@@ -129,8 +129,7 @@ $top-bar-active-border: 2px solid $button-tan;
       text-transform: uppercase;
       letter-spacing: 0.13rem;
       border: $top-bar-link-border;
-      z-index: 10;
-
+      
       .nav-link-text {
         line-height: 1.5rem;
         display: inline-block;
@@ -157,18 +156,19 @@ $top-bar-active-border: 2px solid $button-tan;
     .is-active > a {
       border: $top-bar-link-hover-border;
       border-bottom: $top-bar-link-border;
-      color: black;
+      color: $black;
+      z-index: 6;
     }
 
     .has-submenu.is-down-arrow a { padding-right: 1rem; }
     .has-submenu.is-down-arrow > a::after { border: 0; }
     &:first-child > li.is-dropdown-submenu-parent > a::after { display: none; } 
 
-    .submenu 
+    .submenu.is-dropdown-submenu
     { 
       border: $top-bar-link-hover-border;
-      box-shadow: 2px 2px 12px -2px rgba(0,0,0,0.1);
-      line-height: 1.875rem; 
+      box-shadow: 2px 2px 12px -2px rgba(0,0,0,0.15);
+      line-height: 1.5rem; 
       z-index: 5;
       top: 98%;
       
