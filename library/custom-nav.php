@@ -69,19 +69,3 @@ if ( ! function_exists( 'wpt_register_theme_customizer' ) ) :
 		return $classes;
 	}
 endif;
-
-function bp_main_menu_append ( $items, $args ) {
-	if ($args->theme_location == 'top-bar-r' || $args->theme_location == 'mobile-nav') {
-		if (is_user_logged_in()) {
-			$items .= '<li><a href="'. wp_logout_url() .'" class="nav-unweighted">Log Out</a></li>';
-		}
-		elseif (!is_user_logged_in()) {
-			$items .= '<li><a href="'. site_url('wp-login.php') .'" class="nav-unweighted">Poet Log In</a></li>';
-		}
-	}
-	if ($args->theme_location == 'top-bar-r') {
-		$items .= '<li><a href="#" class="nav-cart"><img src="'. get_stylesheet_directory_uri() . '/dist/assets/images/theme/cart.svg"></a></li>';
-	}
-    return $items;
-}
-add_filter( 'wp_nav_menu_items', 'bp_main_menu_append', 10, 2 );

@@ -26,7 +26,7 @@ if ( ! function_exists( 'foundationpress_top_bar_r' ) ) {
 			array(
 				'container'      => false,
 				'menu_class'     => 'dropdown menu',
-				'items_wrap'     => '<ul id="%1$s" class="%2$s desktop-menu" data-dropdown-menu data-position="bottom" data-alignment="left">%3$s</ul>',
+				'items_wrap'     => '<ul id="%1$s" class="%2$s desktop-menu" data-dropdown-menu data-position="bottom" data-alignment="left" data-hover-delay="50">%3$s</ul>',
 				'theme_location' => 'top-bar-r',
 				'depth'          => 3,
 				'fallback_cb'    => false,
@@ -74,4 +74,23 @@ if ( ! function_exists( 'foundationpress_add_menuclass' ) ) {
 		return preg_replace( $find, $replace, $ulclass, 1 );
 	}
 	add_filter( 'wp_nav_menu', 'foundationpress_add_menuclass' );
+}
+
+// Add login and cart items to main navigation.
+if ( ! function_exists( 'bp_main_menu_append' ) ) {
+	function bp_main_menu_append ( $items, $args ) {
+		if ($args->theme_location == 'top-bar-r' || $args->theme_location == 'mobile-nav') {
+			if (is_user_logged_in()) {
+				$items .= '<li><a href="'. wp_logout_url() .'" class="nav-unweighted"><span class="nav-link-text">Log Out</span></a></li>';
+			}
+			elseif (!is_user_logged_in()) {
+				$items .= '<li><a href="'. site_url('wp-login.php') .'" class="nav-unweighted"><span class="nav-link-text">Poet Login</span></a></li>';
+			}
+		}
+		if ($args->theme_location == 'top-bar-r') {
+			$items .= '<li><a href="#" class="nav-cart"><img src="'. get_stylesheet_directory_uri() . '/dist/assets/images/theme/cart.svg"></a></li>';
+		}
+	    return $items;
+	}
+	add_filter( 'wp_nav_menu_items', 'bp_main_menu_append', 10, 2 );
 }
