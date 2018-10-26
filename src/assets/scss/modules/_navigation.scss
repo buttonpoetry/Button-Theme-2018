@@ -111,7 +111,7 @@ $top-bar-active-border: 2px solid $button-tan;
 
   .desktop-menu.menu {
     line-height: rem-calc(33);
-    @include breakpoint(720px)
+    @include breakpoint(730px)
     {
       line-height: rem-calc(50);
     }
