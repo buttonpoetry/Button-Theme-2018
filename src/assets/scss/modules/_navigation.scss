@@ -6,6 +6,7 @@
 }
 
 .desktop-menu,
+.site-navigation.top-bar,
 .site-navigation .top-bar-left {
   @include show-for(medium);
 }
