@@ -67,17 +67,6 @@ if ( ! function_exists( 'foundationpress_menu_fallback' ) ) :
 	}
 endif;
 
-// Add Foundation 'is-active' class for the current menu item.
-if ( ! function_exists( 'foundationpress_active_nav_class' ) ) :
-	function foundationpress_active_nav_class( $classes, $item ) {
-		if ( $item->current == 1 || $item->current_item_ancestor == true ) {
-			$classes[] = 'is-active';
-		}
-		return $classes;
-	}
-	add_filter( 'nav_menu_css_class', 'foundationpress_active_nav_class', 10, 2 );
-endif;
-
 /**
  * Use the is-active class of ZURB Foundation on wp_list_pages output.
  * From required+ Foundation http://themes.required.ch.
