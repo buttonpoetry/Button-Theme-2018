@@ -91,7 +91,7 @@ $foundation-palette: (
   warning: #ffae00,
   alert: #cc4b37,
 );
-$body-background: white;
+$body-background: $white;
 $body-font-color: $black;
 $body-font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 $body-antialiased: true;
@@ -410,7 +410,7 @@ $dropdownmenu-nested-margin: 0;
 $dropdownmenu-submenu-padding: $dropdownmenu-padding;
 $dropdownmenu-border: 1px solid $medium-gray;
 $dropdown-menu-item-color-active: $black;
-$dropdown-menu-item-background-active: darken($dropdownmenu-background, 5%);
+$dropdown-menu-item-background-active: $white;
 
 // 19. Flexbox Utilities
 // ---------------------
