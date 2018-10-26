@@ -30,6 +30,8 @@ if ( ! function_exists( 'foundationpress_top_bar_r' ) ) {
 				'theme_location' => 'top-bar-r',
 				'depth'          => 3,
 				'fallback_cb'    => false,
+				'link_before'    => '<span class="nav-link-text">',
+				'link_after'     => '</span>',
 				'walker'         => new Foundationpress_Top_Bar_Walker(),
 			)
 		);
