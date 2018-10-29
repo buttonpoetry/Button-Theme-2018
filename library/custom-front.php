@@ -41,18 +41,70 @@ if ( ! function_exists( 'bp_register_theme_customizer_front_page' ) ) :
 			)
 		);
 
-		// Add options for navigation layout
+		// Add setting control for Showcase lead text
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
-				'front_page_showcase',
+				'front_page_showcase_lead_control',
 				array(
-					'type'     => 'textarea',
 					'section'  => 'front_page_showcase',
-					'settings' => 'bp_front_page_showcase_lead'
+					'label'	   => 'Lead copy to show on the homepage:',
+					'settings' => 'bp_front_page_showcase_lead',
+					'type'     => 'textarea',
 				)
 			)
 		);
+
+		// Create and set default showcase books
+		// Get Book IDs to populate selector
+		$category_id = 'books';
+		$books = get_posts( array(
+			'post_type'   => 'product',
+			'numberposts' => -1,
+			'post_status' => 'publish',
+			'tax_query'   => array( array(
+					'taxonomy' => 'product_cat',
+					'field' => 'name',
+					'terms' => $category_id,
+					'operator' => 'IN',
+				) )
+		) );
+		
+		$book_titles = array();
+		$book_ids = array();
+
+		foreach ($books as $book) {
+			array_push($book_ids, $book->ID);
+			array_push($book_titles, $book->post_title);
+		}
+
+		$book_choices = array_combine($book_ids, $book_titles);
+
+		for ( $i = 0; $i < 6; $i++ ) {
+			$wp_customize->add_setting(
+				'front_page_showcase_books[' . $i . ']',
+				array(
+					'default' => $books[i]->ID,
+				)
+			);
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'front_page_showcase_books_control' . $i,
+					array(
+						'label'    => 'Showcase book ID #' . $i,
+						'section'  => 'front_page_showcase',
+						'settings' => 'front_page_showcase_books[' . $i . ']',
+						'type'     => 'select',
+						'choices'  => $book_choices
+					)
+				)
+			);
+		}
+
+		
+		
+		
 	}
 
 	add_action( 'customize_register', 'bp_register_theme_customizer_front_page' );
