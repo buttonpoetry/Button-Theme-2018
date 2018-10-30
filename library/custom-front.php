@@ -100,11 +100,7 @@ if ( ! function_exists( 'bp_register_theme_customizer_front_page' ) ) :
 					)
 				)
 			);
-		}
-
-		
-		
-		
+		}		
 	}
 
 	add_action( 'customize_register', 'bp_register_theme_customizer_front_page' );
