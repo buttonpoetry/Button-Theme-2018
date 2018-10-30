@@ -36,8 +36,8 @@ get_header(); ?>
 		<button class="orbit-previous"><span class="show-for-sr">Previous Feature</span>&#9664;&#xFE0E;</button>
 		<button class="orbit-next"><span class="show-for-sr">Next Feature</span>&#9654;&#xFE0E;</button>
 		</div>
-		<ul class="orbit-container" data-equalizer>
-			<li class="orbit-slide" data-equalizer-watch>
+		<ul class="orbit-container" >
+			<li class="orbit-slide" >
 				<div class="grid-x align-middle feature-slide">
 					<div class="cell medium-6 large-shrink small-order-1 medium-order-2">
 						<a class="feature-link" href="#"><img class="feature-hero" src="https://via.placeholder.com/800/74B6B8/EBE9DD?text=Feature"></a>
@@ -52,7 +52,7 @@ get_header(); ?>
 					</div>
 				</div>
 			</li>
-			<li class="orbit-slide" data-equalizer-watch>
+			<li class="orbit-slide" >
 				<div class="grid-x align-middle feature-slide">
 					<div class="cell medium-6 large-shrink small-order-1 medium-order-2">
 						<a class="feature-link" href="#"><img class="feature-hero" src="https://via.placeholder.com/800/444668/EBE9DD?text=Feature 2"></a>
@@ -94,18 +94,6 @@ get_header(); ?>
 
 <section class="instagram-row">
 	<h2>Instagram</h2>
-	<div class="row collapse small-up-2 medium-up-4 large-up-5 wide">
-	<div class="column"><img src="https://via.placeholder.com/350/000/ffffff?text=%20"></div>
-	<div class="column"><img src="https://via.placeholder.com/350/E0E7AD/000000?text=%20"></div>
-	<div class="column"><img src="https://via.placeholder.com/350/000/ffffff?text=%20"></div>
-	<div class="column"><img src="https://via.placeholder.com/350/CFB49A/000000?text=%20"></div>
-	<div class="column"><img src="https://via.placeholder.com/350/6D3E30/ffffff?text=%20"></div>
-	<div class="column"><img src="https://via.placeholder.com/350/973C2D/ffffff?text=%20"></div>
-	<div class="column"><img src="https://via.placeholder.com/350/747F99/000000?text=%20"></div>
-	<div class="column"><img src="https://via.placeholder.com/350/ddd/000000?text=%20"></div>
-	<div class="column"><img src="https://via.placeholder.com/350/000/ffffff?text=%20"></div>
-	<div class="column"><img src="https://via.placeholder.com/350/DBCC3B/000000?text=%20"></div>
-	</div>
 	<div class="yotpo yotpo-pictures-widget"
 		data-album-id="5b333b8dc3eb964c0b2acb79"
 		data-layout="num_of_rows"
