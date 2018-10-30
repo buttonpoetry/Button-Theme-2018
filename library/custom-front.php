@@ -35,7 +35,7 @@ if ( ! function_exists( 'bp_register_theme_customizer_front_page' ) ) :
 
 		// Create and set default showcase lead copy setting
 		$wp_customize->add_setting(
-			'bp_front_page_showcase_lead',
+			'front_page_showcase_lead',
 			array(
 				'default' => __( 'We showcase the power and diversity of voices in our community because we believe that poetry is for everyone.', 'foundationpress' ),
 			)
@@ -49,7 +49,7 @@ if ( ! function_exists( 'bp_register_theme_customizer_front_page' ) ) :
 				array(
 					'section'  => 'front_page_showcase',
 					'label'	   => 'Lead copy to show on the homepage:',
-					'settings' => 'bp_front_page_showcase_lead',
+					'settings' => 'front_page_showcase_lead',
 					'type'     => 'textarea',
 				)
 			)
@@ -82,7 +82,7 @@ if ( ! function_exists( 'bp_register_theme_customizer_front_page' ) ) :
 
 		for ( $i = 0; $i < 6; $i++ ) {
 			$wp_customize->add_setting(
-				'front_page_showcase_books[' . $i . ']',
+				'front_page_showcase_books_' . $i,
 				array(
 					'default' => $books[i]->ID,
 				)
@@ -94,7 +94,7 @@ if ( ! function_exists( 'bp_register_theme_customizer_front_page' ) ) :
 					array(
 						'label'    => 'Showcase book ID #' . $i,
 						'section'  => 'front_page_showcase',
-						'settings' => 'front_page_showcase_books[' . $i . ']',
+						'settings' => 'front_page_showcase_books_' . $i,
 						'type'     => 'select',
 						'choices'  => $book_choices
 					)

@@ -9,26 +9,25 @@ get_header(); ?>
 		<div class="main-content-full-width">
 <section class="showcase">
 <p class="lead"><?php 
-	if( get_theme_mod( 'bp_front_page_showcase_lead' ) ) 
-	{
-		echo get_theme_mod( 'bp_front_page_showcase_lead' );
-	}
-	else {
-		_e( 'We showcase the power and diversity of voices in our community because we believe that poetry is for everyone.', 'foundationpress' );
-	} ?></p>
+	echo get_theme_mod('front_page_showcase_lead', __( 'We showcase the power and diversity of voices in our community because we believe that poetry is for everyone.', 'foundationpress' ));
+?></p>
 <div class="showcase-shelf grid-container">
 	<div class="grid-x grid-margin-x">
 		<div class="row expanded">
-			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/160x240/EBE9DD?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h2 class="title">Book Title</h2><p class="author">Author Name</p></a></div>
-			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/160x240/000/fff?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h2 class="title">Book Title</h2><p class="author">Author Name</p></a></div>
-			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/160x240/17272E?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h2 class="title">Book Title</h2><p class="author">Author Name</p></a></div>
-			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/160x240/E4DED1?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h2 class="title">A Love Song A Death Rattle A Battle Cry</h2><p class="author">Kyle "Guante" Tran Myhre</p></a></div>
-			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/160x240/F1F0EF?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h2 class="title">Book Title</h2><p class="author">Author Name</p></a></div>
-			<div class="cell small-4 medium-2"><a href="#" class="showcase-book"><img src="https://via.placeholder.com/160x240/666/fff?text=Poems" title="Go to Book Title's product page" alt="Book Title by Author"><h2 class="title">Book Title</h2><p class="author">Author Name</p></a></div>
+		<?php for($i = 0; $i < 6; $i++ ) { 
+			$book_id = get_theme_mod('front_page_showcase_books_' . $i, '35546'); ?>
+			<div class="cell small-4 medium-2">
+				<a href="<?php echo get_permalink( $book_id ); ?>" class="showcase-book">
+					<img src="<?php echo get_the_post_thumbnail_url($book_id); ?>" title="Go to <?php get_the_title( $book_id ); ?>'s product page" alt="Book Title by Author">
+					<h2 class="title"><?php echo get_the_title( $book_id ); ?></h2>
+					<p class="author"><?php echo get_post_meta( $book_id, 'book-author', true); ?></p>
+				</a>
+			</div> 
+		<?php } ?>
 		</div>
 	</div>
 </div>
-<a class="button large" href="#">Shop all books</a>
+<a class="button large" href="<?php echo get_permalink('88'); ?>">Shop all books</a>
 </section>
 
 <section class="feature-row orbit" role="region" aria-label="Button Poetry Featured Content" data-orbit data-options="animInFromLeft:bp-feature-slide-in-left; animInFromRight:bp-feature-slide-in-right; animOutToLeft:bp-feature-slide-out-left; animOutToRight:bp-feature-slide-out-right;">
