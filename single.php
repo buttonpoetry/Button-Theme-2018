@@ -6,7 +6,11 @@
  * @since FoundationPress 1.0.0
  */
 
-get_header(); ?>
+get_header(); 
+if ( in_category( 'Poets' ) ) { 
+	get_template_part( 'template-parts/single-poets' );
+}
+else {?>
 
 <?php get_template_part( 'template-parts/featured-image' ); ?>
 <div class="main-container">
@@ -21,4 +25,5 @@ get_header(); ?>
 		<?php get_sidebar(); ?>
 	</div>
 </div>
-<?php get_footer();
+<?php }
+get_footer();
