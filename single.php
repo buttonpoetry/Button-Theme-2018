@@ -7,9 +7,13 @@
  */
 
 get_header(); 
+
+// Display the Poets single page.
 if ( in_category( 'Poets' ) ) { 
 	get_template_part( 'template-parts/single-poets' );
 }
+
+//Otherwise, display the default single page template.
 else {?>
 
 <?php get_template_part( 'template-parts/featured-image' ); ?>
