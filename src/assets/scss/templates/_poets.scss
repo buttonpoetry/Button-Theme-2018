@@ -1,0 +1,70 @@
+// Sass for the Poets archives and pages
+
+.poet-bio {
+    background-color: $button-light-tan;
+
+    header {
+        display: inline-block;
+        margin-top: 0;
+        .poet-name {
+        }
+    }
+
+    .poet-bio-social {
+
+    }
+    
+    .poet-bio-pic {
+        display:block;
+
+        @include breakpoint(medium) {
+            float:left;
+            max-width: 50%; 
+            margin-right: 5%;
+            margin-bottom: rem-calc(15);
+        }
+
+        @include breakpoint(large) {
+            max-width: 40%; 
+            margin-bottom: rem-calc(25);
+        }
+
+    }
+
+    .poet-bio-content p {
+
+    }
+}
+
+.poet-featured-item {
+    .poet-featured-item-copy {
+
+    }
+
+    .poet-featured-item-pic {
+        
+    }
+}
+
+.poet-product-carousel {
+        
+    .cell {
+        border: 1px solid $button-tan;
+        padding: 15px;
+
+        img {
+            float: left;
+            margin-right: 30px; 
+
+        }
+
+        h3 {
+            
+        }
+
+        a {
+            text-transform: uppercase;
+        }
+    }
+    
+}

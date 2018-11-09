@@ -4,7 +4,7 @@ Template Name: Front
 */
 get_header(); ?>
 
-<div class="main-container front-page">
+<div class="main-container wide">
 	<div class="main-grid">
 		<div class="main-content-full-width">
 <section class="showcase">
