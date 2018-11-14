@@ -1,32 +1,59 @@
 // Sass for the Poets archives and pages
 
-.poet-bio {
+.poet-bio-wrapper {
     background-color: $button-light-tan;
+    margin-top: 0;
+    padding-bottom: 2rem;
+    
+    @include breakpoint(medium) {
+        padding-top: 2rem;
+    }
+
+    @include breakpoint(large) {
+        padding-top: 3rem;
+    }
+
+    .main-grid {
+        margin-top: 0;
+    }
+
 
     header {
-        display: inline-block;
-        margin-top: 0;
+        display: block;
+        margin-top: 0.5rem;
+        text-align: center;
+
+        @include breakpoint(large) {
+            margin-top: 0;
+            display: inline-block;
+            text-align: left;
+        }
+
         .poet-name {
+            @include breakpoint(small only) {
+                font-size: 2rem;
+            }
         }
     }
 
     .poet-bio-social {
-
+        
     }
     
     .poet-bio-pic {
         display:block;
 
         @include breakpoint(medium) {
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: rem-calc(10);
+        }
+
+        @include breakpoint(large) {
             float:left;
             max-width: 50%; 
             margin-right: 5%;
             margin-bottom: rem-calc(15);
-        }
-
-        @include breakpoint(large) {
-            max-width: 40%; 
-            margin-bottom: rem-calc(25);
         }
 
     }
@@ -55,7 +82,6 @@
         img {
             float: left;
             margin-right: 30px; 
-
         }
 
         h3 {
