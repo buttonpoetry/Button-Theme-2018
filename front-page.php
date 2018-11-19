@@ -20,7 +20,7 @@ get_header(); ?>
 				<a href="<?php echo get_permalink( $book_id ); ?>" class="showcase-book">
 					<img src="<?php echo get_the_post_thumbnail_url($book_id); ?>" title="Go to <?php get_the_title( $book_id ); ?>'s product page" alt="Book Title by Author">
 					<h2 class="title"><?php echo get_the_title( $book_id ); ?></h2>
-					<p class="author"><?php echo get_post_meta( $book_id, 'book-author', true); ?></p>
+					<p class="author"><?php echo get_post_meta( $book_id, 'linked-author', true); ?></p>
 				</a>
 			</div> 
 		<?php } ?>
