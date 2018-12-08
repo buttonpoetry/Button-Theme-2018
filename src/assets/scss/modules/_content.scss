@@ -63,7 +63,13 @@
 
     @include breakpoint(medium) {
       @include xy-cell(4);
-      margin-top: 1rem;
+      margin-top: 3rem;
+    }
+
+    @include breakpoint(large) {
+      @include xy-cell(3);
+      @include xy-cell-offset(1, $grid-margin-gutters, margin, $-zf-zero-breakpoint, false);
+      margin-top: 3rem;
     }
 
   }

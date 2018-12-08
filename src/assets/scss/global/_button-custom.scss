@@ -3,6 +3,7 @@
 // 1. Navigation Customization
 // 2. Additional Typography Helpers
 // 3. Custom Motion-UI Animations
+// 4. Widget Customizations
 
 // 1. Navigation customization
 // ---------------------------
@@ -73,4 +74,59 @@ $bp-feature-side-timing: default;
   
 .bp-feature-slide-out-left {
     @include mui-slide(out, $direction : left, $duration: $bp-feature-slide-speed, $timing: $bp-feature-side-timing);
+}
+
+// 4. Widget Customizations
+// -=-=-=-=-=-=-=-=-=-=-=-=
+.widget {
+    margin-bottom: rem-calc(60);
+
+    h6 {
+        font-family: $body-font-family;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        letter-spacing: .1rem;
+        font-weight: bold;
+        border-bottom: rem-calc(2) solid black;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+    }
+}
+
+// Customization for the categories widget.
+.widget_product_categories {
+
+    h6 {
+        display: none;
+    }
+
+    ul {
+        border: $button-tan;
+        box-shadow: 2px 2px 12px -2px rgba(0,0,0,0.15);
+        list-style:none;
+        margin:0;
+     
+        .current-cat {
+            background-color: rgba($button-light-tan, .5);
+            transition: .2s;
+        }
+
+        .cat-item {
+            font-size: 1rem;
+            padding: .5rem 2rem;
+            transition: .2s;            
+
+            &:hover {
+                background-color: $button-light-tan;
+                transition: .2s;
+            }            
+        }
+    }
+}
+
+// 6. WooCommerce Customizations
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+.onsale {
+    box-sizing: content-box;
 }
