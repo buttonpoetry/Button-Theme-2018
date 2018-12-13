@@ -13,6 +13,12 @@
     }
   }
 
+  .showcase-shelf {
+    @include breakpoint(small only) {
+      background: $black;
+    }
+  }
+
   .showcase-book {
     @include breakpoint(medium) {
       display: inline-block;
@@ -27,7 +33,9 @@
 
     img {
       width: 100%;
-      max-width: 160px;
+      @include breakpoint(medium) {
+        max-width: 160px;
+      }
     }
   }
 
