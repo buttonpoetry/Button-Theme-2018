@@ -127,6 +127,12 @@ $bp-feature-side-timing: default;
 // 6. WooCommerce Customizations
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
+// Fix Sale badge sizing
 .onsale {
     box-sizing: content-box;
+}
+
+// Hide product counts
+.count {
+    display: none;
 }
