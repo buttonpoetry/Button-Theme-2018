@@ -18,7 +18,7 @@ get_header(); ?>
 		<main class="main-content">
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php get_template_part( 'template-parts/content', 'page' ); ?>
-				<?php comments_template(); ?>
+				<!-- Don't display comments on pages. ?php comments_template(); ?-->
 			<?php endwhile; ?>
 		</main>
 		<?php get_sidebar(); ?>
