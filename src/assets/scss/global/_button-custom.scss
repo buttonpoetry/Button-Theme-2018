@@ -79,7 +79,8 @@ $bp-feature-side-timing: default;
 // 4. Widget Customizations
 // -=-=-=-=-=-=-=-=-=-=-=-=
 .widget {
-    margin-bottom: rem-calc(60);
+    margin-bottom: rem-calc(40);
+    font-size: .9rem;
 
     h6 {
         font-family: $body-font-family;
@@ -89,7 +90,7 @@ $bp-feature-side-timing: default;
         font-weight: bold;
         border-bottom: rem-calc(2) solid black;
         text-transform: uppercase;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
 }
 
@@ -101,7 +102,7 @@ $bp-feature-side-timing: default;
     }
 
     ul {
-        border: $button-tan;
+        border: 1px solid rgba($button-light-tan, .5);
         box-shadow: 2px 2px 12px -2px rgba(0,0,0,0.15);
         list-style:none;
         margin:0;
@@ -135,4 +136,11 @@ $bp-feature-side-timing: default;
 // Hide product counts
 .count {
     display: none;
+}
+
+// 7. Mailchimp for WordPress Customization
+
+.mc4wp-form-fields input[type="submit"] {
+    @extend .button;
+    @extend .expanded;
 }
