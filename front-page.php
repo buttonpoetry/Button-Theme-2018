@@ -76,11 +76,26 @@ get_header(); ?>
 		<div class="cell medium-7 large-6 small-order-1 medium-order-2 latest-news">
 			<h2>Latest News</h2>
 			<p>We love seeing our poets getting the recognition they deserve. Follow us on <a href="#">Twitter</a> for more news about what goes on behind the scenes.</p>
-			<blockquote>
-				Congratulations to Denice Fohman on topping 3,000,000 views on their poem, "Dear Straight People"<br/><br />
-				Best of Button: Diksha Bijlani & Neil Hilborn<br /><br />
-				Best of Button: Kevin Kantor & Steven Willis<br /><br />
-				Congratulations to Omar Holmon on topping 100,000 views on "Batman's superpower is white privilege."
+			
+			<?php 
+				$bulletinFeed = new WP_Query( array ( 	'post_type' => 'post', 
+														'category__not_in' => array( 1, 15, 1488 ), 
+														'no_found_rows' => true, 
+														'posts_per_page' => 5) );
+				if ( $bulletinFeed->have_posts() ) {
+					echo '<blockquote>';
+					while ( $bulletinFeed->have_posts() ) {
+						$bulletinFeed->the_post();
+						echo '<div class="latest-news-headline"><a href="' . get_permalink() . '">' . get_the_title() . '</a></div>';
+					}
+					echo '</blockquote>';
+				} else {
+					// no posts found? Do nothing.
+				}
+
+				/* Restore original Post Data */
+				wp_reset_postdata();
+			?>				
 			</blockquote>
 			<a class="button secondary" href="#">More News</a>
 		</div>
