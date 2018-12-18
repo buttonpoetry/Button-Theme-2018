@@ -84,7 +84,7 @@ if ( ! function_exists( 'bp_register_theme_customizer_front_page' ) ) :
 			$wp_customize->add_setting(
 				'front_page_showcase_books_' . $i,
 				array(
-					'default' => $books[i]->ID,
+					'default' => $books[$i]->ID,
 				)
 			);
 			$wp_customize->add_control(
