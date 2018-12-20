@@ -20,6 +20,9 @@ require_once( 'library/cleanup.php' );
 /** Required for Foundation to work properly */
 require_once( 'library/foundation.php' );
 
+/** Required for Button Theme to work properly */
+require_once( 'library/button-theme.php' );
+
 /** Format comments */
 require_once( 'library/class-foundationpress-comments.php' );
 

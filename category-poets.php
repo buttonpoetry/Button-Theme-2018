@@ -12,12 +12,17 @@ get_header(); ?>
 
 <div class="main-container">
 	<div class="main-grid">
-		<main class="main-content">
+		<main class="main-content-full-width">
+		<header class="cell medium-10 large-8 large-offset-1">
+			<h1>Poets</h1>
+			<p class="poet-archive-lead">By encouraging and broadcasting the best and brightest performance poets of today, Button Poetry hopes to broaden poetry’s audience, to expand its reach and develop a greater level of cultural appreciation for the art form.</p>
+		</header>
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
+			
 			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+				<?php get_template_part( 'template-parts/content', 'poets' ); ?>
 			<?php endwhile; ?>
 
 			<?php else : ?>
@@ -38,7 +43,7 @@ get_header(); ?>
 			<?php endif; ?>
 
 		</main>
-		<?php get_sidebar(); ?>
+		
 
 	</div>
 </div>

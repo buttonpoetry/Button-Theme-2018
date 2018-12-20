@@ -44,29 +44,20 @@
 		<div class="main-content-full-width">
 			<section class="poet-featured-item grid-container">	
 				<div class="grid-x">
-					<div class="poet-featured-item-copy cell small-12 medium-6">
+					<div class="poet-featured-item-copy cell small-12 medium-8 medium-order-1 small-order-2">
 						<h2>The Future</h2>
 						<h3>Now available for order!</h3>
 						<p>Neil Hilborn's highly anticipated second collection of poems, The Future, invites readers to find comfort in hard nights and better days. Filled with nostalgia, love, heartbreak, and the author’s signature wry examinations of mental health, Neil Hilborn’s second book helps explain what lives inside us, what we struggle to define. Written on the road over two years of touring, The Future is rugged, genuine, and relatable. Grabbing attention like gravity, Hilborn reminds readers that no matter how far away we get, we eventually all drift back together. These poems are fireworks for the numb. In the author’s own words, The Future is a blue sky and a full tank of gas, and in it, we are alive.</p>
 						<a class="button" href="product-link">Buy Now</a>
 					</div>
-					<div class="poet-featured-item-pic cell small-12 medium-6">
-						<img src="https://via.placeholder.com/150x300/">
+					<div class="poet-featured-item-pic cell small-12 medium-4 medium-order-2 small-order-1">
+						<img src="https://via.placeholder.com/160x240/">
 					</div>
 				</div>
 			</section>
 	
-			<section class="poet-product-carousel grid-container">	
-				<div class="grid-x">						
-					<?php for($i = 0; $i < 5; $i++) { ?>
-					<div class="cell small-12 medium-4 large-3">
-						<img src="https://via.placeholder.com/80x120/">
-							<h3>Product Title</h3>
-							<a href="product-link">BUY NOW</a>
-						</div>
-						<?php } ?>
-					</div>
-			</section>
+			<?php bp_poet_carousel(get_the_ID()); ?>
+
 			<footer>
 				<?php
 					wp_link_pages(
