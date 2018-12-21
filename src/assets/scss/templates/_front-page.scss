@@ -95,8 +95,7 @@
       }
     
       @include breakpoint(medium) {
-        padding-left: 15%;
-        padding-right:15%;
+        padding: 15%;
       }
     
       @include breakpoint(large) {
