@@ -19,6 +19,12 @@
     </div>
 </footer>
 
+<!-- Mini cart -->
+<div class="dropdown-pane" id="bp-mini-cart" data-dropdown data-hover="true" data-hover-pane="true" data-position="bottom" data-alignment="right">
+  Empty cart class: <?php echo bp_empty_cart_class(); ?>
+  <br># Items in cart: <?php echo WC()->cart->get_cart_contents_count(); ?>
+</div>
+
 </div><!-- Closes the width limit wrapper -->
 
 <?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>

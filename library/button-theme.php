@@ -6,7 +6,7 @@
  * @since FoundationPress 1.0.0
  */
 
-if ( ! function_exists( 'bp_poet_carousel' ) ) :
+if ( ! function_exists( 'bp_poet_carousel' ) ) {
 	function bp_poet_carousel($poet_id) {
 		$carousel_products = get_post_meta( $poet_id, 'carousel-product', false );
 
@@ -37,4 +37,18 @@ if ( ! function_exists( 'bp_poet_carousel' ) ) :
 			?> </div></section> <?php 
 		}
 	}
-endif;
+}
+
+/**
+ * Function to return an empty cart class name or an empty string if the current cart is empty.
+ * 
+ * @since Button-Theme-2018 0.1.0
+ */
+if ( ! function_exists( 'bp_empty_cart_class' ) ) {
+	function bp_empty_cart_class() {
+		if ( ! WC()->cart->get_cart_contents_count() ) { 
+			return " cart-icon-empty";
+		} 
+		else return '';
+	}
+}

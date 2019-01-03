@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import whatInput from 'what-input';
 
-window.$ = window.jQuery = $;
+window.$ = $;
 
 import Foundation from 'foundation-sites';
 // If you want to pick and choose which modules to include, comment out the above and uncomment
@@ -12,3 +12,6 @@ $(document).foundation();
 
 // Slick Carousel
 import 'slick-carousel';
+
+// Custome WooCommerce JS
+import './lib/bp-woocommerce';
