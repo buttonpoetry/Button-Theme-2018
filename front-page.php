@@ -30,45 +30,54 @@ get_header(); ?>
 <a class="button large" href="<?php echo get_permalink('88'); ?>">Shop all books</a>
 </section>
 
-<section class="feature-row orbit" role="region" aria-label="Button Poetry Featured Content" data-orbit data-options="animInFromLeft:bp-feature-slide-in-left; animInFromRight:bp-feature-slide-in-right; animOutToLeft:bp-feature-slide-out-left; animOutToRight:bp-feature-slide-out-right;">
-	<div class="orbit-wrapper">
-		<div class="orbit-controls">
-		<button class="orbit-previous"><span class="show-for-sr">Previous Feature</span>&#9664;&#xFE0E;</button>
-		<button class="orbit-next"><span class="show-for-sr">Next Feature</span>&#9654;&#xFE0E;</button>
+<section class="feature-row" role="region" aria-label="Button Poetry Featured Content">
+<div class="dummy-slide">
+	<div class="grid-x align-middle feature-slide">
+		<div class="cell medium-6 large-shrink small-order-1 medium-order-2">
+			<a class="feature-link" href="#"><img class="feature-hero" src="https://via.placeholder.com/800/74B6B8/EBE9DD?text=Feature"></a>
 		</div>
-		<ul class="orbit-container" >
-			<li class="orbit-slide" >
-				<div class="grid-x align-middle feature-slide">
-					<div class="cell medium-6 large-shrink small-order-1 medium-order-2">
-						<a class="feature-link" href="#"><img class="feature-hero" src="https://via.placeholder.com/800/74B6B8/EBE9DD?text=Feature"></a>
-					</div>
-					<div class="cell medium-6 large-auto small-order-2 medium-order-1">
-						<div class="feature-text">
-							<h2 class="feature-section-title">Featured</h2>
-							<p class="lead quote">I have kissed love on the lips & it did not fill me with anything other than smoke.</p>
-							<p class="feature-author">Sabrina Benaim<br>Depression & Other Magic Tricks</p>
-							<div class="button-wrap"><a class="button" href="#">Buy Now</a></div>
-						</div>
-					</div>
-				</div>
-			</li>
-			<li class="orbit-slide" >
-				<div class="grid-x align-middle feature-slide">
-					<div class="cell medium-6 large-shrink small-order-1 medium-order-2">
-						<a class="feature-link" href="#"><img class="feature-hero" src="https://via.placeholder.com/800/444668/EBE9DD?text=Feature 2"></a>
-					</div>
-					<div class="cell medium-6 large-auto small-order-2 medium-order-1">
-						<div class="feature-text">
-							<h2 class="feature-section-title">Featured</h2>
-							<p class="lead">Rudy Franscisco on The Tonight Show</p>
-							<p>Congratulations to Button author Rudy Francisco on his phenomenal performance on The Tonight Show Starring Jimmy Fallon!</p>
-							<div class="button-wrap"><a class="button" href="#">Get Rudy's Book Here</a></div>
-						</div>
-					</div>
-				</div>
-			</li>
-		</ul>
+		<div class="cell medium-6 large-auto small-order-2 medium-order-1">
+			<div class="feature-text">
+				<h2 class="feature-section-title">Featured</h2>
+				<p class="lead quote">I have kissed love on the lips & it did not fill me with anything other than smoke.</p>
+				<p class="feature-author">Sabrina Benaim<br>Depression & Other Magic Tricks</p>
+				<div class="button-wrap"><a class="button" href="#">Buy Now</a></div>
+			</div>
+		</div>
 	</div>
+</div>
+<div class="slick-slider">
+<div class="slick-slide">
+		<div class="grid-x align-middle feature-slide">
+			<div class="cell medium-6 large-shrink small-order-1 medium-order-2">
+				<a class="feature-link" href="#"><img class="feature-hero" src="https://via.placeholder.com/800/74B6B8/EBE9DD?text=Feature"></a>
+			</div>
+			<div class="cell medium-6 large-auto small-order-2 medium-order-1">
+				<div class="feature-text">
+					<h2 class="feature-section-title">Featured</h2>
+					<p class="lead quote">I have kissed love on the lips & it did not fill me with anything other than smoke.</p>
+					<p class="feature-author">Sabrina Benaim<br>Depression & Other Magic Tricks</p>
+					<div class="button-wrap"><a class="button" href="#">Buy Now</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="slick-slide">
+		<div class="grid-x align-middle feature-slide">
+			<div class="cell medium-6 large-shrink small-order-1 medium-order-2">
+				<a class="feature-link" href="#"><img class="feature-hero" src="https://via.placeholder.com/800/444668/EBE9DD?text=Feature 2"></a>
+			</div>
+			<div class="cell medium-6 large-auto small-order-2 medium-order-1">
+				<div class="feature-text">
+					<h2 class="feature-section-title">Featured</h2>
+					<p class="lead">Rudy Franscisco on The Tonight Show</p>
+					<p>Congratulations to Button author Rudy Francisco on his phenomenal performance on The Tonight Show Starring Jimmy Fallon!</p>
+					<div class="button-wrap"><a class="button" href="#">Get Rudy's Book Here</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	
 </section>
 
 <section class="bulletin-row">
@@ -125,4 +134,18 @@ get_header(); ?>
 
 <div id="y-badges" class="yotpo yotpo-badge badge-init">&nbsp;</div>
 
-<?php get_footer();
+<?php
+
+if ( !function_exists('bp_front_page_slider') ) {
+	function bp_front_page_slider() {
+		?><script type="text/javascript"> 
+			$(".dummy-slide").remove();
+			$(".slick-slider").slick( {
+				arrows: false
+			}); 
+		</script><?php
+	}
+	add_action( 'wp_footer', 'bp_front_page_slider', 100 );
+}
+
+get_footer();
