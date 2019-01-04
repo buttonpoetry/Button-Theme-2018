@@ -42,7 +42,7 @@ if ( ! function_exists( 'bp_poet_carousel' ) ) {
 /**
  * Function to return an empty cart class name or an empty string if the current cart is empty.
  * 
- * @since Button-Theme-2018 0.1.0
+ * @since Button-Theme 0.1.0
  */
 if ( ! function_exists( 'bp_empty_cart_class' ) ) {
 	function bp_empty_cart_class() {
@@ -51,4 +51,21 @@ if ( ! function_exists( 'bp_empty_cart_class' ) ) {
 		} 
 		else return '';
 	}
+}
+
+// Remove Result Count from WooCommerce archive and search pages
+remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
+
+/**
+ * Function to filter out ebooks from onsale price badges.
+ * 
+ * @since Button-Theme 0.1.0
+ */
+
+if ( ! function_exists( 'bp_no_ebooks_sales_flash' ) ) {
+	function bp_no_ebooks_sales_flash($on_sale, $product) {
+		
+		return false;
+	}
+	add_filter( 'woocommerce_product_is_on_sale', 'bp_no_ebooks_sales_flash', 10, 2 );
 }
