@@ -126,16 +126,29 @@ $bp-feature-side-timing: default;
 }
 
 // 6. WooCommerce Customizations
+// These are overrides of WC CSS
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-// Fix Sale badge sizing
-.onsale {
-    box-sizing: content-box;
-}
+.woocommerce {
+    // Restyle buttons
+    a.button, 
+    button.button, 
+    input.button,
+    #review_form #submit {
+    @extend .button;
+    padding-left: rem-calc(10);
+    padding-right: rem-calc(10);
+    }
 
-// Hide product counts
-.count {
-    display: none;
+    // Fix Sale badge sizing
+    .onsale {
+        box-sizing: content-box;
+    }
+
+    // Hide product counts
+    .count {
+        display: none;
+    }
 }
 
 // 7. Mailchimp for WordPress Customization

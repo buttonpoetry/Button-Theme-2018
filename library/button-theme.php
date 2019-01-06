@@ -65,7 +65,13 @@ remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
 if ( ! function_exists( 'bp_no_ebooks_sales_flash' ) ) {
 	function bp_no_ebooks_sales_flash($on_sale, $product) {
 		
-		return false;
+		if ( $product->get_type() == 'variable' )
+		{
+			if ( in_array( 'E-Book', $product->get_variation_attributes() ) )
+				print_r ( $product->get_variation_attributes() );
+				return false;
+		}		
+		return $on_sale;
 	}
 	add_filter( 'woocommerce_product_is_on_sale', 'bp_no_ebooks_sales_flash', 10, 2 );
 }
