@@ -21,7 +21,7 @@
 
 <!-- Mini cart -->
 <div class="dropdown-pane" id="bp-mini-cart" data-dropdown data-hover="true" data-hover-pane="true" data-position="bottom" data-alignment="right">
-  Empty cart class: <?php echo bp_empty_cart_class(); ?>
+  Mini cart src: <?php echo bp_mini_cart_src(); ?>
   <br># Items in cart: <?php echo WC()->cart->get_cart_contents_count(); ?>
 </div>
 

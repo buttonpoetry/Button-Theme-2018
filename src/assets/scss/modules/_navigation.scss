@@ -25,8 +25,7 @@ $titlebar-title-font-size: 1.5rem;
 
   .title-bar-cart {
     width: 2.25rem;
-    margin-right: 1.5rem;    
-    content: url('../images/theme/cart-icon-full.svg');
+    margin-right: 1.5rem;
   }
 
   .menu-icon {
@@ -222,7 +221,6 @@ $top-bar-active-border: 2px solid $button-tan;
       img {
         width: 2.25rem;
         vertical-align: -10%;    
-        content: url('../images/theme/cart-icon-full.svg');
       }
     }
 
@@ -234,10 +232,6 @@ $top-bar-active-border: 2px solid $button-tan;
   @include breakpoint(small only) {
     padding: 0; /* prevents container visibility on small screens */
   }
-}
-
-.cart-icon-empty {
-  content: url('../images/theme/cart-icon-empty.svg') !important;
 }
 
 /* WP post navigation */

@@ -44,12 +44,12 @@ if ( ! function_exists( 'bp_poet_carousel' ) ) {
  * 
  * @since Button-Theme 0.1.0
  */
-if ( ! function_exists( 'bp_empty_cart_class' ) ) {
-	function bp_empty_cart_class() {
+if ( ! function_exists( 'bp_mini_cart_src' ) ) {
+	function bp_mini_cart_src() {
 		if ( ! WC()->cart->get_cart_contents_count() ) { 
-			return " cart-icon-empty";
+			return get_stylesheet_directory_uri() . '/dist/assets/images/theme/cart-icon-empty.svg';
 		} 
-		else return '';
+		else return get_stylesheet_directory_uri() . '/dist/assets/images/theme/cart-icon-full.svg';
 	}
 }
 

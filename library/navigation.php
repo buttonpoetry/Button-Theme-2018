@@ -88,7 +88,7 @@ if ( ! function_exists( 'bp_main_menu_append' ) ) {
 			}
 		}
 		if ($args->theme_location == 'top-bar-r') {
-			$items .= '<li><a href="' . wc_get_cart_url() . '" class="nav-cart" data-toggle="bp-mini-cart"><img class="cart-class-sample' . bp_empty_cart_class() . '" src="'. get_stylesheet_directory_uri() . '/dist/assets/images/theme/cart-icon-empty.svg"></a></li>';
+			$items .= '<li><a href="' . wc_get_cart_url() . '" class="nav-cart" data-toggle="bp-mini-cart"><img class="cart-class-sample" src="'. bp_mini_cart_src() . '"></a></li>';
 		}
 	    return $items;
 	}
