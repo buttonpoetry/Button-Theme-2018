@@ -11,6 +11,7 @@ register_nav_menus(
 	array(
 		'top-bar-r'  => esc_html__( 'Right Top Bar', 'foundationpress' ),
 		'mobile-nav' => esc_html__( 'Mobile', 'foundationpress' ),
+		'instalinks' => esc_html__( 'Instalinks', 'foundationpress'),
 	)
 );
 
@@ -88,9 +89,29 @@ if ( ! function_exists( 'bp_main_menu_append' ) ) {
 			}
 		}
 		if ($args->theme_location == 'top-bar-r') {
-			$items .= '<li><a href="' . wc_get_cart_url() . '" class="nav-cart" data-toggle="bp-mini-cart"><img class="cart-class-sample" src="'. bp_mini_cart_src() . '"></a></li>';
+			$items .= '<li><a href="' . wc_get_cart_url() . '" class="nav-cart" data-toggle="bp-mini-cart"><img class="desktop-cart-img" src="'. bp_mini_cart_src() . '"></a></li>';
 		}
 	    return $items;
 	}
 	add_filter( 'wp_nav_menu_items', 'bp_main_menu_append', 10, 2 );
+}
+
+/**
+ * Show cart contents / total Ajax
+ * Adapted from https://docs.woocommerce.com/document/show-cart-contents-total/ 
+ */
+
+if ( ! function_exists('bp_woocommerce_header_add_to_cart_fragment') ) {
+	function bp_woocommerce_header_add_to_cart_fragment( $fragments ) {
+		global $woocommerce;
+
+		ob_start();
+
+		?>
+		<a class="cart-customlocation" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>"><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?> - <?php echo $woocommerce->cart->get_cart_total(); ?></a>
+		<?php
+		$fragments['a.cart-customlocation'] = ob_get_clean();
+		return $fragments;
+	}
+	add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
 }

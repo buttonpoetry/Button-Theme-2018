@@ -1,0 +1,332 @@
+/*
+This is CSS taken and modified from old Headway CSS.
+ 1. Instalinks  
+ 2. CSS Indies page 
+ 3. In the news
+ 4. Gift wrap
+ 5. Store FAQ
+ 6. Store Notice
+*/
+
+/* 1. Instalinks CSS */
+.page-id-53556 {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2a598e+0,12c8e8+92,6de9ff+100 */
+    background: #2a598e; /* Old browsers */
+    background: -moz-linear-gradient(top, #2a598e 0%, #12c8e8 92%, #6de9ff 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #2a598e 0%,#12c8e8 92%,#6de9ff 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #2a598e 0%,#12c8e8 92%,#6de9ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a598e', endColorstr='#6de9ff',GradientType=0 ); /* IE6-9 */
+
+    .title-bar {
+        background: transparent;
+
+        .title-bar-title a {
+            color: white;
+        }
+
+        .menu-icon {
+            @include hamburger($color: white, $color-hover: $titlebar-icon-color-hover, $height: 22px, $width: 24px, $weight: 2px, $bars: 3);
+        }
+    }
+
+    .top-bar {
+        background: transparent;
+        
+        .top-bar-title a,        
+        .desktop-menu {
+            background: transparent;
+            .submenu.is-dropdown-submenu {
+                border-color: white;
+                a:hover {
+                    background: #daeaff;
+                }
+            }
+        }
+
+        .desktop-menu.menu > li:not(.menu-text) > a {
+            background: transparent;
+            color: white;
+        }
+
+        .desktop-menu.menu > li:not(.menu-text) > a:hover {
+            background: transparent;
+            color: white;            
+
+            .nav-link-text {
+                border-bottom: white 2px solid;
+            }
+        }
+    }
+
+    .main-container {
+        margin: auto;
+        padding: 15px;
+        
+        .instalinks-container {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 640px;
+            text-align: center;
+
+            .instalinks-logo {
+                width: 100px;
+                margin-bottom: 20px;
+            }        
+
+            h1 {
+                margin-bottom: 20px;
+                color:white;
+            }
+
+            ul.instalinks-menu {           
+                max-width: 640px;
+                list-style: none inside;
+                padding: 0;
+                margin: 0;
+                margin-bottom: 100px;
+                
+                li {
+                    padding: 12px 15px;
+                    width: 100%;
+                    border: 2px white solid;
+                    margin-bottom: 10px;
+                    text-align: center;
+                }
+                
+                li > a {
+                    width:100%;
+                    height:100%;
+                    color: white;
+                    font-weight:709;
+                    white-space: pre-wrap;
+                    word-wrap: break-word;
+                    transition: all .25s cubic-bezier(.08,.59,.29,.99);
+                }
+                li > a:hover {
+                    border-color:white;
+                    background-color:white;
+                    color:#2A598E;
+                    transition: all .25s cubic-bezier(.08,.59,.29,.99);
+                }
+            }
+        }
+    }
+}
+
+
+/* 2. CSS Indies page CSS */
+.page-id-53365 {
+    
+    @media only screen and (min-width: 601px) {
+        .bp-indies-img-lg {
+            width:24%;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        .bp-indies-img-lg {
+            width:33%;
+        }
+    }
+
+}
+
+/* 3. In the news */
+/* Begin In the news styles */
+.in-the-news {
+    list-style-type: none;
+    padding:0 !important;
+    margin:0;
+}
+
+.in-the-news-item {
+    display:block;
+    box-sizing: border-box;
+    margin-bottom:20px;
+    background-color: rgba(24,16,0, 0.05);
+    font-size:24px;
+    min-height:4.5rem;
+    color: black;
+    border-radius:3px;
+    min-height: 5rem;
+
+    @include breakpoint(small only) {
+        background-color: transparent;
+    }
+}
+
+.in-the-news-date {
+    float:left;
+    display:block;
+    box-sizing:border-box;
+    min-width: 6rem;    
+    height: 5rem;
+    background-color: $dark-gray;
+    padding:10px 5px 15px 5px;
+    margin-right: 10px;
+    font-size:24px;
+    font-weight:bold;
+    color: $white;
+    text-align:center;
+    clear:left;
+    border-radius:3px 0 0 3px;
+    
+
+    @include breakpoint(small only) {
+        float:none;
+        clear:both;
+        width:100%;
+        height: auto;
+        text-align:left;
+        color: $medium-gray;
+        background-color: transparent;
+        padding: 5px;        
+        font-size: 1rem;
+        font-style: italic;
+        border-radius: 0;
+    }
+}
+
+.in-the-news-year {
+    display:block;
+    font-size:16px;
+    @include breakpoint(small only) {
+        display: inline;
+        font-size: inherit;
+        &:before {
+            content: ', ';
+        }
+    }
+}
+
+.in-the-news-linkblock {
+    padding:10px 5px 5px; 
+    margin:0px;
+    display:block;
+    text-decoration:none;
+    min-height:4.5rem;
+    box-sizing:border-box;
+    border-radius:3px;
+    @include breakpoint(small only) {
+        background-color: rgba(24,16,0, 0.05);
+        border-bottom: $dark-gray solid 2px;
+    }
+}
+
+.in-the-news-linkblock:hover, .in-the-news-linkblock:focus {
+    background-color: rgba(255,255,255, 0.2);    
+    
+}
+
+.in-the-news-title {
+    display:block;
+    font-weight:bold;
+    font-size:1.3rem !important;
+    line-height:1.5rem !important;
+    margin-bottom:0 !important;
+}
+
+.in-the-news-outlet {
+    font-size:16px;
+    font-style: italic;
+}
+
+/* 4. Style Gift Wrap Section */
+.gift-wrapping>label {
+    display:inline-block;
+    padding:5px;
+    margin:0;
+    color:white;
+    font-size:1rem;
+    line-height:1.5rem;
+    border-radius:3px;
+    width:auto;
+    background: #bfd255; /* Old browsers */
+    background: -moz-linear-gradient(top, #bfd255 0%, #8eb92a 50%, #72aa00 51%, #9ecb2d 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #bfd255 0%,#8eb92a 50%,#72aa00 51%,#9ecb2d 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #bfd255 0%,#8eb92a 50%,#72aa00 51%,#9ecb2d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfd255', endColorstr='#9ecb2d',GradientType=0 ); /* IE6-9 */
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+    margin-bottom:15px;
+}
+
+.gift-wrapping input[type='checkbox'] {
+    vertical-align:middle;
+}
+
+/* 5. FAQ Styles */
+/* FAQ Page Styling */
+.page-id-26339 .entry-content #faq-top {
+    font-size: 2rem !important;
+    text-align:center !important;
+    line-height:2rem !important;
+}
+
+.page-id-26339 .entry-content #faq-top span {
+    font-size: .8em !important;
+}
+
+.page-id-26339 .entry-content #faq-toc {
+    padding: 10px;
+    border: 1px black solid !important; 
+    margin: 0px !important; 
+    background-color: white !important; 
+    border-radius: 5px !important;
+    margin-bottom:1.5em !important;
+}
+
+.page-id-26339 .entry-content #faq-toc ul li{
+    font-family: sans-serif !important;
+}
+
+.page-id-26339 .entry-content h2 {
+    font-size: 1.5em !important;
+}
+
+.page-id-26339 .entry-content h2, .page-id-26339 .entry-content h3 {
+    font-weight: bold !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.page-id-26339 .entry-content h2 a, .page-id-26339 .entry-content h3 a {
+    color: #aa3333 !important; 
+    text-decoration: none !important; 
+    font-style: italic !important; 
+    font-size: 0.6em !important;
+    content: "Jump to Top";
+}
+
+.page-id-26339 .entry-content h2:before, .page-id-26339 .entry-content h3:before  { 
+  display: block !important; 
+  content: " " !important; 
+  margin-top: -25px !important; 
+  height: 25px !important; 
+  visibility: hidden !important; 
+  pointer-events: none !important;
+}
+
+.page-id-26339 .entry-content p {
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.page-id-26339 .entry-content p, .page-id-26339 .entry-content h3 {
+    margin-left: 1rem;
+}
+
+/* 6. Store Notice customization */
+.woocommerce-store-notice {
+    background-color: #0071BC !important; /* Vote Blue*/
+    /*background-color: #af2828 !important; /* Button Red*/
+    padding:5px;
+    font-size:1.2em !important;
+}
+
+.woocommerce-store-notice__dismiss-link {
+    text-decoration:none !important;
+    font-style:italic;
+    font-size:.8em;
+    color: rgba(255,255,255,.7) !important;
+}
+/* End Store Notice customization */

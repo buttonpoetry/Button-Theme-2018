@@ -70,6 +70,7 @@
 @import "modules/content";
 @import "modules/footer";
 @import "modules/editor-style";
+@import "modules/button-woocommerce";
 
 // Components
 @import "components/cards";
@@ -81,11 +82,7 @@
 @import "templates/front-page";
 @import "templates/poets";
 @import "templates/kitchen-sink";
+@import "templates/button-legacy";
 
 // Slick Carousel
-$slick-font-path: "/node_modules/slick-carousel/slick/fonts/" !default;
-$slick-font-family: "slick" !default;
-$slick-loader-path: "/node_modules/slick-carousel/slick-carousel/slick/" !default;
-$slick-arrow-color: black !default;
-@import "../../../node_modules/slick-carousel/slick/slick.scss"; 
-@import "../../../node_modules/slick-carousel/slick/slick-theme.scss"; 
+@import "modules/slick";

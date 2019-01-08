@@ -47,9 +47,9 @@ if ( ! function_exists( 'bp_poet_carousel' ) ) {
 if ( ! function_exists( 'bp_mini_cart_src' ) ) {
 	function bp_mini_cart_src() {
 		if ( ! WC()->cart->get_cart_contents_count() ) { 
-			return get_stylesheet_directory_uri() . '/dist/assets/images/theme/cart-icon-empty.svg';
+			return get_stylesheet_directory_uri() . apply_filters('bp_cart_src', '/dist/assets/images/theme/cart-icon-empty.svg');
 		} 
-		else return get_stylesheet_directory_uri() . '/dist/assets/images/theme/cart-icon-full.svg';
+		else return get_stylesheet_directory_uri() . apply_filters('bp_cart_src', '/dist/assets/images/theme/cart-icon-full.svg');
 	}
 }
 
@@ -75,3 +75,15 @@ if ( ! function_exists( 'bp_no_ebooks_sales_flash' ) ) {
 	}
 	add_filter( 'woocommerce_product_is_on_sale', 'bp_no_ebooks_sales_flash', 10, 2 );
 }
+
+/** 
+ * Snippet to alter the 'Select Options' text
+ */
+
+add_filter( 'woocommerce_product_add_to_cart_text', function( $text ) {
+	global $product;
+	if ( $product->is_type( 'variable' ) ) {
+		$text = $product->is_purchasable() ? __( 'Add to cart', 'woocommerce' ) : __( 'Read more', 'woocommerce' );
+	}
+	return $text;
+}, 10 );

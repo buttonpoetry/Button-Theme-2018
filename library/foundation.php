@@ -153,23 +153,7 @@ endif;
 
 if ( ! function_exists( 'foundationpress_mobile_menu_id' ) ) :
 	function foundationpress_mobile_menu_id() {
-		if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) {
-			echo 'off-canvas-menu';
-		} else {
-			echo 'mobile-menu';
-		}
-	}
-endif;
-
-/**
- * Get title bar responsive toggle attribute
- */
-
-if ( ! function_exists( 'foundationpress_title_bar_responsive_toggle' ) ) :
-	function foundationpress_title_bar_responsive_toggle() {
-		if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) {
-			echo 'data-responsive-toggle="mobile-menu"';
-		}
+		echo 'off-canvas-menu';		
 	}
 endif;
 
