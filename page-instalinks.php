@@ -26,4 +26,54 @@ get_header(); ?>
         </main>        
 	</div>
 </div>
+<script>
+// Legacy Instalinks tracking from Headway
+// Begin Tracking Function
+function bp_instalinks_ga_setup () { 
+    //Get the user's role (logged in role or 'guest') via AJAX
+    var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
+    var data = {url : ajaxurl, 
+                action : 'bp_check_user_role' };
+    
+    jQuery.post( ajaxurl, data, function(userRole) {
+        window.bpILuserRole = window.bpILuserRole || userRole;
+        return false;
+    });
+}
+bp_instalinks_ga_setup();
+
+function bp_il_ga_event (url) {
+    var clickType = ""; 
+    
+    if (url.search(/.+buttonpoetry/) == -1) { 
+        clickType = 'click_outbound_' + window.bpILuserRole;
+    }  
+    else {
+        clickType = 'click_internal_' + window.bpILuserRole;
+    }
+    
+    gtag('event', clickType, {
+        'event_category': 'instalinks',
+        'event_label': url
+    });
+}
+
+// Add onclick attributes to all page links
+jQuery(document).ready(function($) {
+    
+    // Don't bother for Administrators
+    if(window.bpILuserRole == 'administrator')
+    {
+        console.log("Tracking error: Administrators cannot fire analytics events.");
+        return false;
+    }
+    
+    // Attach tracking onclick events to every normal link on the page
+    $('.block-content a').each( function () {
+        $(this).attr('onclick',"bp_il_ga_event('" + $(this).attr('href') + "');"); 
+        $(this).attr('target',"_blank"); 
+    });
+});
+
+</script>
 <?php get_footer();
