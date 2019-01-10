@@ -1,7 +1,10 @@
 <?php
-/*
-Template Name: Instalinks
-*/
+/**
+ * Instalinks default template.
+ * 
+ * @package ButtonTheme
+ * @since ButtonTheme 0.1.0
+ */
 add_filter('bp_cart_src', function($cartSrc) { return str_replace('.svg', '-white.svg', $cartSrc); } );
 get_header(); ?>
 

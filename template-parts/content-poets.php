@@ -4,10 +4,9 @@
  *
  * Used for both single and index/archive/search.
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package ButtonTheme
+ * @since ButtonTheme 0.1.0
  */
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( array('grid-x', 'poet-archive-listing') ); ?>>

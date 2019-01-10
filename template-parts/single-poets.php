@@ -1,9 +1,9 @@
 <?php
 /**
- * The template for displaying Poet pages.
+ * The template for displaying individual Poet pages.
  *
- * @package Button-Theme
- * @since Button-Theme 0.1.0
+ * @package ButtonTheme
+ * @since ButtonTheme 0.1.0
  */
 
  remove_action('the_content', 'bp_render_footer');

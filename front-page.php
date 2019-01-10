@@ -1,7 +1,10 @@
 <?php
-/*
-Template Name: Front
-*/
+/**
+ * Front Page template.
+ *
+ * @package ButtonTheme
+ * @since ButtonTheme 0.1.0
+ */
 get_header(); ?>
 
 <div class="main-container wide">

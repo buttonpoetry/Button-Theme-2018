@@ -1,7 +1,10 @@
 <?php
-/*
-Template Name: Full Width
-*/
+/**
+ * Indies Affiliates default template.
+ * 
+ * @package ButtonTheme
+ * @since ButtonTheme 0.1.0
+ */
 get_header(); ?>
 
 <?php get_template_part( 'template-parts/featured-image' ); ?>

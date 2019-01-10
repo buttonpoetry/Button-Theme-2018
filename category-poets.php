@@ -4,8 +4,8 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Button-Theme
- * @since Button-Theme 0.1.0
+ * @package ButtonTheme
+ * @since ButtonTheme 0.1.0
  */
 
 get_header(); ?>

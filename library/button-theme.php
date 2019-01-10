@@ -2,10 +2,16 @@
 /**
  * Button Theme PHP functions
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package ButtonTheme
+ * @since ButtonTheme 0.1.0
  */
 
+ /**
+ * Function to display a list of products for Poets on archives and single pages.
+ * Utilizes a new custom post meta field 'carousel-product'.
+ * 
+ * @since ButtonTheme 0.1.0
+ */
 if ( ! function_exists( 'bp_poet_carousel' ) ) {
 	function bp_poet_carousel($poet_id, $archive = false) {
 		$carousel_products = get_post_meta( $poet_id, 'carousel-product', false );		
@@ -49,9 +55,9 @@ if ( ! function_exists( 'bp_poet_carousel' ) ) {
 }
 
 /**
- * Function to return an empty cart class name or an empty string if the current cart is empty.
+ * Function to return an empty cart class name or an empty string if the current cart is empty for displaying the correct mini cart icon.
  * 
- * @since Button-Theme 0.1.0
+ * @since ButtonTheme 0.1.0
  */
 if ( ! function_exists( 'bp_mini_cart_src' ) ) {
 	function bp_mini_cart_src() {
@@ -62,16 +68,15 @@ if ( ! function_exists( 'bp_mini_cart_src' ) ) {
 	}
 }
 
-// Remove Result Count from WooCommerce archive and search pages
-remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
-
 /**
  * Function to filter out ebooks from onsale price badges.
  * 
- * @since Button-Theme 0.1.0
+ * @since ButtonTheme 0.1.0
  */
-
 if ( ! function_exists( 'bp_no_ebooks_sales_flash' ) ) {
+	
+	add_filter( 'woocommerce_product_is_on_sale', 'bp_no_ebooks_sales_flash', 10, 2 );
+
 	function bp_no_ebooks_sales_flash($on_sale, $product) {
 		
 		if ( $product->get_type() == 'variable' )
@@ -82,13 +87,9 @@ if ( ! function_exists( 'bp_no_ebooks_sales_flash' ) ) {
 		}		
 		return $on_sale;
 	}
-	add_filter( 'woocommerce_product_is_on_sale', 'bp_no_ebooks_sales_flash', 10, 2 );
 }
 
-/** 
- * Snippet to alter the 'Select Options' text
- */
-
+// Snippet to alter the 'Select Options' text
 add_filter( 'woocommerce_product_add_to_cart_text', function( $text ) {
 	global $product;
 	if ( $product->is_type( 'variable' ) ) {
@@ -96,3 +97,6 @@ add_filter( 'woocommerce_product_add_to_cart_text', function( $text ) {
 	}
 	return $text;
 }, 10 );
+
+// Remove Result Count from WooCommerce archive and search pages
+remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);

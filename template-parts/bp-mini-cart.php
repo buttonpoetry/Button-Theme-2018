@@ -1,13 +1,11 @@
 <?php
 /**
- * Template part for off canvas menu
+ * Template part for the mini cart on desktop.
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package ButtonTheme
+ * @since ButtonTheme 0.1.0
  */
-
 ?>
-
 <ul>
     <div class="bp-mini-cart">
         <?php if ( ! WC()->cart->is_empty() ) {
