@@ -37,7 +37,7 @@ if ( ! function_exists( 'bp_poet_carousel' ) ) {
 							</div>
 							<div class="cell auto">
 								<h3><?php echo $product->get_title(); ?></h3>
-								<a href="<?php $cart_url . '?add-to-cart=' . $product->get_id(); ?>">BUY NOW</a>
+								<a href="<?php echo get_the_permalink($product->get_id()) ?>">BUY NOW</a>
 							</div>
 						</div>
 					</div>

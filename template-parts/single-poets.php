@@ -57,9 +57,9 @@
 										if( metadata_exists( 'post', get_the_ID(), 'poet-social-tumblr' ) ) {
 											$psNetwork = 'Tumblr';
 											$psHandle = trim(get_post_meta(get_the_ID(), 'poet-social-tumblr', true));
-											$psURL = 'https://' . $psHandle . 'tumblr.com';
-											$psDisplayHandle = $psHandle . 'tumblr.com';
-											$psLinks[] = '<a href="' . $psURL . '">' . $psDisplayHandle . '</a>';
+											$psURL = 'https://' . $psHandle . '.tumblr.com';
+											$psDisplayHandle = $psHandle;
+											$psLinks[] = $psNetwork . ' <a href="' . $psURL . '">' . $psDisplayHandle . '</a>';
 										}										
 										//Facebook
 										if( metadata_exists( 'post', get_the_ID(), 'poet-social-facebook' ) ){
