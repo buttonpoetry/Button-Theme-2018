@@ -6,6 +6,7 @@ This is CSS taken and modified from old Headway CSS.
  4. Gift wrap
  5. Store FAQ
  6. Store Notice
+ 7. Footer
 */
 
 /* 1. Instalinks CSS */
@@ -334,3 +335,41 @@ This is CSS taken and modified from old Headway CSS.
     color: rgba(255,255,255,.7) !important;
 }
 /* End Store Notice customization */
+
+/* 7. Footer advertisement*/
+.attention {    
+    margin:60px auto 30px;
+    color: $black;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    clear: both;
+    
+    .attention-inner {
+
+        .attention-image {
+            width: 60px;
+            height: 60px;         
+            display: inline-block;
+            vertical-align: middle;                        
+            background-size: cover;
+            background-position: center 45%;
+            background-repeat: no-repeat;                     
+            border-radius:50%;
+            margin: 0 1rem 0 0;
+            padding: 0;                       
+        }        
+
+        .attention-text {    
+            display: inline-block;
+            
+            a {
+                @include button;                   
+                display: inline-block;                
+                vertical-align: baseline;
+                padding: .5rem 1rem;
+                margin: 0 1rem;                
+            }
+        }        
+    }  
+}
