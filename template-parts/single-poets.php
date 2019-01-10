@@ -5,10 +5,9 @@
  * @package Button-Theme
  * @since Button-Theme 0.1.0
  */
+
+ remove_action('the_content', 'bp_render_footer');
  ?>
-
-<?php while ( have_posts() ) : the_post(); ?>
-
 <div class="poet-bio-wrapper">
 	<div class="main-container wide">
 		<div class="main-grid">
@@ -18,18 +17,71 @@
 						<div class="grid-x">
 							<div class="poet-bio-content cell entry-content">
 								<img class="poet-bio-pic" src="<?php the_post_thumbnail_url( 'full' ) ?>">
-								<header>
-									<?php
-										if ( is_single() ) {
-											the_title( '<h1 class="poet-name entry-title">', '</h1>' );
-										} else {
-											the_title( '<h2 class="poet-name entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-										}									
+									<?php										
+										the_title( '<h1 class="poet-name entry-title">', '</h1>' );
+										edit_post_link( __( '(Edit)', 'foundationpress' ), '<span class="edit-link">', '</span>' );
+										/* Poet Social (ps) links code.
+											Could be enhanced with a table of options with network/site names, url formats, and display formats.
+											For now, these keys work with the associated values:
+											poet-social-website : site URL
+											poet-social-instagram : handle
+											poet-social-youtube : handle
+											poet-social-tumblr : handle
+											poet-social-facebook : handle
+											poet-social-twitter : handle
+										**/
+
+										$psLinks = [];
+										//Website
+										if( metadata_exists( 'post', get_the_ID(), 'poet-social-website' ) ) {
+											$psURL = trim(get_post_meta(get_the_ID(), 'poet-social-website', true));
+											$psLinks[] = '<a href="' . $psURL . '">Website</a>';
+										}
+										//Instagram
+										if( metadata_exists( 'post', get_the_ID(), 'poet-social-instagram' ) ) {
+											$psNetwork = 'Instagram';
+											$psHandle = trim(get_post_meta(get_the_ID(), 'poet-social-instagram', true));
+											$psURL = 'https://www.instagram.com/' . $psHandle . '/';
+											$psDisplayHandle = '@' . $psHandle;
+											$psLinks[] = $psNetwork . ' <a href="' . $psURL . '">' . $psDisplayHandle . '</a>';
+										}										
+										//YouTube
+										if( metadata_exists( 'post', get_the_ID(), 'poet-social-youtube' ) ) {
+											$psNetwork = 'YouTube';
+											$psHandle = trim(get_post_meta(get_the_ID(), 'poet-social-youtube', true));
+											$psURL = 'https://www.youtube.com/' . $psHandle;											
+											$psDisplayHandle = $psHandle;
+											$psLinks[] = $psNetwork . ' <a href="' . $psURL . '">' . $psDisplayHandle . '</a>';
+										}
+										//Tumblr
+										if( metadata_exists( 'post', get_the_ID(), 'poet-social-tumblr' ) ) {
+											$psNetwork = 'Tumblr';
+											$psHandle = trim(get_post_meta(get_the_ID(), 'poet-social-tumblr', true));
+											$psURL = 'https://' . $psHandle . 'tumblr.com';
+											$psDisplayHandle = $psHandle . 'tumblr.com';
+											$psLinks[] = '<a href="' . $psURL . '">' . $psDisplayHandle . '</a>';
+										}										
+										//Facebook
+										if( metadata_exists( 'post', get_the_ID(), 'poet-social-facebook' ) ){
+											$psNetwork = 'Facebook';
+											$psHandle = trim(get_post_meta(get_the_ID(), 'poet-social-facebook', true));
+											$psURL = 'https://facebook.com/' . $psHandle;
+											$psDisplayHandle = '@' . $psHandle;
+											$psLinks[] = $psNetwork . ' <a href="' . $psURL . '">' . $psDisplayHandle . '</a>';
+										}
+										//Twitter
+										if( metadata_exists( 'post', get_the_ID(), 'poet-social-twitter' ) ){
+											$psNetwork = 'Twitter';
+											$psHandle = trim(get_post_meta(get_the_ID(), 'poet-social-twitter', true));
+											$psURL = 'https://twitter.com/' . $psHandle;
+											$psDisplayHandle = '@' . $psHandle;
+											$psLinks[] = $psNetwork . ' <a href="' . $psURL . '">' . $psDisplayHandle . '</a>';
+										}
+										if ( ! empty($psLinks) ) {
+											echo '<p class="poet-bio-social">' . implode(' | ', $psLinks) . '</p>';											
+										}
 									?>
-									<p class="poet-bio-social">Twitter <a href="#social1">@Neilicorn</a> | Facebook <a href="#social1">@neilhilborn</a></p>
-								</header>
-								<?php the_content(); ?>
-								<?php edit_post_link( __( '(Edit)', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
+								<?php the_content(); ?>								
 							</div>
 						</div>
 					</section>
@@ -39,25 +91,35 @@
 	</div>
 </div>
 
+<?php if ( metadata_exists( 'post', get_the_ID(), 'featured-product' ) ) : ?>
+<div class="poet-featured-wrapper">
+	<div class="main-container">
+		<div class="main-grid">
+			<div class="main-content-full-width"><?php
+				$featuredID = get_post_meta( get_the_ID(), 'featured-product', true );
+				$fProduct = wc_get_product( $featuredID ); ?>
+				<section class="poet-featured-item grid-container">
+					<div class="grid-x">
+						<div class="poet-featured-item-copy cell small-12 medium-8 medium-order-1 small-order-2">
+							<h2><?php echo $fProduct->get_name(); ?></h2>
+							<?php echo $fProduct->get_description(); ?>
+							<a class="button poet-featured-item-buy-button" href="<?php echo get_permalink( $featuredID ) ?>">Buy Now</a>
+						</div>
+						<div class="poet-featured-item-pic cell small-12 medium-4 medium-order-2 small-order-1">
+							<img src="<?php echo get_the_post_thumbnail_url( $featuredID, 'full' ) ?>">
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</div>		
+<?php endif ?>
+
 <div class="main-container">
 	<div class="main-grid">
-		<div class="main-content-full-width">
-			<section class="poet-featured-item grid-container">	
-				<div class="grid-x">
-					<div class="poet-featured-item-copy cell small-12 medium-8 medium-order-1 small-order-2">
-						<h2>The Future</h2>
-						<h3>Now available for order!</h3>
-						<p>Neil Hilborn's highly anticipated second collection of poems, The Future, invites readers to find comfort in hard nights and better days. Filled with nostalgia, love, heartbreak, and the author’s signature wry examinations of mental health, Neil Hilborn’s second book helps explain what lives inside us, what we struggle to define. Written on the road over two years of touring, The Future is rugged, genuine, and relatable. Grabbing attention like gravity, Hilborn reminds readers that no matter how far away we get, we eventually all drift back together. These poems are fireworks for the numb. In the author’s own words, The Future is a blue sky and a full tank of gas, and in it, we are alive.</p>
-						<a class="button" href="product-link">Buy Now</a>
-					</div>
-					<div class="poet-featured-item-pic cell small-12 medium-4 medium-order-2 small-order-1">
-						<img src="https://via.placeholder.com/160x240/">
-					</div>
-				</div>
-			</section>
-	
+		<div class="main-content-full-width">			
 			<?php bp_poet_carousel(get_the_ID()); ?>
-
 			<footer>
 				<?php
 					wp_link_pages(
@@ -68,12 +130,9 @@
 					);
 				?>
 				<?php $tag = get_the_tags(); if ( $tag ) { ?><p><?php the_tags(); ?></p><?php } ?>
-			</footer>			
-			<?php comments_template(); ?>	
+			</footer>						
 		</div>
 	</div>
 </div>
-
-<?php endwhile; ?>
 
 <?php
