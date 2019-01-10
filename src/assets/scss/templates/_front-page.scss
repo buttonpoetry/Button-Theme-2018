@@ -114,6 +114,13 @@
         text-transform: uppercase;
         font-weight: bold;
         color: $button-tan;
+
+        .edit-link {
+          font-size: .8rem;
+          a {
+            color: $button-red !important;
+          }
+        }
       }
     
       .lead {

@@ -103,10 +103,11 @@ if ( $feature_slides->have_posts() )
 				</div>
 				<div class="cell medium-6 large-auto small-order-2 medium-order-1">
 					<div class="feature-text">
-						<h2 class="feature-section-title">Featured</h2>
+						<h2 class="feature-section-title">Featured <?php edit_post_link( __( '(Edit slide)', 'foundationpress' ), '<br><span class="edit-link">', '</span>' ) ?></h2>
 						<p class="<?php echo $f_lead_class ?>"><?php echo $f_lead ?></p>
 						<p class="<?php echo $f_follow_class ?>"><?php echo nl2br($f_author) ?></p>
 						<div class="button-wrap"><a class="button" href="<?php echo $f_action_url ?>"><?php echo $f_action_lbl ?></a></div>
+						
 					</div>
 				</div>
 			</div>
