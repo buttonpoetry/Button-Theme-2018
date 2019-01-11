@@ -1,21 +1,11 @@
 {
-<<<<<<< HEAD
   "name": "button-theme-2018",
   "title": "Button Poetry Theme 2018",
   "version": "0.1.0",
   "description": "Button Poetry's 2018 theme is based on FoundationPress. FoundationPress is a WordPress starter theme based on Foundation 6 by Zurb",
   "homepage": "https://buttonpoetry.com",
   "license": "UNLICENSED",
-  "main": "gulpfile.js",
-=======
-  "name": "foundationpress",
-  "title": "FoundationPress",
-  "version": "2.10.4",
-  "description": "FoundationPress is a WordPress starter theme based on Foundation 6 by Zurb",
-  "homepage": "https://foundationpress.olefredrik.com",
-  "license": "MIT",
   "main": "gulpfile.babel.js",
->>>>>>> upstream/master
   "scripts": {
     "start": "gulp",
     "dev": "gulp build --dev",
@@ -35,7 +25,6 @@
     "responsive"
   ],
   "dependencies": {
-<<<<<<< HEAD
     "foundation-sites": "^6.5.1",
     "jquery": "^3.3.1",
     "motion-ui": "~2.0.0",
@@ -51,22 +40,6 @@
     "browser-sync": "^2.26.3",
     "dateformat": "^3.0.3",
     "fancy-log": "^1.3.3",
-=======
-    "foundation-sites": "6.5.1",
-    "jquery": "~3.0.0",
-    "what-input": "^4.1.3",
-    "motion-ui": "~1.2.2"
-  },
-  "devDependencies": {
-    "ansi-colors": "^1.0.1",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.2",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-register": "^6.7.2",
-    "browser-sync": "^2.26.3",
-    "dateformat": "^3.0.2",
-    "fancy-log": "^1.3.2",
->>>>>>> upstream/master
     "gulp": "^4.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-babel": "^6.1.3",
@@ -83,13 +56,8 @@
     "gulp-sass": "^3.2.1",
     "gulp-sourcemaps": "^1.12.1",
     "gulp-uglify": "^1.2.0",
-<<<<<<< HEAD
     "gulp-zip": "^4.2.0",
     "js-yaml": "^3.12.0",
-=======
-    "gulp-zip": "^4.0.0",
-    "js-yaml": "^3.4.6",
->>>>>>> upstream/master
     "panini": "^1.6.3",
     "rimraf": "^2.4.3",
     "style-sherpa": "^1.0.0",
