@@ -56,7 +56,7 @@ if ( $feature_slides->have_posts() )
 { 
 	$dummy_placed = false; ?>
 <section class="feature-row" role="region" aria-label="Button Poetry Featured Content">
-	<div class="slick-slider">
+	<div class="featured-slider">
 		<?php while ( $feature_slides->have_posts() ) : 
 		$feature_slides->the_post(); 
 		$f_quote =	feature_slide_options_get_meta( 'feature_slide_options_is_this_a_quote_' );		
@@ -136,7 +136,7 @@ if ( $feature_slides->have_posts() )
 		</div>
 	</div>
 </div>
-<div class="slick-slider">
+<div class="featured-slider">
 <div class="slick-slide">
 		<div class="grid-x align-middle feature-slide">
 			<div class="cell medium-6 large-shrink small-order-1 medium-order-2">
@@ -236,8 +236,11 @@ if ( !function_exists('bp_front_page_slider') ) {
 	function bp_front_page_slider() {
 		?><script type="text/javascript"> 
 			$(".dummy-slide").remove();
-			$(".slick-slider").slick( {
-				arrows: false
+			$(".featured-slider").slick( {
+				arrows: true,
+				autoplay: true,
+				autoplaySpeed: 5000,
+				useTransform: false,
 			}); 
 		</script><?php
 	}
