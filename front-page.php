@@ -14,29 +14,34 @@ get_header(); ?>
 <p class="lead"><?php 
 	echo get_theme_mod('front_page_showcase_lead', __( 'We showcase the power and diversity of voices in our community because we believe that poetry is for everyone.', 'foundationpress' ));
 ?></p>
-<div class="showcase-shelf grid-container">
-	<div class="grid-x grid-margin-x">
-		<div class="row expanded">
-		<?php for($i = 0; $i < 6; $i++ ) { 
-			$book_id = get_theme_mod('front_page_showcase_books_' . $i, '35546'); 
-			$book_title = get_the_title( $book_id );
-			if( metadata_exists( 'product', $book_id, 'linked-author' ) ) { 
-				$book_author = get_post_meta( $book_id, 'linked-author', true); 
-			} else $book_author = null;	?>
-			<div class="cell small-4 medium-2">
-				<a href="<?php echo get_permalink( $book_id ); ?>" class="showcase-book">
-					<img src="<?php echo get_the_post_thumbnail_url($book_id); 
-						?>" title="View <?php echo $book_title ?> in the Button Shop" alt="<?php 
-						echo $book_title;
-						if( $book_author ) echo " by " . $book_author;
-						?>">
-					<h2 class="title"><?php echo $book_title; ?></h2>
-					<?php if( $book_author ) { ?> <p class="author"><?php echo $book_author; ?></p> <?php } ?>
-				</a>
-			</div> 
-		<?php } ?>
-		</div>
-	</div>
+<div class="showcase-shelf">
+	<!-- div class="grid-x grid-margin-x" -->
+		<!-- div class="row expanded" -->
+			<div id="showcase-slider">
+			<?php for($i = 0; $i < 6; $i++ ) { 
+				$book_id = get_theme_mod('front_page_showcase_books_' . $i, '35546'); 
+				$book_title = get_the_title( $book_id );
+				if( metadata_exists( 'product', $book_id, 'linked-author' ) ) { 
+					$book_author = get_post_meta( $book_id, 'linked-author', true); 
+				} else $book_author = null;	?>
+				<!-- div class="cell small-4 medium-2" -->
+				<div class="slick-slide">
+					<a href="<?php echo get_permalink( $book_id ); ?>" class="showcase-book">
+						<div class="showcase-cover" 
+							style="background-image: url('<?php echo get_the_post_thumbnail_url($book_id); ?>')">
+							<div class="showcase-cover-stroke"
+								title="View <?php echo $book_title ?> in the Button Shop" 
+								alt="<?php echo $book_title; 
+							if( $book_author ) echo " by " . $book_author; ?>"></div>
+						</div>
+						<h2 class="title"><?php echo $book_title; ?></h2>
+						<?php if( $book_author ) { ?> <p class="author"><?php echo $book_author; ?></p> <?php } ?>
+					</a>
+				</div> 
+			<?php } ?>
+			</div>
+		<!-- /div -->
+	<!-- /div -->
 </div>
 <a class="button large" href="<?php echo get_permalink('88'); ?>">Shop all books</a>
 </section>
@@ -56,7 +61,7 @@ if ( $feature_slides->have_posts() )
 { 
 	$dummy_placed = false; ?>
 <section class="feature-row" role="region" aria-label="Button Poetry Featured Content">
-	<div class="featured-slider">
+	<div id="featured-slider">
 		<?php while ( $feature_slides->have_posts() ) : 
 		$feature_slides->the_post(); 
 		$f_quote =	feature_slide_options_get_meta( 'feature_slide_options_is_this_a_quote_' );		
@@ -136,7 +141,7 @@ if ( $feature_slides->have_posts() )
 		</div>
 	</div>
 </div>
-<div class="featured-slider">
+<div id="featured-slider">
 <div class="slick-slide">
 		<div class="grid-x align-middle feature-slide">
 			<div class="cell medium-6 large-shrink small-order-1 medium-order-2">
@@ -236,12 +241,29 @@ if ( !function_exists('bp_front_page_slider') ) {
 	function bp_front_page_slider() {
 		?><script type="text/javascript"> 
 			$(".dummy-slide").remove();
-			$(".featured-slider").slick( {
+			
+			$("#featured-slider").slick( {
 				arrows: true,
 				autoplay: true,
 				autoplaySpeed: 5000,
 				useTransform: false,
 			}); 
+
+			$("#showcase-slider").slick( {
+				arrows: false,
+				slidesToShow: 6,
+				adaptiveHeight: true,
+				responsive: [{
+					breakpoint: 900,
+					settings: {
+						slidesToShow: 3,
+						slidesToScroll: 1,
+						centerMode: true,
+						infinite: true,
+					}
+				}]
+			});
+			
 		</script><?php
 	}
 	add_action( 'wp_footer', 'bp_front_page_slider', 100 );

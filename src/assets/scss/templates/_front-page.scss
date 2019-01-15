@@ -14,34 +14,70 @@
   }
 
   .showcase-shelf {
-    @include breakpoint(small only) {
+    /*@include breakpoint(small only) {
       background: $black;
+    }*/
+  }
+
+  #showcase-slider.center {
+    
+    .slick-track {
+      display: flex;
+      align-items: center;
     }
+
+    .slick-center {
+      .showcase-book {
+          zoom: 1.15;
+          -moz-transform: scale(1.15);
+          transition: zoom 0.5s;
+      }
+    } 
   }
 
   .showcase-book {
+    width: 40vw;
+    max-width: 120px;
+    text-align:center;
+    color: $black;
+
     @include breakpoint(medium) {
-      display: inline-block;
-      color: $black;
-      padding: 0;
+      max-width: 160px;
     }
   
     @include breakpoint(large) {
-      margin-top: 1rem;
-      padding: 0 1rem;
     }
 
-    img {
+    .showcase-cover {
+      margin-left: auto;
+      margin-right: auto;
       width: 100%;
+      height: 62vw;
+      max-width: 120px;
+      max-height: 185px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
       @include breakpoint(medium) {
         max-width: 160px;
+        max-height: 247px;
       }
+      @include breakpoint(large) {
+        width: 15vw;
+        height: 23vw;
+      }
+    }
+
+    .showcase-cover-stroke {
+      border:black 2px solid;
+      width:100%;
+      height:100%;
     }
   }
 
   .title {
     @include breakpoint(small only) {
-      display: none;
+      // display: none;
     }
 
     margin-top: 0.5rem;
@@ -53,7 +89,7 @@
 
   .author {
     @include breakpoint(small only) {
-      display:none;
+      // display:none;
     }
     font-size: 0.8rem;
     font-weight: bold;
