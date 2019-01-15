@@ -1,5 +1,13 @@
-// Navigation breakpoints
-// -=-=-=-=-=-=-=-=-=-=-=
+/** 
+  1. Navigation Breakpoints
+  2. Mobile Navigation
+  3. Desktop/Tablet Navigation
+  4. WP Post Navigation
+  5. Global Anchor Transition
+*/
+
+// 1. Navigation breakpoints
+// -=-=-=-=-=-=-=-=-=-=-=-=-
 .mobile-menu,
 .site-title-bar {
   @include hide-for(medium);
@@ -11,8 +19,8 @@
   @include show-for(medium);
 }
 
-// Mobile Navigation
-// -=-=-=-=-=-=-=-=-
+// 2. Mobile Navigation
+// -=-=-=-=-=-=-=-=-=-=
 $titlebar-title-font-size: 1.5rem;
 
 .title-bar {
@@ -87,8 +95,8 @@ $titlebar-title-font-size: 1.5rem;
     user-select: none;
 }
 
-// Desktop/Tablet Navigation
-// -=-=-=-=-=-=-=-=-=-=-=-=-
+// 3. Desktop/Tablet Navigation
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=
 $top-bar-link-border: 1px solid transparent;
 $top-bar-link-hover-border: 1px solid $button-light-tan;
 $top-bar-active-border-spacing: 2px solid transparent;
@@ -234,7 +242,8 @@ $top-bar-active-border: 2px solid $button-tan;
   }
 }
 
-/* WP post navigation */
+// 4. WP post navigation
+// -=-=-=-=-=-=-=-=-=-=-
 .post-navigation {
   @include clearfix;
 }
@@ -245,4 +254,12 @@ $top-bar-active-border: 2px solid $button-tan;
 
 .nav-next {
   float:right;
+}
+
+// 5. Global Anchor Transition
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+a { 
+  transition-property: filter, background, border, color;
+  transition-duration: .2s;
 }
