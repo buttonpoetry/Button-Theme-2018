@@ -64,7 +64,7 @@ if ( $feature_slides->have_posts() )
 	<div id="featured-slider">
 		<?php while ( $feature_slides->have_posts() ) : 
 		$feature_slides->the_post(); 
-		$f_quote =	feature_slide_options_get_meta( 'feature_slide_options_is_this_a_quote_' );		
+		$f_quote =		feature_slide_options_get_meta( 'feature_slide_options_is_this_a_quote_' );		
 		$f_lead = 		feature_slide_options_get_meta( 'feature_slide_options_lead_paragraph' );
 		$f_author = 	feature_slide_options_get_meta( 'feature_slide_options_followup_paragraph' );
 		$f_action_lbl = feature_slide_options_get_meta( 'feature_slide_options_call_to_action_label' );
@@ -79,9 +79,9 @@ if ( $feature_slides->have_posts() )
 		}
 
 		if ( has_post_thumbnail() ) {
-			$f_img_src = get_the_post_thumbnail( the_ID(), 'full' );
+			$f_img_tag = get_the_post_thumbnail( the_ID(), 'full', array('feature-hero') );
 		} else {
-			$f_img_src = 'https://via.placeholder.com/800/74B6B8/EBE9DD?text=' . get_the_title();
+			$f_img_tag = '<img class="feature-hero" src="https://via.placeholder.com/800/74B6B8/EBE9DD?text=' . get_the_title() . '">';
 		}
 
 		if( ! $dummy_placed ) { 
@@ -89,7 +89,7 @@ if ( $feature_slides->have_posts() )
 			<div class="dummy-slide">
 				<div class="grid-x align-middle feature-slide">
 					<div class="cell medium-6 large-shrink small-order-1 medium-order-2">
-						<a class="feature-link" href="<?php echo $f_action_url ?>"><img class="feature-hero" src="<?php echo $f_img_src ?>"></a>
+						<a class="feature-link" href="<?php echo $f_action_url ?>"><?php echo $f_img_tag ?></a>
 					</div>
 					<div class="cell medium-6 large-auto small-order-2 medium-order-1">
 						<div class="feature-text">
@@ -107,7 +107,7 @@ if ( $feature_slides->have_posts() )
 		<div class="slick-slide">
 			<div class="grid-x align-middle feature-slide">
 				<div class="cell medium-6 large-shrink small-order-1 medium-order-2">
-					<a class="feature-link" href="<?php echo $f_action_url ?>"><img class="feature-hero" src="<?php echo $f_img_src ?>"></a>
+					<a class="feature-link" href="<?php echo $f_action_url ?>"><?php echo $f_img_tag ?></a>
 				</div>
 				<div class="cell medium-6 large-auto small-order-2 medium-order-1">
 					<div class="feature-text">
