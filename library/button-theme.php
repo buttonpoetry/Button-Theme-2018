@@ -89,14 +89,55 @@ if ( ! function_exists( 'bp_no_ebooks_sales_flash' ) ) {
 	}
 }
 
-// Snippet to alter the 'Select Options' text
-add_filter( 'woocommerce_product_add_to_cart_text', function( $text ) {
-	global $product;
-	if ( $product->is_type( 'variable' ) ) {
-		$text = $product->is_purchasable() ? __( 'Add to cart', 'woocommerce' ) : __( 'Read more', 'woocommerce' );
+ /**
+ * Snippet to alter the 'Select Options' text
+ * 
+ * @since ButtonTheme 0.1.0
+ */
+if ( ! function_exists( 'bp_swap_select_options_text' ) )
+{
+	add_filter( 'woocommerce_product_add_to_cart_text', 'bp_swap_select_options_text', 10 );
+	function bp_swap_select_options_text( $text ) {
+		global $product;
+		if ( $product->is_type( 'variable' ) ) {
+			$text = $product->is_purchasable() ? __( 'Add to cart', 'woocommerce' ) : __( 'Read more', 'woocommerce' );
+		}
+		return $text;
 	}
-	return $text;
-}, 10 );
+}
 
-// Remove Result Count from WooCommerce archive and search pages
+ /**
+ * Remove Result Count from WooCommerce archive and search pages
+ * 
+ * @since ButtonTheme 0.1.0
+ */
 remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
+
+ /**
+ * Remove the description from the Category pages from WooCommerce.
+ * 
+ * @since ButtonTheme 0.2.0
+ */
+if ( ! function_exists( 'bp_remove_list_grid_description' ) )
+{
+	add_action('woocommerce_before_shop_loop', 'bp_remove_list_grid_description', 100);
+	function bp_remove_list_grid_description()
+	{
+		global $WC_List_Grid;
+		remove_action( 'woocommerce_after_subcategory', array( $WC_List_Grid, 'gridlist_cat_desc' ) );
+	}
+}
+
+ /**
+ * Always add a span tag to the pre-order message.
+ * 
+ * @since ButtonTheme 0.2.0
+ */
+
+if ( ! function_exists('bp_wrap_preorder_message') ) {
+	add_filter('wc_pre_orders_product_message', 'bp_wrap_preorder_message', 100);
+	function bp_wrap_preorder_message($message) 
+	{ 
+		return '<span class="bp-wc-preorder-message">' . $message . '</span>';
+	}
+}

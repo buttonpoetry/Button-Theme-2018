@@ -1,3 +1,5 @@
+// 1. Top navigation mini-cart
+// =-=-=-=-=-=-=-=-=-=-=-=-=-= 
 .bp-mini-cart {
     padding: .5rem;
     .mini-shipping-note {
@@ -5,6 +7,41 @@
         width:100%;
         text-align:center;
         color: $dark-gray;
+        display:block;
+    }
+}
+
+// 2. WooCommerce Grid/List Plugin Customization
+// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+nav.gridlist-toggle {
+    float: left;
+    clear: none !important;
+    padding: 0 !important;
+}
+
+.products {
+    // This rule mirrors the WooCommerce Grid/List plugin CSS.
+    &.list .yotpo-small.bottomLine {
+        display:block;
+        width: 65.4%;
+        float: right;
+        clear: none;
+    }
+
+    &.grid {
+        text-align: center;
+    
+        .yotpo-bottomline {
+            text-align: center;
+        }
+
+        .yotpo-stars {
+            margin-right: 0 !important;
+            display: block;
+        }
+    }
+    
+    .bp-wc-preorder-message {
         display:block;
     }
 }
