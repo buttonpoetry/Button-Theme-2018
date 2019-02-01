@@ -1,6 +1,6 @@
 <?php
 /**
- * The default template for displaying content
+ * The template for displaying the Poet archives.
  *
  * Used for both single and index/archive/search.
  *
