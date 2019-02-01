@@ -35,7 +35,8 @@ if ( ! function_exists( 'foundationpress_theme_support' ) ) :
 		add_theme_support( 'automatic-feed-links' );
 
 		// Add post formats support: http://codex.wordpress.org/Post_Formats
-		add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
+		// Disabling in Button theme until a time we choose to use them
+		//add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
 
 		// Base WooCommerce Support
 		add_theme_support( 'woocommerce' );
