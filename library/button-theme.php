@@ -134,10 +134,28 @@ if ( ! function_exists( 'bp_remove_list_grid_description' ) )
  * @since ButtonTheme 0.2.0
  */
 
-if ( ! function_exists('bp_wrap_preorder_message') ) {
+if ( ! function_exists( 'bp_wrap_preorder_message' ) ) {
 	add_filter('wc_pre_orders_product_message', 'bp_wrap_preorder_message', 100);
-	function bp_wrap_preorder_message($message) 
-	{ 
+	function bp_wrap_preorder_message($message) { 
 		return '<span class="bp-wc-preorder-message">' . $message . '</span>';
+	}
+}
+
+ /**
+ * Wrap YouTube video iframes and embeds with responsive div in the_content
+ * 
+ * @since ButtonTheme 0.2.0
+ */
+if( ! function_exists( 'bp_responsive_wrap_iframes' ) ) {
+	add_filter( 'the_content', 'bp_responsive_wrap_iframes' );
+	function bp_responsive_wrap_iframes( $content ) {
+		// Match any iframes or embeds
+		$pattern = '/<iframe.*youtu.*<\/iframe>|<embed.*<\/embed>/';
+		preg_match_all( $pattern, $content, $matches );
+		foreach ( $matches[0] as $match ) {
+			$wrappedframe = '<div class="responsive-embed widescreen">' . $match . '</div>';
+			$content = str_replace($match, $wrappedframe, $content);
+		}
+		return $content;
 	}
 }
