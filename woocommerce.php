@@ -9,19 +9,7 @@
  */
 
 get_header(); 
-/* Comment out to differentiate products and archives.
-if (is_singular( 'product' )) {
-?>
-<div class="main-container">
-	<div class="main-grid">
-		<main class="main-content-full-width">
-			<?php woocommerce_content(); ?>
-		</main>
-	</div>
-</div> 
-<?php }
-else {
-*/
+
 ?> 
 <div class="main-container">
 	<div class="main-grid">
@@ -31,5 +19,6 @@ else {
 	<?php get_sidebar(); ?>
 	</div>
 </div>
-<?php /* } */ 
+<?php 
+
 get_footer();
