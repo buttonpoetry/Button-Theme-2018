@@ -10,9 +10,20 @@
  * @since FoundationPress 1.0.0
  */
 
-get_header(); ?>
+get_header(); 
 
-<?php get_template_part( 'template-parts/featured-image' ); ?>
+// Skip the sidebar on some pages
+if ( is_page( array( 'cart', 'checkout', 'my-account') ) ) {
+?>
+<div class="main-container">
+	<div class="main-grid">
+		<main class="main-content-full-width">
+			<?php get_template_part( 'template-parts/content', 'page' ); ?>
+		</main>
+	</div>
+</div> 
+<?php } else { 
+get_template_part( 'template-parts/featured-image' ); ?>
 <div class="main-container">
 	<div class="main-grid">
 		<main class="main-content">
@@ -23,5 +34,6 @@ get_header(); ?>
 		<?php get_sidebar(); ?>
 	</div>
 </div>
-<?php
+<?php }
+
 get_footer();
