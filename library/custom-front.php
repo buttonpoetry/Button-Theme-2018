@@ -167,8 +167,9 @@ if ( ! function_exists( 'bp_register_theme_customizer_front_page' ) ) {
 	add_action( 'customize_register', 'bp_register_theme_customizer_front_page' );
 	function bp_register_theme_customizer_front_page( $wp_customize ) {
 
-		// Remove 'Homepage' section, it is confusing and unnecessary. 
+		// Remove 'Homepage' and 'Themes' sections, they are confusing and unnecessary. 
 		$wp_customize->remove_section( 'static_front_page' ); 
+		$wp_customize->remove_panel( 'themes' );
 
 		// Create custom panel
 		$wp_customize->add_panel(
