@@ -4,7 +4,7 @@
 // 2. Additional Typography Helpers
 // 3. Custom Motion-UI Animations
 // 4. Widget Customizations
-
+// 5. Mailchimp for WordPress Customization
 // 1. Navigation customization
 // ---------------------------
 
@@ -82,6 +82,10 @@ $bp-feature-side-timing: default;
         text-transform: uppercase;
         margin-bottom: 1rem;
     }
+
+    a {
+        text-decoration: none;
+    }
 }
 
 // Customization for the categories widget.
@@ -115,7 +119,7 @@ $bp-feature-side-timing: default;
     }
 }
 
-// 7. Mailchimp for WordPress Customization
+// 5. Mailchimp for WordPress Customization
 
 .mc4wp-form-fields input[type="submit"] {
     @extend .button;
