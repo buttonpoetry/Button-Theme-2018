@@ -36,13 +36,18 @@
     margin-right: .2rem;
     transition-duration: 0.5s;
 
-    &:hover {
-      -webkit-filter: brightness(160%); /* Safari 6.0 - 9.0 */
-      filter: brightness(160%);
-      transition-duration: 0.2s;
+    &:hover, 
+    &:active, 
+    &:focus {
+      img {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+        -webkit-filter: brightness(160%); /* Safari 6.0 - 9.0 */
+        filter: brightness(160%);
+        transition-duration: 0.2s;
+      }
     }
 
-    
     img {
       width: 2.5rem;
       height: 2.5rem;

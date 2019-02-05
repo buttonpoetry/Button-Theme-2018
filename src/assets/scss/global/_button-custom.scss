@@ -35,16 +35,6 @@
     color: $white;
 }
 
-p a {
-    text-decoration: underline;
-}
-
-p a:hover,
-p a:active,
-p a:focus {
-    color: $button-red;
-}
-
 .quote {
     quotes: "“" "”" "‘" "’";
   }
@@ -122,32 +112,6 @@ $bp-feature-side-timing: default;
                 transition: .2s;
             }            
         }
-    }
-}
-
-// 6. WooCommerce Customizations
-// These are overrides of WC CSS
-// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
-.woocommerce {
-    // Restyle buttons
-    a.button, 
-    button.button, 
-    input.button,
-    #review_form #submit {
-    @extend .button;
-    padding-left: rem-calc(10);
-    padding-right: rem-calc(10);
-    }
-
-    // Fix Sale badge sizing
-    .onsale {
-        box-sizing: content-box;
-    }
-
-    // Hide product counts
-    .count {
-        display: none;
     }
 }
 

@@ -1,0 +1,52 @@
+// 2. Global Anchor Styles & Hover Effects
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+a {
+    text-decoration: underline;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: $button-red;    
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.pagination,
+.showcase {
+    a {
+        text-decoration: none;
+    }
+}
+
+a.button {
+    text-decoration: none;
+}
+
+.site-header {
+    a {
+        text-decoration: none;
+    }
+
+    a:hover,
+    a:active,
+    a:focus {
+        color: initial;
+        -webkit-transform: none;
+        transform: none;
+        z-index: none;
+        
+    }
+}
+
+// 2. Global Anchor Transition
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+a, .nav-link-text { 
+    transition-duration: .2s;
+  }

@@ -3,7 +3,6 @@
   2. Mobile Navigation
   3. Desktop/Tablet Navigation
   4. WP Post Navigation
-  5. Global Anchor Transition
 */
 
 // 1. Navigation breakpoints
@@ -254,12 +253,4 @@ $top-bar-active-border: 2px solid $button-tan;
 
 .nav-next {
   float:right;
-}
-
-// 5. Global Anchor Transition
-// -=-=-=-=-=-=-=-=-=-=-=-=-=-
-
-a { 
-  transition-property: filter, background, border, color;
-  transition-duration: .2s;
 }

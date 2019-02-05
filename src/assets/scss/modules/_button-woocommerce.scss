@@ -1,3 +1,36 @@
+// 0. Legacy Compatibility Styles
+// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+//Limit width of product images on product archives.
+.woocommerce ul.products li.product a img {
+    
+}
+
+// 0.1 General WooCommerce Customizations
+// These are overrides of WC CSS
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+.woocommerce {
+    // Restyle buttons
+    a.button, 
+    button.button, 
+    input.button,
+    #review_form #submit {
+    @extend .button;
+    padding-left: rem-calc(10);
+    padding-right: rem-calc(10);
+    }
+
+    // Fix Sale badge sizing
+    .onsale {
+        box-sizing: content-box;
+    }
+
+    // Hide product counts
+    .count {
+        display: none;
+    }
+}
+
 // 1. Top navigation mini-cart
 // =-=-=-=-=-=-=-=-=-=-=-=-=-= 
 .bp-mini-cart {
@@ -17,6 +50,7 @@ nav.gridlist-toggle {
     float: left;
     clear: none !important;
     padding: 0 !important;
+    margin-bottom: rem-calc(16) !important;
 }
 
 .products {
@@ -44,4 +78,9 @@ nav.gridlist-toggle {
     .bp-wc-preorder-message {
         display:block;
     }
+}
+
+.products .product h2 {
+    font-family: $body-font-family;
+    font-size: 1.5rem;
 }
