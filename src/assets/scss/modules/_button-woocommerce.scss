@@ -1,3 +1,12 @@
+// Button Theme WooCommerce related & override CSS 
+// -----------------------------------------------
+// 0. Legacy Compatibility Styles // 0.1 General WooCommerce Customizations
+// 1. Top navigation mini-cart
+// 2. WooCommerce Grid/List Plugin Customization
+// 3. Cart Page Fixes
+// 4. Quantity Input Fixes
+// =======================
+
 // 0. Legacy Compatibility Styles
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 //Limit width of product images on product archives.
@@ -18,6 +27,23 @@
     @extend .button;
     padding-left: rem-calc(10);
     padding-right: rem-calc(10);
+    }
+
+    // Fix padding on disabled buttons
+    #respond input#submit.disabled,
+    #respond input#submit:disabled,
+    #respond input#submit:disabled[disabled],
+    a.button.disabled,  a.button:disabled,
+    a.button:disabled[disabled],
+    button.button.disabled,
+    button.button:disabled,
+    button.button:disabled[disabled],
+    input.button.disabled,
+    input.button:disabled,
+    input.button:disabled[disabled] {
+        @extend .button;
+        padding-left: rem-calc(10);
+        padding-right: rem-calc(10);
     }
 
     // Fix Sale badge sizing
@@ -53,49 +79,121 @@ nav.gridlist-toggle {
     margin-bottom: rem-calc(16) !important;
 }
 
-.products {
+.woocommerce ul.products {
     // This rule mirrors the WooCommerce Grid/List plugin CSS.
-    &.list .yotpo-small.bottomLine {
-        display:block;
-        width: 65.4%;
-        float: right;
-        clear: none;
-    }
+    &.list {
+        
+        a h2.woocommerce-loop-category__title {
+            font-family: $body-font-family;
+            font-size: 1.5rem;
+            padding-top: 0;
+        }  
 
-    &.grid {
-        text-align: center;
-    
-        .yotpo-bottomline {
-            text-align: center;
+        a h2.woocommerce-loop-product__title {
+            font-family: $body-font-family;
+        }      
+
+        .bp-cat-text {
+            padding-left: rem-calc(2);
+            display: block;
+            width: 65.4%;
+            float: right;
+            clear: none;
         }
 
-        .yotpo-stars {
+        .yotpo-small.bottomLine {
+            display: block;
+            width: 65.4%;
+            float: right;
+            clear: none;
+        }
+    }
+
+    &:not(.list) {
+        text-align: center;
+
+        a h2.woocommerce-loop-category__title {
+            font-family: $body-font-family;
+            font-size: 1.5rem;
+        }
+
+        a h2.woocommerce-loop-product__title {
+            font-family: $body-font-family;
+        }
+    
+        .yotpo-bottomline {                
+            text-align: center;
+        }        
+
+        .yotpo-stars {            
             margin-right: 0 !important;
             display: block;
         }
+
+        li.product .button.add_to_cart_button {        
+            display: block;
+            margin-top: 0;
+        }
     }
     
-    .bp-wc-preorder-message {
-        display:block;
+    .bp-wc-preorder-message {        
+        display: block;
     }
-}
-
-.products .product h2 {
-    font-family: $body-font-family;
-    font-size: 1.5rem;
 }
 
 // 3. Cart Page Fixes
 // =-=-=-=-=-=-==-=-=
 
 // Fix Disabled Cart button
-.woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled] {
+.woocommerce button.button {
+    transition-duration: 2ms;
+} 
+
+.woocommerce button.button:disabled,
+.woocommerce button.button:disabled[disabled] {
     opacity: 0;
-    height: auto;
+    box-sizing: border-box;
+    height: 0;       
 }
 
+// Adjust coupon code input box.
 .woocommerce-cart table.cart td.actions .coupon .input-text {
     height: 2.825rem;
     width: rem-calc(160);
     vertical-align: middle;
+}
+
+// 4. Quantity Input Fixes
+// =-=-=-=-=-=-=-=-=-=-=-=
+
+.woocommerce.single-product .quantity .qty {
+    height: 2.825rem;
+}
+
+// Adjust Cart 'Quantity' input box positioning on small screens
+.woocommerce-cart table.cart input {
+    display: inline-block;
+}
+
+// 5. Product Page Form Fixes
+.woocommerce.single-product {
+
+    table.variations tbody {        
+        border: 0;
+
+        td.label {
+            background: transparent;
+            color: $black;
+        }
+        td.value { 
+            padding-top: 0;
+            select {
+                width: initial;
+            }
+        }
+    }
+
+    .tabs.wc-tabs {
+        border: 0;
+    }
 }
