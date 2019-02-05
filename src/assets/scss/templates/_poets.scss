@@ -74,8 +74,7 @@
         display: block;
         text-align: center;
         
-        @include breakpoint(large) {
-            display: inline-block;    
+        @include breakpoint(large) {            
             text-align: left;
         }
     }

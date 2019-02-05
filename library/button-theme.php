@@ -18,18 +18,18 @@ if ( ! function_exists( 'bp_poet_carousel' ) ) {
 		if ( $carousel_products )
 		{
 			if( count( $carousel_products ) > 1) {
-				$titlePrefix = "Books from ";				
+				$titleSuffix = " in the Button Store";				
 				$archive ? $cardClass = 'poet-product-carousel-card cell small-12 large-6' : $cardClass = 'poet-product-carousel-card cell small-12 medium-6 large-4';
 			}
 			else {
-				$titlePrefix = "Written by ";
+				$titleSuffix = " in the Button Store";
 				$archive ? $cardClass = 'poet-product-carousel-card cell small-12 large-6' : $cardClass = 'poet-product-carousel-card cell small-12 medium-6 medium-offset-3 large-4 large-offset-4';
 			}
 			global $woocommerce;
 			$cart_url = wc_get_cart_url();
 			?> 
 				<section class="poet-product-carousel grid-container">
-				<?php if( ! $archive ) { echo "<h2 class='poet-product-carousel-title'>" . $titlePrefix . get_the_title() . "</h2>"; }?>
+				<?php if( ! $archive ) { echo "<h2 class='poet-product-carousel-title'>" . get_the_title() . $titleSuffix . "</h2>"; }?>
 				<div class="grid-x grid-margin-x grid-margin-y">
 			<?php 
 		
