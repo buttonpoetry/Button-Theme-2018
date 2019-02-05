@@ -96,7 +96,7 @@ if ( ! function_exists( 'bp_main_menu_append' ) ) {
 			get_template_part('template-parts/bp-mini-cart');
 			$bp_mini_cart = ob_get_contents();
 			ob_end_clean();
-			$items .= '<li><a href="' . wc_get_cart_url() . '" class="nav-cart" data-toggle="bp-mini-cart"><img class="desktop-cart-img" src="'. bp_mini_cart_src() . '"></a>' . $bp_mini_cart . '</li>';					
+			$items .= '<li><a href="' . wc_get_cart_url() . '" class="nav-cart"><img class="desktop-cart-img" src="'. bp_mini_cart_src() . '"></a><ul>' . $bp_mini_cart . '</ul></li>';					
 		}
 	    return $items;
 	}
