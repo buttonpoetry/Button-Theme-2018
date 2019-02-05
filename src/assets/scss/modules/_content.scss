@@ -24,8 +24,8 @@
   }
 
   &.sidebar-left {
-    // Place the sidebar below main content on small screens ...
-    @include breakpoint(small) {
+    // Place the sidebar below main content on medium screens ...
+    @include breakpoint(medium) {
       .main-content { order: 1; }
       .sidebar { order: 2; }
     }
@@ -50,22 +50,35 @@
       @include xy-cell(12);
     }
 
-    @include breakpoint(medium) {
+    @include breakpoint(large) {
+      @include xy-cell(8);
+    }
+    
+    @include breakpoint(xlarge) {
       @include xy-cell(8);
     }
   }
 
   .sidebar {
+    transition-duration: .2s;
     @include breakpoint(small) {
       @include xy-cell(12);
     }
 
-    @include breakpoint(medium) {
+    // Method to 
+    @include breakpoint(medium only) {
+      @include xy-grid()
+      .widget {      
+        @include xy-cell(6);
+      }
+    }
+
+    @include breakpoint(large) {
       @include xy-cell(4);
       margin-top: 3rem;
     }
 
-    @include breakpoint(large) {
+    @include breakpoint(xlarge) {
       @include xy-cell(3);
       @include xy-cell-offset(1, $grid-margin-gutters, margin, $-zf-zero-breakpoint, false);
       margin-top: 3rem;
