@@ -84,3 +84,18 @@ nav.gridlist-toggle {
     font-family: $body-font-family;
     font-size: 1.5rem;
 }
+
+// 3. Cart Page Fixes
+// =-=-=-=-=-=-==-=-=
+
+// Fix Disabled Cart button
+.woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled] {
+    opacity: 0;
+    height: auto;
+}
+
+.woocommerce-cart table.cart td.actions .coupon .input-text {
+    height: 2.825rem;
+    width: rem-calc(160);
+    vertical-align: middle;
+}
