@@ -162,6 +162,10 @@
         a {
             text-decoration: underline;
             text-transform: uppercase;
+
+            &:hover {
+                text-decoration: none;
+            }
         }
     }
     
