@@ -159,3 +159,28 @@ if( ! function_exists( 'bp_responsive_wrap_iframes' ) ) {
 		return $content;
 	}
 }
+
+ /**
+ * Dynamically remove inline formatting from legacy content
+ * 
+ * @since ButtonTheme 0.2.0
+ */
+if( ! function_exists( 'bp_clean_legacy_content' ) ) {
+	add_filter( 'the_content', 'bp_clean_legacy_content', 9);
+	function bp_clean_legacy_content( $content ) {
+		// If this isn't a post, get outta here!
+		if (get_post_type() != 'post') return $content;
+				
+		// Remove header and other tags.
+		$content = trim(strip_tags($content, '<br><p><div><span><em><strong><u><b><i><a><img><iframe><embed>'));
+		
+		// Remove '&nbsp'. 		
+		$content = str_replace("&nbsp;", "", $content);
+
+		return $content;
+		
+
+		
+		return trim(strip_tags($content, '<br><p><div><span><em><strong><u><b><i><a><img><iframe><embed>'));
+	}
+}
