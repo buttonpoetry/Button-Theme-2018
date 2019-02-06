@@ -22,11 +22,11 @@ if ( is_page( array( 'cart', 'checkout', 'my-account') ) ) {
 		</main>
 	</div>
 </div> 
-<?php } else { 
-get_template_part( 'template-parts/featured-image' ); ?>
+<?php } else { ?>
 <div class="main-container">
 	<div class="main-grid">
 		<main class="main-content">
+			<?php get_template_part( 'template-parts/featured-image' ); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php get_template_part( 'template-parts/content', 'page' ); ?>				
 			<?php endwhile; ?>

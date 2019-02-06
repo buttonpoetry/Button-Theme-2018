@@ -16,10 +16,10 @@ if ( in_category( 'Poets' ) ) {
 //Otherwise, display the default single page template.
 else {?>
 
-<?php get_template_part( 'template-parts/featured-image' ); ?>
 <div class="main-container">
 	<div class="main-grid">
 		<main class="main-content">
+			<?php get_template_part( 'template-parts/featured-image' ); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php get_template_part( 'template-parts/content', '' ); ?>
 				<?php the_post_navigation(); ?>
