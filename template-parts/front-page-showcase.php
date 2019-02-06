@@ -9,7 +9,7 @@
 
 <section class="showcase">
 <p class="lead hide-for-large"><?php 
-    echo get_theme_mod('front_page_showcase_lead_short', __( 'Poetry is for everyone!', 'foundationpress' ));
+    echo get_theme_mod('front_page_showcase_lead_small', __( 'Poetry is for everyone!', 'foundationpress' ));
 ?></p>
 <p class="lead show-for-large"><?php 
     echo get_theme_mod('front_page_showcase_lead', __( 'We showcase the power and diversity of voices in our community because we believe that poetry is for everyone.', 'foundationpress' ));
