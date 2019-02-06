@@ -191,7 +191,7 @@ if ( ! function_exists( 'bp_register_theme_customizer_front_page' ) ) {
 			)
 		);
 
-		// Create and set default showcase lead copy setting
+		// Create and set default showcase lead copy & positioning settings
 		$wp_customize->add_setting(
 			'front_page_showcase_lead',
 			array(
@@ -204,8 +204,14 @@ if ( ! function_exists( 'bp_register_theme_customizer_front_page' ) ) {
 				'default' => __( 'Poetry is for everyone!', 'foundationpress' ),
 			)
 		);
+		$wp_customize->add_setting(
+			'front_page_top_section',
+			array(
+				'default' => 'Showcase',
+			)
+		);
 
-		// Add setting control for Showcase lead text
+		// Add setting control for Showcase lead text & positioning
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
@@ -230,6 +236,23 @@ if ( ! function_exists( 'bp_register_theme_customizer_front_page' ) ) {
 				)
 			)
 		);
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'front_page_top_section_control',
+				array(
+					'section'  => 'front_page_showcase',
+					'label'	   => 'Top section of homepage:',
+					'settings' => 'front_page_top_section',
+					'type'     => 'radio',
+					'choices'  => array( 
+						'Showcase' => 'Showcase',
+						'Featured' => 'Featured'
+						)						
+					)
+				)
+			);
+		
 
 		// Create and set default showcase books
 		// Get Book IDs to populate selector
