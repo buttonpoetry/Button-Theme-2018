@@ -1,44 +1,41 @@
 $slick-font-path: "../fonts/" !default;
 $slick-font-family: "slick" !default;
-$slick-loader-path: "../images/theme/slick" !default;
+$slick-loader-path: "../images/slick/" !default;
 $slick-arrow-color: black !default;
 @import "../../../../node_modules/slick-carousel/slick/slick.scss"; 
 @import "../../../../node_modules/slick-carousel/slick/slick-theme.scss"; 
 
 //Featured Slick CSS
-#featured-slider>.slick-prev {
-    left: 1.5rem;
-    z-index: 1;
-    opacity: .5;
-    transition-duration: .2s;
-    transition-property: opacity;
-    text-shadow: 1px 1px 3px rgba( $button-tan, .5);
-
-    &:before {
-        font-size: 2.5rem;
-        color: $white;                
+#featured-slider {
+    &>.slick-prev {
+        left: 1.5rem;
     }
 
-    &:hover {
-        opacity: .75;
-        text-shadow: 1px 1px 3px rgba( $button-tan, .75);
-    }
-}
-  
-#featured-slider>.slick-next {
-    right: 2.5rem;
-    z-index: 1;
-    opacity: .5;
-    transition-duration: .2s;
-    transition-property: opacity;
-    text-shadow: 1px 1px 3px rgba( $button-tan, .5);
-    &:before {
-        font-size: 2.5rem;
-        color: $white;                
+    &>.slick-next {
+        right: 2.5rem;
     }
 
-    &:hover {
-        opacity: .75;
-        text-shadow: 1px 1px 3px rgba( $button-tan, .75);
+    &>.slick-arrow {
+        opacity: 0;
+        z-index: 1;        
+        transition-duration: .2s;
+        transition-property: opacity;
+        text-shadow: 1px 1px 3px rgba( $button-tan, .5);        
+
+        &:before {
+            font-size: 2.5rem;
+            color: $white;                
+        }      
+    }
+
+    &:hover{
+        .slick-arrow{
+            opacity: .5;           
+        
+            &:hover {
+                opacity: .75;
+                text-shadow: 1px 1px 3px rgba( $button-tan, .75);
+            }
+        }        
     }
 }
