@@ -13,36 +13,13 @@
     }
   }
 
-  .showcase-shelf {
-    /*@include breakpoint(small only) {
-      background: $black;
-    }*/
-  }
-
-  #showcase-slider.center {
-    
-    .slick-track {
-      display: flex;
-      align-items: center;
-    }
-
-    .slick-center {
-      .showcase-book {
-          zoom: 1.15;
-          -moz-transform: scale(1.15);
-          transition: zoom 0.5s;
-      }
-    } 
-  }
-
   .showcase-book {
-    width: 40vw;
-    max-width: 120px;
     text-align:center;
     color: $black;
+    max-width: 33%;
 
     @include breakpoint(medium) {
-      max-width: 160px;
+      //max-width: 160px;
     }
   
     @include breakpoint(large) {
@@ -51,20 +28,19 @@
     .showcase-cover {
       margin-left: auto;
       margin-right: auto;
-      width: 100%;
-      height: 62vw;
-      max-width: 120px;
-      max-height: 185px;
+      width: 30vw;
+      height: 46vw;
+      max-width: 240px;
+      max-height: 370px;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      @include breakpoint(medium) {
-        max-width: 160px;
-        max-height: 247px;
-      }
+      
       @include breakpoint(large) {
         width: 15vw;
         height: 23vw;
+        max-width: 160px;
+        max-height: 247px
       }
     }
 
@@ -76,10 +52,6 @@
   }
 
   .title {
-    @include breakpoint(small only) {
-      // display: none;
-    }
-
     margin-top: 0.5rem;
     font-family: $body-font-family;
     font-weight: bold;
@@ -87,10 +59,7 @@
     margin-bottom: 0.2rem;
   }
 
-  .author {
-    @include breakpoint(small only) {
-      // display:none;
-    }
+  .author {    
     font-size: 0.8rem;
     font-weight: bold;
     color: $dark-gray;
@@ -112,15 +81,20 @@
       padding:1.5rem 1rem 2.5rem 1rem;
     }
     
-    .feature-link  {
-      display: block; 
+    .feature-link-cell {
+      height: 100%;
+      background-size: cover;
     }
 
-    .feature-hero {
-      display: block; 
+    .feature-link  {      
+      display: block;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+            
+      .feature-hero {
+        width: 100%;
+        height: 100%;
+      }
     }
 
     .feature-text {

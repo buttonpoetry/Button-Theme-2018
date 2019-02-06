@@ -198,6 +198,12 @@ if ( ! function_exists( 'bp_register_theme_customizer_front_page' ) ) {
 				'default' => __( 'We showcase the power and diversity of voices in our community because we believe that poetry is for everyone.', 'foundationpress' ),
 			)
 		);
+		$wp_customize->add_setting(
+			'front_page_showcase_lead_small',
+			array(
+				'default' => __( 'Poetry is for everyone!', 'foundationpress' ),
+			)
+		);
 
 		// Add setting control for Showcase lead text
 		$wp_customize->add_control(
@@ -208,6 +214,18 @@ if ( ! function_exists( 'bp_register_theme_customizer_front_page' ) ) {
 					'section'  => 'front_page_showcase',
 					'label'	   => 'Lead copy to show on the homepage:',
 					'settings' => 'front_page_showcase_lead',
+					'type'     => 'textarea',
+				)
+			)
+		);
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'front_page_showcase_lead_small_control',
+				array(
+					'section'  => 'front_page_showcase',
+					'label'	   => 'Shorter Lead copy to show on smaller screens:',
+					'settings' => 'front_page_showcase_lead_small',
 					'type'     => 'textarea',
 				)
 			)
