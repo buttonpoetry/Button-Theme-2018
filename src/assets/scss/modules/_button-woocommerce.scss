@@ -149,13 +149,6 @@ nav.gridlist-toggle {
     transition-duration: 2ms;
 } 
 
-.woocommerce button.button:disabled,
-.woocommerce button.button:disabled[disabled] {
-    opacity: 0;
-    box-sizing: border-box;
-    height: 0;       
-}
-
 // Adjust coupon code input box.
 .woocommerce-cart table.cart td.actions .coupon .input-text {
     height: 2.825rem;
