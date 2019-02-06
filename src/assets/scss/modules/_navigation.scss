@@ -5,6 +5,8 @@
   4. WP Post Navigation
 */
 
+$menustack: 1025px; // Special breakpoint for when to stack the top bar menu.
+
 // 1. Navigation breakpoints
 // -=-=-=-=-=-=-=-=-=-=-=-=-
 .mobile-menu,
@@ -134,7 +136,7 @@ $top-bar-active-border: 2px solid $button-tan;
       line-height: rem-calc(49);
     }
 
-    @include breakpoint(xlarge)
+    @include breakpoint($menustack)
     {
       line-height: rem-calc(98);
       padding-right: 2rem;
@@ -219,7 +221,7 @@ $top-bar-active-border: 2px solid $button-tan;
         font-weight: normal;
       }
 
-      @include breakpoint(xlarge) {
+      @include breakpoint($menustack) {
         margin-left: 10px;
       }
     }
