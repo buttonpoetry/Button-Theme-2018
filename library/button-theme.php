@@ -43,7 +43,12 @@ if ( ! function_exists( 'bp_poet_carousel' ) ) {
 							</div>
 							<div class="cell auto">
 								<h3><?php echo $product->get_title(); ?></h3>
-								<a href="<?php echo get_the_permalink($product->get_id()) ?>">BUY NOW</a>
+								<a href="<?php echo get_the_permalink($product->get_id()) ?>"><?php
+									if ( ! $product->is_in_stock() || ! $product->is_purchasable() ) {
+										echo 'READ MORE';
+									} else {
+										echo 'BUY NOW'; 
+									}?></a>
 							</div>
 						</div>
 					</div>
