@@ -160,6 +160,25 @@ if ( ! function_exists( 'bp_feature_slides_post_type' ) ) {
  * Allows users to edit Front Page copy and layout from the Customizer.
  * 
  * @package ButtonTheme
+ * @since ButtonTheme 0.2.0
+ */
+if ( ! function_exists( 'bp_showcase_default_books' ) ) {
+	function bp_showcase_default_books() {
+	return array(
+		30250, // Helium
+		43902, // Nothing Is Okay            
+		55330, // Lord of the Butterflies
+		53666, // Date & Time
+		35546, // The Future
+		26167 // Depression & Other Magic Tricks
+		);
+	}
+}
+
+/**
+ * Allows users to edit Front Page copy and layout from the Customizer.
+ * 
+ * @package ButtonTheme
  * @since ButtonTheme 0.1.0
  */
 if ( ! function_exists( 'bp_register_theme_customizer_front_page' ) ) {
@@ -171,7 +190,7 @@ if ( ! function_exists( 'bp_register_theme_customizer_front_page' ) ) {
 		$wp_customize->remove_section( 'static_front_page' ); 
 		$wp_customize->remove_panel( 'themes' );
 
-		// Create custom panel
+		// Create Front Page Settings panel
 		$wp_customize->add_panel(
 			'front_page_settings', array(
 				'priority'       => 1,
@@ -181,7 +200,7 @@ if ( ! function_exists( 'bp_register_theme_customizer_front_page' ) ) {
 			)
 		);
 
-		// Create custom section for the showcase
+		// Create Showcase section
 		$wp_customize->add_section(
 			'front_page_showcase', array(
 				'title'    => __( 'Showcase Section', 'foundationpress' ),
@@ -253,9 +272,8 @@ if ( ! function_exists( 'bp_register_theme_customizer_front_page' ) ) {
 				)
 			);
 		
-
 		// Create and set default showcase books
-		// Get Book IDs to populate selector
+		// Get Book IDs to populate selector		
 		$category_id = 'books';
 		$books = get_posts( array(
 			'post_type'   => 'product',
@@ -278,12 +296,13 @@ if ( ! function_exists( 'bp_register_theme_customizer_front_page' ) ) {
 		}
 
 		$book_choices = array_combine($book_ids, $book_titles);
+		$default_book_ids = bp_showcase_default_books();
 
 		for ( $i = 0; $i < 6; $i++ ) {
 			$wp_customize->add_setting(
 				'front_page_showcase_books_' . $i,
 				array(
-					'default' => $books[$i]->ID,
+					'default' => $default_book_ids[$i],
 				)
 			);
 			$wp_customize->add_control(
@@ -299,6 +318,6 @@ if ( ! function_exists( 'bp_register_theme_customizer_front_page' ) ) {
 					)
 				)
 			);
-		}		
+		}	
 	}
 }

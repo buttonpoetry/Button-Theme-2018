@@ -13,10 +13,13 @@
     }
   }
 
+  .slick-slide{ 
+    
+  }
+
   .showcase-book {
-    text-align:center;
-    color: $black;
-    max-width: 33%;
+    text-align: center;
+    max-width: 33%;    
 
     @include breakpoint(medium) {
       //max-width: 160px;
@@ -41,23 +44,35 @@
         height: 23vw;
         max-width: 160px;
         max-height: 247px
+      }      
+
+      transition-duration: .05s;
+      transform-origin: top center;
+    
+      &:hover,
+      &:active,
+      &:focus {
+        transform: scale(1.02);
       }
     }
 
     .showcase-cover-stroke {
       border:black 2px solid;
       width:100%;
-      height:100%;
+      height:100%;    
     }
+
+    
   }
 
   .title {
+    display: block;
     margin-top: 0.5rem;
     font-family: $body-font-family;
     font-weight: bold;
     font-size: 1.125rem;
     margin-bottom: 0.2rem;
-  }
+    }    
 
   .author {    
     font-size: 0.8rem;
@@ -120,7 +135,7 @@
         .edit-link {
           font-size: .8rem;
           a {
-            color: $button-red !important;
+            color: $anchor-color !important;
           }
         }
       }
@@ -204,7 +219,6 @@
     a {
       background: $white;
       padding: 5px;
-      text-decoration: underline;
       position: relative;
       left: 70%;
       top: 155px;
