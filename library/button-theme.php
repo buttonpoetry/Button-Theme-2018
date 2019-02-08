@@ -28,33 +28,34 @@ if ( ! function_exists( 'bp_poet_carousel' ) ) {
 			global $woocommerce;
 			$cart_url = wc_get_cart_url();
 			?> 
-				<section class="poet-product-carousel grid-container">
+			<section class="poet-product-carousel grid-container full">
 				<?php if( ! $archive ) { echo "<h2 class='poet-product-carousel-title'>" . get_the_title() . $titleSuffix . "</h2>"; }?>
 				<div class="grid-x grid-margin-x grid-margin-y">
-			<?php 
-		
-			foreach ( $carousel_products as $product_id) {
-				$product = wc_get_product( $product_id )
-				?>
-					<div class="<?php echo $cardClass ?>">
-						<div class="grid-x grid-margin-x">
-							<div class="cell shrink">
-								<img src="<?php echo get_the_post_thumbnail_url( $product->get_id(), 'post-thumbnail' ); ?>">
-							</div>
-							<div class="cell auto">
-								<h3><?php echo $product->get_title(); ?></h3>
-								<a href="<?php echo get_the_permalink($product->get_id()) ?>"><?php
-									if ( ! $product->is_in_stock() || ! $product->is_purchasable() ) {
-										echo 'READ MORE';
-									} else {
-										echo 'BUY NOW'; 
-									}?></a>
+				<?php 
+			
+				foreach ( $carousel_products as $product_id) {
+					$product = wc_get_product( $product_id )
+					?>
+						<div class="<?php echo $cardClass ?>">
+							<div class="grid-x grid-margin-x">
+								<div class="cell shrink">
+									<img src="<?php echo get_the_post_thumbnail_url( $product->get_id(), 'post-thumbnail' ); ?>">
+								</div>
+								<div class="cell auto">
+									<h3><?php echo $product->get_title(); ?></h3>
+									<a href="<?php echo get_the_permalink($product->get_id()) ?>"><?php
+										if ( ! $product->is_in_stock() || ! $product->is_purchasable() ) {
+											echo 'READ MORE';
+										} else {
+											echo 'BUY NOW'; 
+										}?></a>
+								</div>
 							</div>
 						</div>
-					</div>
-				<?php
-			} 
-			?> </div></section> <?php 
+					<?php
+				} 
+				?> </div>
+			</section> <?php 
 		}
 	}
 }
@@ -187,5 +188,36 @@ if( ! function_exists( 'bp_clean_legacy_content' ) ) {
 
 		
 		return trim(strip_tags($content, '<br><p><div><span><em><strong><u><b><i><a><img><iframe><embed>'));
+	}
+}
+
+/**
+ * Limit excerpt size.
+ *
+ * @since ButtonTheme 0.2.0
+ */
+if( ! function_exists( 'bp_limit_excerpt' ) ) {
+	add_filter( 'excerpt_length', 'bp_limit_excerpt', 100 );
+	function bp_limit_excerpt( $length ) {
+		return 38;
+	}	
+}
+
+/**
+ * Function to filter 'more' links to be inline, and adds them to excerpts.
+ *
+ * @since ButtonTheme 0.2.0
+ */
+if( ! function_exists( 'bp_generate_custom_content_more' ) ) {
+	add_filter( 'the_content_more_link', 'bp_generate_custom_content_more', 100 );
+	function bp_generate_custom_content_more( $more ) {
+		return '... <a class="read-more content-read-more" href="'. get_permalink( get_the_ID() ) . '">' . __('MORE', 'foundationpress') . '</a>';
+	}
+}
+
+if( ! function_exists( 'bp_excerpt_more' ) ) {
+	add_filter('excerpt_more', 'bp_excerpt_more');
+	function bp_excerpt_more($more) {	
+		return '... <a class="read-more excerpt-read-more" href="'. get_permalink( get_the_ID() ) . '">' . __('MORE', 'foundationpress') . '</a>';
 	}
 }

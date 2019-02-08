@@ -120,8 +120,15 @@ $bp-feature-side-timing: default;
 }
 
 // 5. Mailchimp for WordPress Customization
-
+// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 .mc4wp-form-fields input[type="submit"] {
     @extend .button;
     @extend .expanded;
+}
+
+// 6. Read More customization
+// =-=-=-=-=-=-=-=-=-=-=-=-=-=
+.read-more {
+    font-weight: bold;
+    text-transform: uppercase;
 }

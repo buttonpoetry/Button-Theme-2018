@@ -13,7 +13,7 @@ get_header(); ?>
 <div class="main-container">
 	<div class="main-grid">
 		<main class="main-content-full-width">
-		<header class="cell medium-10 large-8 large-offset-1">
+		<header class="cell medium-10 large-8">
 			<h1>Poets</h1>
 			<p class="poet-archive-lead">By encouraging and broadcasting the best and brightest performance poets of today, Button Poetry hopes to broaden poetry’s audience, to expand its reach and develop a greater level of cultural appreciation for the art form.</p>
 		</header>
