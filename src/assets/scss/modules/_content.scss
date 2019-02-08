@@ -1,7 +1,7 @@
 .main-container {
   @include xy-grid-container;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .main-container.wide {
@@ -83,6 +83,5 @@
       @include xy-cell-offset(1, $grid-margin-gutters, margin, $-zf-zero-breakpoint, false);
       margin-top: 3rem;
     }
-
   }
 }
