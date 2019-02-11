@@ -8,13 +8,13 @@
 
  /**
  * Function to display a list of products for Poets on archives and single pages.
- * Utilizes a new custom post meta field 'carousel-product'.
+ * Utilizes a new custom post meta field 'bp_carousel_product'.
  * 
  * @since ButtonTheme 0.1.0
  */
 if ( ! function_exists( 'bp_poet_carousel' ) ) {
 	function bp_poet_carousel($poet_id, $archive = false) {
-		$carousel_products = get_post_meta( $poet_id, 'carousel-product', false );		
+		$carousel_products = get_post_meta( $poet_id, 'bp_carousel_product', false );		
 		if ( $carousel_products )
 		{
 			if( count( $carousel_products ) > 1) {

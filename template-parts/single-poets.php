@@ -91,12 +91,12 @@
 	</div>
 </div>
 
-<?php if ( metadata_exists( 'post', get_the_ID(), 'featured-product' ) ) : ?>
+<?php if ( metadata_exists( 'post', get_the_ID(), 'bp_featured_product' ) ) : ?>
 <div class="poet-featured-wrapper">
 	<div class="main-container">
 		<div class="main-grid">
 			<div class="main-content-full-width"><?php
-				$featuredID = get_post_meta( get_the_ID(), 'featured-product', true );
+				$featuredID = get_post_meta( get_the_ID(), 'bp_featured_product', true );
 				$fProduct = wc_get_product( $featuredID ); ?>
 				<section class="poet-featured-item grid-container">
 					<div class="grid-x">

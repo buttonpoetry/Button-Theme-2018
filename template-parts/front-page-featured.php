@@ -7,8 +7,10 @@
  */
   
 $feature_slides_query_args = array (
-	'post_type' 	=> array( 'feature_slide' ),
+	'post_type' 	=> array( 'bp_feature_slide' ),
 	'post_status'	=> array( 'publish' ),
+	'meta_key'   	=> 'bp_feature_slide_options_is_enabled',
+	'meta_value' 	=> 'Yes',
 	'posts_per_page'=> 5,
 	'order'			=> 'DESC',
 	'order-by'		=> 'date-published'
@@ -23,11 +25,11 @@ if ( $feature_slides->have_posts() )
 	<div id="featured-slider">
 		<?php while ( $feature_slides->have_posts() ) : 
 		$feature_slides->the_post(); 
-		$f_quote =		feature_slide_options_get_meta( 'feature_slide_options_is_this_a_quote_' );		
-		$f_lead = 		feature_slide_options_get_meta( 'feature_slide_options_lead_paragraph' );
-		$f_author = 	feature_slide_options_get_meta( 'feature_slide_options_followup_paragraph' );
-		$f_action_lbl = feature_slide_options_get_meta( 'feature_slide_options_call_to_action_label' );
-		$f_action_url =	feature_slide_options_get_meta( 'feature_slide_options_call_to_action_url' );
+		$f_quote =		bp_feature_slide_options_get_meta( 'bp_feature_slide_options_is_quote' );		
+		$f_lead = 		bp_feature_slide_options_get_meta( 'bp_feature_slide_options_lead' );
+		$f_author = 	bp_feature_slide_options_get_meta( 'bp_feature_slide_options_followup' );
+		$f_action_lbl = bp_feature_slide_options_get_meta( 'bp_feature_slide_options_call_to_action_label' );
+		$f_action_url =	bp_feature_slide_options_get_meta( 'bp_feature_slide_options_call_to_action_url' );
 
 		if( $f_quote == "Yes" ) {
 			$f_lead_class = "lead quote";
@@ -41,8 +43,8 @@ if ( $feature_slides->have_posts() )
 			$f_img_src = get_the_post_thumbnail_url();
 			$f_img_tag = get_the_post_thumbnail( the_ID(), 'full', array('feature-hero') );
 		} else {
-			$f_img_src = 'https://via.placeholder.com/800/74B6B8/EBE9DD?text=' . get_the_title();
-            $f_img_tag = '<img class="feature-hero" src="https://via.placeholder.com/800/74B6B8/EBE9DD?text=' . get_the_title() . '">';
+			$f_img_src = 'https://via.placeholder.com/800/74B6B8/EBE9DD?text=' . $f_action_lbl;
+            $f_img_tag = '<img class="feature-hero" src="https://via.placeholder.com/800/74B6B8/EBE9DD?text=' . $f_action_lbl . '">';
 		}
 
 		if( ! $dummy_placed ) { 
@@ -52,7 +54,7 @@ if ( $feature_slides->have_posts() )
                 <div class="feature-link-cell cell medium-6 large-auto small-order-1 medium-order-2">
 					<a class="feature-link" href="<?php echo $f_action_url ?>"><?php echo $f_img_tag ?></a>
 					</div>
-					<div class="cell medium-6 large-shrink small-order-2 medium-order-1">
+					<div class="cell medium-6 small-order-2 medium-order-1">
 						<div class="feature-text">
 							<h2 class="feature-section-title">Featured</h2>
 							<p class="<?php echo $f_lead_class ?>"><?php echo $f_lead ?></p>
@@ -68,11 +70,9 @@ if ( $feature_slides->have_posts() )
 		<div class="slick-slide">
 			<div class="grid-x align-middle feature-slide">
 				<div class="feature-link-cell cell medium-6 large-auto small-order-1 medium-order-2">
-				<?php // <div class="feature-link-cell cell large-6 xlarge-auto small-order-1 large-order-2"> ?>
 					<a class="feature-link" href="<?php echo $f_action_url ?>"><?php echo $f_img_tag ?></a>
 				</div>
-				<div class="cell medium-6 large-shrink small-order-2 medium-order-1">
-				<?php // <div class="cell large-6 xlarge-shrink small-order-2 large-order-1"> ?>
+				<div class="cell medium-6 small-order-2 medium-order-1">
 					<div class="feature-text">
 						<h2 class="feature-section-title">Featured <?php edit_post_link( __( '(Edit slide)', 'foundationpress' ), '<br><span class="edit-link">', '</span>' ) ?></h2>
 						<p class="<?php echo $f_lead_class ?>"><?php echo $f_lead ?></p>
