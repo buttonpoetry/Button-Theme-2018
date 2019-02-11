@@ -9,7 +9,7 @@
  remove_action('the_content', 'bp_render_footer');
  ?>
 <div class="poet-bio-wrapper">
-	<div class="main-container wide">
+	<div class="main-container full">
 		<div class="main-grid">
 			<main class="main-content-full-width">
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -23,56 +23,56 @@
 										/* Poet Social (ps) links code.
 											Could be enhanced with a table of options with network/site names, url formats, and display formats.
 											For now, these keys work with the associated values:
-											poet-social-website : site URL
-											poet-social-instagram : handle
-											poet-social-youtube : handle
-											poet-social-tumblr : handle
-											poet-social-facebook : handle
-											poet-social-twitter : handle
+											bp_poet_social_website : site URL
+											bp_poet_social_instagram : handle
+											bp_poet_social_youtube : handle
+											bp_poet_social_tumblr : handle
+											bp_poet_social_facebook : handle
+											bp_poet_social_twitter : handle
 										**/
 
 										$psLinks = [];
 										//Website
-										if( metadata_exists( 'post', get_the_ID(), 'poet-social-website' ) ) {
-											$psURL = trim(get_post_meta(get_the_ID(), 'poet-social-website', true));
+										if( metadata_exists( 'post', get_the_ID(), 'bp_poet_social_website' ) ) {
+											$psURL = trim(get_post_meta(get_the_ID(), 'bp_poet_social_website', true));
 											$psLinks[] = '<a href="' . $psURL . '">Website</a>';
 										}
 										//Instagram
-										if( metadata_exists( 'post', get_the_ID(), 'poet-social-instagram' ) ) {
+										if( metadata_exists( 'post', get_the_ID(), 'bp_poet_social_instagram' ) ) {
 											$psNetwork = 'Instagram';
-											$psHandle = trim(get_post_meta(get_the_ID(), 'poet-social-instagram', true));
+											$psHandle = trim(get_post_meta(get_the_ID(), 'bp_poet_social_instagram', true));
 											$psURL = 'https://www.instagram.com/' . $psHandle . '/';
 											$psDisplayHandle = '@' . $psHandle;
 											$psLinks[] = $psNetwork . ' <a href="' . $psURL . '">' . $psDisplayHandle . '</a>';
 										}										
 										//YouTube
-										if( metadata_exists( 'post', get_the_ID(), 'poet-social-youtube' ) ) {
+										if( metadata_exists( 'post', get_the_ID(), 'bp_poet_social_youtube' ) ) {
 											$psNetwork = 'YouTube';
-											$psHandle = trim(get_post_meta(get_the_ID(), 'poet-social-youtube', true));
+											$psHandle = trim(get_post_meta(get_the_ID(), 'bp_poet_social_youtube', true));
 											$psURL = 'https://www.youtube.com/' . $psHandle;											
 											$psDisplayHandle = $psHandle;
 											$psLinks[] = $psNetwork . ' <a href="' . $psURL . '">' . $psDisplayHandle . '</a>';
 										}
 										//Tumblr
-										if( metadata_exists( 'post', get_the_ID(), 'poet-social-tumblr' ) ) {
+										if( metadata_exists( 'post', get_the_ID(), 'bp_poet_social_tumblr' ) ) {
 											$psNetwork = 'Tumblr';
-											$psHandle = trim(get_post_meta(get_the_ID(), 'poet-social-tumblr', true));
+											$psHandle = trim(get_post_meta(get_the_ID(), 'bp_poet_social_tumblr', true));
 											$psURL = 'https://' . $psHandle . '.tumblr.com';
 											$psDisplayHandle = $psHandle;
 											$psLinks[] = $psNetwork . ' <a href="' . $psURL . '">' . $psDisplayHandle . '</a>';
 										}										
 										//Facebook
-										if( metadata_exists( 'post', get_the_ID(), 'poet-social-facebook' ) ){
+										if( metadata_exists( 'post', get_the_ID(), 'bp_poet_social_facebook' ) ){
 											$psNetwork = 'Facebook';
-											$psHandle = trim(get_post_meta(get_the_ID(), 'poet-social-facebook', true));
+											$psHandle = trim(get_post_meta(get_the_ID(), 'bp_poet_social_facebook', true));
 											$psURL = 'https://facebook.com/' . $psHandle;
 											$psDisplayHandle = '@' . $psHandle;
 											$psLinks[] = $psNetwork . ' <a href="' . $psURL . '">' . $psDisplayHandle . '</a>';
 										}
 										//Twitter
-										if( metadata_exists( 'post', get_the_ID(), 'poet-social-twitter' ) ){
+										if( metadata_exists( 'post', get_the_ID(), 'bp_poet_social_twitter' ) ){
 											$psNetwork = 'Twitter';
-											$psHandle = trim(get_post_meta(get_the_ID(), 'poet-social-twitter', true));
+											$psHandle = trim(get_post_meta(get_the_ID(), 'bp_poet_social_twitter', true));
 											$psURL = 'https://twitter.com/' . $psHandle;
 											$psDisplayHandle = '@' . $psHandle;
 											$psLinks[] = $psNetwork . ' <a href="' . $psURL . '">' . $psDisplayHandle . '</a>';
