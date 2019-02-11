@@ -10,8 +10,15 @@
 .poet-archive-listing {
     margin-bottom: rem-calc(60);
 
-    .poet-archive-bio-pic img {    
-        max-width:350px;
+    .poet-archive-bio-pic {        
+        text-align: center;        
+        
+        @include breakpoint(medium) {
+            text-align: left;
+            img {                
+             max-width:350px;
+            }   
+        }
     }
 
     .poet-archive-content {
@@ -21,8 +28,10 @@
  
         header {
             padding-top: 1rem;
+            text-align: center; 
             @include breakpoint(medium)
             {
+                text-align: left;
                 h2 {
                     font-size: 1.5rem;
                 }
