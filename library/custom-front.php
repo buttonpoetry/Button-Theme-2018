@@ -221,7 +221,7 @@ if ( ! function_exists( 'bp_register_theme_customizer_front_page' ) ) {
 		$wp_customize->add_setting(
 			'front_page_showcase_lead_small',
 			array(
-				'default' => __( 'Poetry is for everyone!', 'foundationpress' ),
+				'default' => __( 'Showcasing diverse voices because poetry is for everyone.', 'foundationpress' ),
 			)
 		);
 		$wp_customize->add_setting(
