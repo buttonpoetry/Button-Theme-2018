@@ -9,11 +9,11 @@
  remove_action('the_content', 'bp_render_footer');
  ?>
 <div class="poet-bio-wrapper">
-	<div class="main-container full">
+	<div class="main-container wide">
 		<div class="main-grid">
 			<main class="main-content-full-width">
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<section class="grid-container">	
+					<section class="grid-container wide">	
 						<div class="grid-x">
 							<div class="poet-bio-content cell entry-content">
 								<img class="poet-bio-pic" src="<?php the_post_thumbnail_url( 'full' ) ?>">
