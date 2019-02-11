@@ -49,7 +49,7 @@ if ( $feature_slides->have_posts() )
 			$dummy_placed = true; ?>
 			<div class="dummy-slide">
 				<div class="grid-x align-middle feature-slide">
-                <div class="feature-link-cell cell medium-6 large-auto small-order-1 medium-order-2"> <!-- style="background-image: url('<?php //echo $f_img_src ?>')"> -->
+                <div class="feature-link-cell cell medium-6 large-auto small-order-1 medium-order-2">
 					<a class="feature-link" href="<?php echo $f_action_url ?>"><?php echo $f_img_tag ?></a>
 					</div>
 					<div class="cell medium-6 large-shrink small-order-2 medium-order-1">
@@ -64,13 +64,15 @@ if ( $feature_slides->have_posts() )
 			</div><?php
 		}
 		?>
-
+		
 		<div class="slick-slide">
 			<div class="grid-x align-middle feature-slide">
-				<div class="feature-link-cell cell large-6 xlarge-auto small-order-1 large-order-2"> <!-- style="background-image: url('<?php //echo $f_img_src ?>')"> -->
+				<div class="feature-link-cell cell medium-6 large-auto small-order-1 medium-order-2">
+				<?php // <div class="feature-link-cell cell large-6 xlarge-auto small-order-1 large-order-2"> ?>
 					<a class="feature-link" href="<?php echo $f_action_url ?>"><?php echo $f_img_tag ?></a>
 				</div>
-				<div class="cell large-6 xlarge-shrink small-order-2 large-order-1">
+				<div class="cell medium-6 large-shrink small-order-2 medium-order-1">
+				<?php // <div class="cell large-6 xlarge-shrink small-order-2 large-order-1"> ?>
 					<div class="feature-text">
 						<h2 class="feature-section-title">Featured <?php edit_post_link( __( '(Edit slide)', 'foundationpress' ), '<br><span class="edit-link">', '</span>' ) ?></h2>
 						<p class="<?php echo $f_lead_class ?>"><?php echo $f_lead ?></p>
