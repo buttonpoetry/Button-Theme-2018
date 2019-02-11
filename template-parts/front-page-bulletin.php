@@ -12,7 +12,7 @@ $poetCat = 15; // Poet category ID
 
 <section class="bulletin-row">
 	<div class="grid-x">	
-		<div class="cell medium-7 large-6 small-order-1 medium-order-2 latest-news">
+		<div class="cell large-6 small-order-1 large-order-2 latest-news">
 			<h2>Latest News</h2>
 			<p>We love seeing our poets getting the recognition they deserve. See more articles and interviews at our <a href="/in-the-news/">In the News</a> section, and follow us on <a href="https://twitter.com/buttonpoetry">Twitter</a> for more news about what goes on behind the scenes.</p>
 			<blockquote>
@@ -42,7 +42,7 @@ $poetCat = 15; // Poet category ID
 			</blockquote>
 			<a class="button secondary" href="/in-the-news/">More News</a>
 		</div>
-		<div class="cell medium-5 large-6 small-order-1 medium-order-1">
+		<div class="cell large-6 small-order-2 large-order-1">
 			<div class="meet-our-poets">
 				<a href="/category/poets/">
 				<?php 	
