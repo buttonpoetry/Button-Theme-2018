@@ -86,4 +86,23 @@ if ( $feature_slides->have_posts() )
 		<?php endwhile; ?>
 	</div>	
 </section>
+<?php } 
+else { 
+	//If no slides exist, put up a functional demo slide.
+	?>
+<section class="feature-row" role="region" aria-label="Button Poetry Featured Content">
+	<div class="grid-x align-middle feature-slide">
+		<div class="feature-link-cell cell medium-6 large-auto small-order-1 medium-order-2">
+			<a class="feature-link" href="/product/depression-other-magic-tricks/"><img class="feature-hero" src="<?php echo get_stylesheet_directory_uri() . '/dist/assets/images/theme/depression-demo-slide.jpg'; ?>"></a>
+		</div>
+		<div class="cell medium-6 small-order-2 medium-order-1">
+			<div class="feature-text">
+				<h2 class="feature-section-title">Featured <?php edit_post_link( __( '(Edit slide)', 'foundationpress' ), '<br><span class="edit-link">', '</span>' ) ?></h2>
+				<p class="lead quote">I have kissed love on the lips & it did not fill me with anything other than smoke.</p>
+				<p class="feature-author">Sabrina Benaim<br>Depression & Other Magic Tricks</p>
+				<div class="button-wrap"><a class="button" href="/product/depression-other-magic-tricks/">Buy Now</a></div>	
+			</div>
+		</div>
+	</div>	
+</section>
 <?php } ?>

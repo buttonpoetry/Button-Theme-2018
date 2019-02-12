@@ -7,7 +7,7 @@
  */
 get_header(); ?>
 
-<div class="main-container wide">
+<div class="main-container full-width">
 	<div class="main-grid">
 		<div class="main-content-full-width">
 

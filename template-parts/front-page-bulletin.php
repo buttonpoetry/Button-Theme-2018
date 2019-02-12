@@ -26,7 +26,7 @@ $poetCat = 15; // Poet category ID
 				$bulletinFeed = new WP_Query( array ( 	'post_type' => 'post', 
 														'category__not_in' => array( 1, 15, 1488 ), 
 														'no_found_rows' => true, 
-														'posts_per_page' => 5) );
+														'posts_per_page' => 4) );
 				if ( $bulletinFeed->have_posts() ) {
 					while ( $bulletinFeed->have_posts() ) {
 						$bulletinFeed->the_post();
