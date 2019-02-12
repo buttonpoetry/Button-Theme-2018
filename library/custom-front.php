@@ -106,7 +106,7 @@ if ( ! function_exists( 'bp_feature_slides_post_type' ) ) {
 	function bp_feature_slide_options_html( $post) {
 		wp_nonce_field( '_bp_feature_slide_options_nonce', 'bp_feature_slide_options_nonce' ); ?>
 
-		<p>Set these options and set a slide image to create your feature slide. <br> Images should be square, compressed via tinyPNG, and 600x600 or 640x640.</p>
+		<p>Set these options and set a slide image to create your feature slide. <br> Images should be square, compressed via tinyPNG, and minimum 720x720. 1440x1440 for crisp text/sharp graphics is preferred for Retina/4X/UHD displays.</p>
 
 		<table style="width:100%;">
 			<thead>
