@@ -3,10 +3,9 @@ This is CSS taken and modified from old Headway CSS.
  1. Instalinks  
  2. CSS Indies page 
  3. In the news
- 4. Gift wrap
- 5. Store FAQ
- 6. Store Notice
- 7. Footer
+ 4. Store FAQ
+ 5. Store Notice
+ 6. Footer
 */
 
 /* 1. Instalinks CSS */
@@ -238,23 +237,7 @@ This is CSS taken and modified from old Headway CSS.
     font-style: italic;
 }
 
-/* 4. Style Gift Wrap Section */
-.gift-wrapping>label {
-    display:inline-block;
-    padding:5px;
-    margin:0;    
-    font-size:1rem;
-    line-height:1.5rem;
-    border-radius:3px;
-    width:auto;        
-    margin-bottom:15px;
-}
-
-.gift-wrapping input[type='checkbox'] {
-    vertical-align:middle;
-}
-
-/* 5. FAQ Styles */
+/* 4. FAQ Styles */
 /* FAQ Page Styling */
 .faq-wrap #faq-top {
     font-size: 2rem !important;
@@ -315,7 +298,7 @@ This is CSS taken and modified from old Headway CSS.
     margin-left: 1rem;
 }
 
-/* 6. Store Notice customization */
+/* 5. Store Notice customization */
 .woocommerce-store-notice {
     background-color: #0071BC !important; /* Vote Blue*/
     /*background-color: #af2828 !important; /* Button Red*/
@@ -331,7 +314,7 @@ This is CSS taken and modified from old Headway CSS.
 }
 /* End Store Notice customization */
 
-/* 7. Footer advertisement*/
+/* 6. Footer advertisement*/
 .attention {    
     margin:60px auto 30px;
     color: $black;

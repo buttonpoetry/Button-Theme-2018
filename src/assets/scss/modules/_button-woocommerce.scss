@@ -5,6 +5,8 @@
 // 2. WooCommerce Grid/List Plugin Customization
 // 3. Cart Page Fixes
 // 4. Quantity Input Fixes
+// 5. Product page form fixes
+// 6. Gift Wrap CSS
 // =======================
 
 // 0. Legacy Compatibility Styles
@@ -188,5 +190,102 @@ nav.gridlist-toggle {
 
     .tabs.wc-tabs {
         border: 0;
+    }
+}
+
+// 6. Gift Wrap CSS
+// -=-=-=-=-=-=-=-=
+
+/* Sample HTML to test with.
+<div class='gift-wrapping'><label class="gift-wrapping-checkbox-container">Gift wrap this item for $3.00?<input type="checkbox"><span class="gift-checkmark"></span></label></div>
+*/
+
+.gift-wrapping>label {
+    display: inline-block; 
+    padding: .75rem 1rem;
+    font-size: 1rem;
+    margin: 0;    
+    width: auto;
+    margin-bottom:15px;
+    border: 1px solid $button-light-tan;
+    box-shadow: 2px 2px 12px -2px rgba(0,0,0,0.15);
+}
+
+.gift-wrapping {
+    
+    // Compatibility Code
+    input[type='checkbox'] {
+        vertical-align: middle;
+        margin: 0 .5rem .25rem;
+    }
+
+    // W3Schools Checkbox Customization
+    /* Customize the label (the container) */
+    .gift-wrap-checkbox-container {
+        display: inline-block;
+        position: relative;
+        padding-left: 3rem;
+        font-size: 1.15rem;
+        margin-bottom: 1rem;
+        cursor: pointer;        
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        
+        /* Hide the browser's default checkbox */
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        /* Create a custom checkbox */
+        .gift-checkmark {
+            position: absolute;
+            top: 1rem;
+            left: .75rem;
+            height: 1.5rem;
+            width: 1.5rem;
+            border: 1px solid $black;            
+            background-color: $white;
+
+            /* Create the checkmark/indicator (hidden when not checked) */
+            &:after {
+                content: "";
+                position: absolute;
+                display: none;
+            }
+        }
+
+        /* On mouse-over, add a background color */
+        &:hover input ~ .gift-checkmark {
+            background-color: $button-light-tan;
+        }        
+
+        /* When the checkbox is checked, add a background */
+        & input:checked ~ .gift-checkmark {
+            //background-color: $button-tan;
+        }
+            
+        /* Show the checkmark when checked */
+        & input:checked ~ .gift-checkmark:after {
+            display: block;
+        }
+        
+        /* Style the checkmark/indicator */
+        & .gift-checkmark:after {        
+            left: .475rem;
+            top: .15rem;
+            width: .5rem;
+            height: .8rem;
+            border: solid $black;
+            border-width: 0 2px 2px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
     }
 }
