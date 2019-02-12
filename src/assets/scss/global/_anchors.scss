@@ -51,3 +51,42 @@ a.button {
 a, .nav-link-text { 
     transition-duration: .2s;
   }
+
+// 3. Global Button Hover Effect
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+button, .button, .woocommerce button, .woocommerce .button {
+    position: relative;
+
+    &:hover, &:focus {     
+        box-shadow: 1px 1px 3px rgba($black, .25);
+    }
+
+    &:active {
+        position:relative;
+        top: 1px;
+        left: 1px;
+        box-shadow: none;
+    }
+
+    &::after {
+        content: '→';
+        color: inherit;
+        position: absolute;          
+        display: block;
+        top: 0;
+        right: 1em;          
+        font-size: inherit;
+        line-height: inherit;
+        padding: $button-padding;
+        padding-left: 0;
+        padding-right: 0;
+        opacity: 0;                    
+        transition: .2s ease-in;
+    }
+    
+    &:hover::after, &:focus::after {
+        opacity: .75;
+        right: .5em;
+    }
+}

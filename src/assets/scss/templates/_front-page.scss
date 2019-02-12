@@ -228,23 +228,39 @@
       margin-bottom: 1.5rem;
       padding-top: 0;
       padding-left: 1rem;
-      font-weight: bold;
+      font-weight: bold;      
       
       .latest-news-headline {
         display:block;
         margin-bottom:.5rem;
+        position: relative;
 
         a {
           text-decoration: none;
-        }  
-        
-        em {
-          color: rgba($anchor-color, .75);
-          font-weight: normal;
-        }
+          &::after {
+            content: '→';
+            color: black;
+            position: absolute;          
+            display:block;
+            top: 0;
+            right: 0;          
+            line-height: inherit;
+            opacity: 0;                    
+            transition: .2s ease-in;
+          }
+
+          em {
+            color: rgba($anchor-color, .75);
+            font-weight: normal;
+          }
+  
+          &:hover::after {
+            opacity: .75;
+            right: -1em;
+          }
+        }              
       }
     }
-
   }
 
   .meet-our-poets {    
@@ -293,7 +309,6 @@
         left: 65%;
         top: 30%;
         font-size: 1.2rem;
-
       }
     }    
   }

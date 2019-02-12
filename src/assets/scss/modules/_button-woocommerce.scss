@@ -27,11 +27,9 @@
     input.button,
     #review_form #submit {
     @extend .button;
-    padding-left: rem-calc(10);
-    padding-right: rem-calc(10);
     }
 
-    // Fix padding on disabled buttons
+    // Tweak disabled buttons
     #respond input#submit.disabled,
     #respond input#submit:disabled,
     #respond input#submit:disabled[disabled],
@@ -44,8 +42,10 @@
     input.button:disabled,
     input.button:disabled[disabled] {
         @extend .button;
-        padding-left: rem-calc(10);
-        padding-right: rem-calc(10);
+        &::after {
+            content: none;
+        }
+        cursor: default;
     }
 
     // Fix Sale badge sizing
@@ -61,7 +61,7 @@
 
 // 1. Top navigation mini-cart
 // =-=-=-=-=-=-=-=-=-=-=-=-=-= 
-.bp-mini-cart {
+.submenu.is-dropdown-submenu .bp-mini-cart {
     padding: .5rem;
     .mini-shipping-note {
         font-size: .8rem;
@@ -69,6 +69,25 @@
         text-align:center;
         color: $dark-gray;
         display:block;
+    }
+
+    & a.button.secondary {
+        &:after {
+            position: absolute;
+            display: block;
+            top: 0;
+            right: 1em;
+            margin-top:0;
+            padding-top:inherit;              
+        }
+
+        &:hover {
+            background-color: lighten( $button-tan, 10% );
+
+            &:after {
+                right: .5em;
+            }
+        }
     }
 }
 
