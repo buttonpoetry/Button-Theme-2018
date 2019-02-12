@@ -9,7 +9,7 @@
  remove_action('the_content', 'bp_render_footer');
  ?>
 <div class="poet-bio-wrapper">
-	<div class="main-container wide">
+	<div class="main-container full-width-padded">
 		<div class="main-grid">
 			<main class="main-content-full-width">
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
