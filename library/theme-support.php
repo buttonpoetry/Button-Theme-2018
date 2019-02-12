@@ -49,9 +49,12 @@ if ( ! function_exists( 'foundationpress_theme_support' ) ) :
 		add_theme_support( 'editor-styles' );
 
 		add_editor_style( get_stylesheet_directory_uri() . '/dist/assets/css/editor.css' );
-
+			
 		// Add foundation.css as editor style https://codex.wordpress.org/Editor_Style
-		// add_editor_style( 'dist/assets/css/' . foundationpress_asset_path( 'editor.css' ) );
+		//add_editor_style( 'dist/assets/css/' . foundationpress_asset_path( 'editor.css' ) );
+
+		// Add Yoast Breadcrumb support
+		add_theme_support( 'yoast-seo-breadcrumbs' );
 	}
 
 	add_action( 'after_setup_theme', 'foundationpress_theme_support' );

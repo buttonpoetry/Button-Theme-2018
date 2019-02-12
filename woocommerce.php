@@ -14,7 +14,12 @@ get_header();
 <div class="main-container">
 	<div class="main-grid">
 		<main class="main-content">
-			<?php woocommerce_content(); ?>
+			<?php
+				//Add breadcrumbs.
+				if ( function_exists('yoast_breadcrumb') ) {
+					yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+				}
+				woocommerce_content(); ?>				
 		</main>
 	<?php get_sidebar(); ?>
 	</div>
