@@ -242,18 +242,11 @@ This is CSS taken and modified from old Headway CSS.
 .gift-wrapping>label {
     display:inline-block;
     padding:5px;
-    margin:0;
-    color:white;
+    margin:0;    
     font-size:1rem;
     line-height:1.5rem;
     border-radius:3px;
-    width:auto;
-    background: #bfd255; /* Old browsers */
-    background: -moz-linear-gradient(top, #bfd255 0%, #8eb92a 50%, #72aa00 51%, #9ecb2d 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #bfd255 0%,#8eb92a 50%,#72aa00 51%,#9ecb2d 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #bfd255 0%,#8eb92a 50%,#72aa00 51%,#9ecb2d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfd255', endColorstr='#9ecb2d',GradientType=0 ); /* IE6-9 */
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+    width:auto;        
     margin-bottom:15px;
 }
 
@@ -263,17 +256,17 @@ This is CSS taken and modified from old Headway CSS.
 
 /* 5. FAQ Styles */
 /* FAQ Page Styling */
-.page-id-26339 .entry-content #faq-top {
+.faq-wrap #faq-top {
     font-size: 2rem !important;
     text-align:center !important;
     line-height:2rem !important;
 }
 
-.page-id-26339 .entry-content #faq-top span {
+.faq-wrap #faq-top span {
     font-size: .8em !important;
 }
 
-.page-id-26339 .entry-content #faq-toc {
+.faq-wrap #faq-toc {
     padding: 10px;
     border: 1px black solid !important; 
     margin: 0px !important; 
@@ -282,20 +275,20 @@ This is CSS taken and modified from old Headway CSS.
     margin-bottom:1.5em !important;
 }
 
-.page-id-26339 .entry-content #faq-toc ul li{
+.faq-wrap #faq-toc ul li{
     font-family: sans-serif !important;
 }
 
-.page-id-26339 .entry-content h2 {
+.faq-wrap h2 {
     font-size: 1.5em !important;
 }
 
-.page-id-26339 .entry-content h2, .page-id-26339 .entry-content h3 {
+.faq-wrap h2, .faq-wrap h3 {
     font-weight: bold !important;
     margin-bottom: 0.5rem !important;
 }
 
-.page-id-26339 .entry-content h2 a, .page-id-26339 .entry-content h3 a {
+.faq-wrap h2 a, .faq-wrap h3 a {
     color: #aa3333 !important; 
     text-decoration: none !important; 
     font-style: italic !important; 
@@ -303,7 +296,7 @@ This is CSS taken and modified from old Headway CSS.
     content: "Jump to Top";
 }
 
-.page-id-26339 .entry-content h2:before, .page-id-26339 .entry-content h3:before  { 
+.faq-wrap h2:before, .faq-wrap h3:before  { 
   display: block !important; 
   content: " " !important; 
   margin-top: -25px !important; 
@@ -312,13 +305,13 @@ This is CSS taken and modified from old Headway CSS.
   pointer-events: none !important;
 }
 
-.page-id-26339 .entry-content p {
+.faq-wrap p {
     font-size: 1rem !important;
     line-height: 1.5rem !important;
     margin-bottom: 1rem !important;
 }
 
-.page-id-26339 .entry-content p, .page-id-26339 .entry-content h3 {
+.faq-wrap p, .faq-wrap h3 {
     margin-left: 1rem;
 }
 
