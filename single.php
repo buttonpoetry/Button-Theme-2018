@@ -23,7 +23,6 @@ else {?>
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php get_template_part( 'template-parts/content', '' ); ?>
 				<?php the_post_navigation(); ?>
-				<?php comments_template(); ?>
 			<?php endwhile; ?>
 		</main>
 		<?php get_sidebar(); ?>
