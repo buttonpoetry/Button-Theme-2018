@@ -106,7 +106,7 @@
 							<a class="button poet-featured-item-buy-button" href="<?php echo get_permalink( $featuredID ) ?>">Buy Now</a>
 						</div>
 						<div class="poet-featured-item-pic cell small-12 medium-4 medium-order-2 small-order-1">
-							<img src="<?php echo get_the_post_thumbnail_url( $featuredID, 'full' ) ?>">
+							<a href="<?php echo get_permalink( $featuredID ) ?>"><img src="<?php echo get_the_post_thumbnail_url( $featuredID, 'full' ) ?>"></a>
 						</div>
 					</div>
 				</section>
