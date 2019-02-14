@@ -38,7 +38,7 @@ $titlebar-title-font-size: 1.5rem;
   }
 
   .menu-icon {
-    @include hamburger($color: $titlebar-icon-color, $color-hover: $titlebar-icon-color-hover, $height: 22px, $width: 24px, $weight: 2px, $bars: 3);
+    @include hamburger($color: $titlebar-icon-color, $color-hover: $titlebar-icon-color-hover, $height: 22px, $width: 24px, $weight: 2px, $bars: 3);    
   }
 }
 

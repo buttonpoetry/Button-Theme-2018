@@ -29,7 +29,15 @@ a.button {
     text-decoration: none;
 }
 
-.site-header {
+.top-bar-title a {
+    text-decoration: none;
+        
+    &:hover {
+        opacity: .9;
+    }
+}
+
+.top-bar-right {
     a {
         text-decoration: none;
     }
@@ -55,7 +63,7 @@ a, .nav-link-text {
 // 3. Global Button Hover Effect
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-button, .button, .woocommerce button, .woocommerce .button {
+button:not(.menu-icon), .button, .woocommerce button, .woocommerce .button {
     position: relative;
 
     &:hover, &:focus {     

@@ -13,10 +13,10 @@
 @include foundation-button;
 @include foundation-forms;
 // @include foundation-range-input;
-@include foundation-accordion;
-@include foundation-accordion-menu;
-@include foundation-badge;
-@include foundation-breadcrumbs;
+// @include foundation-accordion;
+// @include foundation-accordion-menu;
+// @include foundation-badge;
+//@include foundation-breadcrumbs;
 @include foundation-button-group;
 @include foundation-callout;
 @include foundation-card;
@@ -64,8 +64,6 @@
 @import "global/wp-overrides";
 @import "global/gutenberg";
 @import "global/button-custom";
-@import "global/anchors";
-
 
 // Modules
 @import "modules/navigation";
@@ -74,6 +72,7 @@
 @import "modules/editor-style";
 @import "modules/button-woocommerce";
 @import "modules/button-legacy";
+@import "modules/anchors";
 
 // Components
 @import "components/cards";
