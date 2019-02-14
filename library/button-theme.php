@@ -178,16 +178,13 @@ if( ! function_exists( 'bp_clean_legacy_content' ) ) {
 		if (get_post_type() != 'post' || has_blocks() ) return $content;
 				
 		// Remove header and other tags.
-		$content = trim(strip_tags($content, '<br><p><div><span><em><strong><u><b><i><a><img><iframe><embed>'));
+		$content = trim(strip_tags($content, '<br><p><div><span><em><strong><u><b><i><a><img><iframe><embed><blockquote>'));
 		
 		// Remove '&nbsp'. 		
 		$content = str_replace("&nbsp;", "", $content);
 
 		return $content;
 		
-
-		
-		return trim(strip_tags($content, '<br><p><div><span><em><strong><u><b><i><a><img><iframe><embed>'));
 	}
 }
 
