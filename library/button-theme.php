@@ -232,3 +232,39 @@ if( ! function_exists( 'bp_add_yotpo_carousel' ) ) {
 		?><div class="yotpo yotpo-slider" data-product-id="<?php echo $product->get_id(); ?>"></div><?php 
 	}
 }
+
+/**
+ * Function to add Author Bios sliders to the product pages
+ *
+ * @since ButtonTheme 0.2.0
+ */
+
+if( ! function_exists( 'bp_add_linked_author_bio' ) ) {	
+	add_filter( 'the_content', 'bp_add_linked_author_bio', 5);
+	function bp_add_linked_author_bio($the_content) { 
+		if ( is_single() && metadata_exists( 'post', get_the_ID(), 'bp_linked_author' )) {
+			$bio_content = null;
+			$poetCat = 15; // Poet category ID
+			$author_name = get_post_meta( get_the_ID(), 'bp_linked_author', true);
+			//$author_id = get_page_by_title($author_name);
+			//if($author_id != null || get_the_category($author_id) != $poetCat ) {
+			$poetPage = new WP_Query( array ( 'post_type' 	=> 'post', 
+											  'category__in'=> array( $poetCat ),														
+											  'title'		=> $author_name) );
+			if ( $poetPage->have_posts() ) {
+				while ( $poetPage->have_posts() ) {
+					$poetPage->the_post();
+					ob_start();
+					?><h3>About <?php echo $author_name ?></h3><?php 
+					the_excerpt();						
+					$bio_content = ob_get_contents();
+					ob_end_clean();						
+				}									
+				// Restore original post data.
+				wp_reset_postdata();			
+			}
+			return $the_content . $bio_content;
+		}
+		else return $the_content;
+	}
+}
