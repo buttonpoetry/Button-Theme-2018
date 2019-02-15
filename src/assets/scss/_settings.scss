@@ -179,8 +179,8 @@ $code-background: $light-gray;
 $code-border: 1px solid $medium-gray;
 $code-padding: rem-calc(2 5 1);
 $anchor-color: $primary-color;
-$anchor-color-hover: scale-color($anchor-color, $lightness: 15%);
-$anchor-text-decoration: none;
+$anchor-color-hover: $button-red; //scale-color($anchor-color, $lightness: 15%);
+$anchor-text-decoration: underline;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
 $hr-border: 1px solid $medium-gray;
@@ -507,7 +507,8 @@ $meter-fill-bad: $alert-color;
 // --------------
 
 $offcanvas-sizes: (
-  small: 150px,
+  small: 175px,
+  medium: 250px,
 );
 $offcanvas-vertical-sizes: (
   small: 250px,
@@ -834,7 +835,7 @@ $thumbnail-radius: $global-radius;
 
 $titlebar-background: $white;
 $titlebar-color: $black;
-$titlebar-padding: rem-calc(38) rem-calc(20) 1rem rem-calc(20);
+$titlebar-padding: rem-calc(30) rem-calc(20) 1rem rem-calc(20);
 $titlebar-text-font-weight: bold;
 $titlebar-icon-color: $black;
 $titlebar-icon-color-hover: $black;

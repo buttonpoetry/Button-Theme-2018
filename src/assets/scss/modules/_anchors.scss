@@ -1,16 +1,5 @@
-// 2. Global Anchor Styles & Hover Effects
+// 1. Global Anchor Styles & Hover Effects
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
-a {
-    text-decoration: underline;
-}
-
-a:hover,
-a:active,
-a:focus {
-    color: $button-red;    
-    text-decoration: none;
-}
 
 h1,
 h2,
@@ -63,38 +52,43 @@ a, .nav-link-text {
 // 3. Global Button Hover Effect
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-button:not(.menu-icon, .slick-arrow, .slick-prev, .slick-next), .button, .woocommerce button, .woocommerce .button {
-    position: relative;
+.main-container button, 
+.main-container .button, 
+.woocommerce .main-container button, 
+.woocommerce .main-container .button {
+    &:not(.menu-icon, .slick-arrow, .slick-prev, .slick-next, .submenu-toggle) {
+        position: relative;
 
-    &:hover, &:focus {     
-        box-shadow: 1px 1px 3px rgba($black, .25);
-    }
+        &:hover, &:focus {     
+            box-shadow: 1px 1px 3px rgba($black, .25);
+        }
 
-    &:active {
-        position:relative;
-        top: 1px;
-        left: 1px;
-        box-shadow: none;
-    }
+        &:active {
+            position:relative;
+            top: 1px;
+            left: 1px;
+            box-shadow: none;
+        }
 
-    &::after {
-        content: '→';
-        color: inherit;
-        position: absolute;          
-        display: block;
-        top: 0;
-        right: 1em;          
-        font-size: inherit;
-        line-height: inherit;
-        padding: $button-padding;
-        padding-left: 0;
-        padding-right: 0;
-        opacity: 0;                    
-        transition: .2s ease-in;
-    }
-    
-    &:hover::after, &:focus::after {
-        opacity: .75;
-        right: .5em;
+        &::after {
+            content: '→';
+            color: inherit;
+            position: absolute;          
+            display: block;
+            top: 0;
+            right: 1em;          
+            font-size: inherit;
+            line-height: inherit;
+            padding: $button-padding;
+            padding-left: 0;
+            padding-right: 0;
+            opacity: 0;                    
+            transition: .2s ease-in;
+        }
+        
+        &:hover::after, &:focus::after {
+            opacity: .75;
+            right: .5em;
+        }
     }
 }

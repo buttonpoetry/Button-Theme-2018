@@ -29,6 +29,7 @@ $titlebar-title-font-size: 1.5rem;
   .title-bar-title {
     a {
       font-size: $titlebar-title-font-size;
+      text-decoration: none;
     }
   }
 
@@ -57,6 +58,10 @@ $titlebar-title-font-size: 1.5rem;
       font-weight: 600;
       font-size: rem-calc(15);
       letter-spacing: rem-calc(2);
+      line-height: 1.1em; 
+      padding-top: 0.625rem;
+      padding-bottom: 0.625rem;
+
       &:hover {
         background-color: rgba(255,255,255,.25);
       } 
