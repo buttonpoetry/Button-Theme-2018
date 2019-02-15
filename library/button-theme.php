@@ -218,3 +218,17 @@ if( ! function_exists( 'bp_excerpt_more' ) ) {
 		return '... <a class="read-more excerpt-read-more" href="'. get_permalink( get_the_ID() ) . '">' . __('MORE', 'foundationpress') . '</a>';
 	}
 }
+
+/**
+ * Function to add Yotpo sliders to the product pages
+ *
+ * @since ButtonTheme 0.2.0
+ */
+
+if( ! function_exists( 'bp_add_yotpo_carousel' ) ) {
+	add_filter( 'woocommerce_after_single_product_summary', 'bp_add_yotpo_carousel', 9);
+	function bp_add_yotpo_carousel() { 
+		global $product;
+		?><div class="yotpo yotpo-slider" data-product-id="<?php echo $product->get_id(); ?>"></div><?php 
+	}
+}
