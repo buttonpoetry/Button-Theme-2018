@@ -52,11 +52,11 @@ a, .nav-link-text {
 // 3. Global Button Hover Effect
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-.main-container button, 
+.main-container button:not(.menu-icon, .slick-arrow, .slick-prev, .slick-next, .submenu-toggle), 
 .main-container .button, 
 .woocommerce .main-container button, 
 .woocommerce .main-container .button {
-    &:not(.menu-icon, .slick-arrow, .slick-prev, .slick-next, .submenu-toggle) {
+    
         position: relative;
 
         &:hover, &:focus {     
@@ -91,4 +91,3 @@ a, .nav-link-text {
             right: .5em;
         }
     }
-}
