@@ -248,17 +248,18 @@
             opacity: 0;                    
             transition: .2s ease-in;
           }
-
-          em {
-            color: rgba($anchor-color, .75);
-            font-weight: normal;
-          }
-  
+          
           &:hover::after {
             opacity: .75;
             right: -1em;
           }
         }              
+        
+        em {
+          color: rgba($anchor-color, .75);
+          font-weight: normal;
+        }
+
       }
     }
   }
