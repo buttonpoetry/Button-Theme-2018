@@ -97,7 +97,20 @@ nav.gridlist-toggle {
     float: left;
     clear: none !important;
     padding: 0 !important;
-    margin-bottom: rem-calc(16) !important;
+    margin-bottom: rem-calc(16) !important;    
+
+    a {
+        background-color: transparent;
+
+        &.active {
+            //background-color: $button-light-tan;
+        }
+
+        &:not(.active):hover {
+            color: $anchor-color;        
+            //background-color: $button-tan;
+        }
+    }
 }
 
 .woocommerce ul.products {
