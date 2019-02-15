@@ -63,7 +63,7 @@ a, .nav-link-text {
 // 3. Global Button Hover Effect
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-button:not(.menu-icon), .button, .woocommerce button, .woocommerce .button {
+button:not(.menu-icon, .slick-arrow, .slick-prev, .slick-next), .button, .woocommerce button, .woocommerce .button {
     position: relative;
 
     &:hover, &:focus {     
