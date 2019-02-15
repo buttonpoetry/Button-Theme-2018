@@ -239,17 +239,17 @@ This is CSS taken and modified from old Headway CSS.
 
 /* 4. FAQ Styles */
 /* FAQ Page Styling */
-.faq-wrap #faq-top {
+#faq-wrap #faq-top {
     font-size: 2rem !important;
     text-align:center !important;
     line-height:2rem !important;
 }
 
-.faq-wrap #faq-top span {
+#faq-wrap #faq-top span {
     font-size: .8em !important;
 }
 
-.faq-wrap #faq-toc {
+#faq-wrap #faq-toc {
     padding: 10px;
     border: 1px black solid !important; 
     margin: 0px !important; 
@@ -258,20 +258,16 @@ This is CSS taken and modified from old Headway CSS.
     margin-bottom:1.5em !important;
 }
 
-.faq-wrap #faq-toc ul li{
+#faq-wrap #faq-toc ul li{
     font-family: sans-serif !important;
 }
 
-.faq-wrap h2 {
-    font-size: 1.5em !important;
-}
-
-.faq-wrap h2, .faq-wrap h3 {
+#faq-wrap h2, #faq-wrap h3 {
     font-weight: bold !important;
     margin-bottom: 0.5rem !important;
 }
 
-.faq-wrap h2 a, .faq-wrap h3 a {
+#faq-wrap h2 a, #faq-wrap h3 a {
     color: #aa3333 !important; 
     text-decoration: none !important; 
     font-style: italic !important; 
@@ -279,7 +275,7 @@ This is CSS taken and modified from old Headway CSS.
     content: "Jump to Top";
 }
 
-.faq-wrap h2:before, .faq-wrap h3:before  { 
+#faq-wrap h2:before, #faq-wrap h3:before  { 
   display: block !important; 
   content: " " !important; 
   margin-top: -25px !important; 
@@ -288,13 +284,13 @@ This is CSS taken and modified from old Headway CSS.
   pointer-events: none !important;
 }
 
-.faq-wrap p {
+#faq-wrap p {
     font-size: 1rem !important;
     line-height: 1.5rem !important;
     margin-bottom: 1rem !important;
 }
 
-.faq-wrap p, .faq-wrap h3 {
+#faq-wrap p, #faq-wrap h3 {
     margin-left: 1rem;
 }
 
