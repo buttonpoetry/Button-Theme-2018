@@ -18,9 +18,15 @@
 	</head>
 	<body <?php body_class(); ?>>
 
+<<<<<<< HEAD
 	<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
 	
 	<div class="limit-width-wrap">
+=======
+	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
+		<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
+	<?php endif; ?>
+>>>>>>> upstream/master
 
 	<header class="site-header" role="banner">
 		<div class="site-title-bar title-bar">
