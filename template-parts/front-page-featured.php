@@ -44,7 +44,7 @@ if ( $feature_slides->have_posts() )
 			$f_img_tag = get_the_post_thumbnail( the_ID(), 'full', array('feature-hero') );
 		} else {
 			$f_img_src = 'https://via.placeholder.com/800/74B6B8/EBE9DD?text=' . $f_action_lbl;
-            $f_img_tag = '<img class="feature-hero" src="https://via.placeholder.com/800/74B6B8/EBE9DD?text=' . $f_action_lbl . '">';
+            $f_img_tag = '<img class="feature-hero" src="https://via.placeholder.com/800/74B6B8/EBE9DD?text=' . $f_action_lbl . '" alt="">';
 		}
 
 		if( ! $dummy_placed ) { 
@@ -93,7 +93,7 @@ else {
 <section class="feature-row" role="region" aria-label="Button Poetry Featured Content">
 	<div class="grid-x align-middle feature-slide">
 		<div class="feature-link-cell cell medium-6 large-auto small-order-1 medium-order-2">
-			<a class="feature-link" href="/product/depression-other-magic-tricks/"><img class="feature-hero" src="<?php echo get_stylesheet_directory_uri() . '/dist/assets/images/theme/depression-demo-slide.jpg'; ?>"></a>
+			<a class="feature-link" href="/product/depression-other-magic-tricks/"><img class="feature-hero" src="<?php echo get_stylesheet_directory_uri() . '/dist/assets/images/theme/depression-demo-slide.jpg'; ?>" alt=""></a>
 		</div>
 		<div class="cell medium-6 small-order-2 medium-order-1">
 			<div class="feature-text">
