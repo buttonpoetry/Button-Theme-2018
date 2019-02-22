@@ -17,24 +17,29 @@ This is CSS taken and modified from old Headway CSS.
     background: linear-gradient(to bottom, #2a598e 0%,#12c8e8 92%,#6de9ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a598e', endColorstr='#6de9ff',GradientType=0 ); /* IE6-9 */
 
+    .top-bar-title a,
+    .title-bar-title a {
+        filter:none;
+        &:hover {
+            filter:none; 
+        }
+    }
+
     .title-bar {
         background: transparent;
 
         .title-bar-title a {
-            color: white;            
+            color: white;
         }
 
         .menu-icon {
-            @include hamburger($color: white, $color-hover: $titlebar-icon-color-hover, $height: 22px, $width: 24px, $weight: 2px, $bars: 3);
+            @include hamburger($color: white, $color-hover: white, $height: 22px, $width: 24px, $weight: 2px, $bars: 3);
         }
     }
 
-    .top-bar {
-        background: transparent;
-        
-        .top-bar-title a,        
+    .top-bar {        
+
         .desktop-menu {
-            background: transparent;
             .submenu.is-dropdown-submenu {
                 border-color: white;
                 a:hover {

@@ -403,8 +403,8 @@ $dropdownmenu-arrow-color: $anchor-color;
 $dropdownmenu-arrow-size: 6px;
 $dropdownmenu-arrow-padding: 1.5rem;
 $dropdownmenu-min-width: 250px;
-$dropdownmenu-background: $white;
-$dropdownmenu-submenu-background: $dropdownmenu-background;
+$dropdownmenu-background: transparent;
+$dropdownmenu-submenu-background: $white;
 $dropdownmenu-padding: $global-menu-padding;
 $dropdownmenu-nested-margin: 0;
 $dropdownmenu-submenu-padding: $dropdownmenu-padding;
@@ -833,7 +833,7 @@ $thumbnail-radius: $global-radius;
 // 53. Title Bar
 // -------------
 
-$titlebar-background: $white;
+$titlebar-background: transparent;
 $titlebar-color: $black;
 $titlebar-padding: 0 rem-calc(20) 1rem;
 $titlebar-text-font-weight: bold;
@@ -861,8 +861,8 @@ $tooltip-radius: $global-radius;
 
 $topbar-height: 100px;
 $topbar-padding: 0;
-$topbar-background: $white;
-$topbar-submenu-background: $topbar-background;
+$topbar-background: transparent;
+$topbar-submenu-background: $white;
 $topbar-input-width: 200px;
 $topbar-unstack-breakpoint: medium;
 $topbar-title-spacing: 0;

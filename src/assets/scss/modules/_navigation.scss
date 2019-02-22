@@ -2,10 +2,11 @@
   1. Navigation Breakpoints
   2. Mobile Navigation
   3. Desktop/Tablet Navigation
-  4. WP Post Navigation
+  4. Top Left Logo Hover Effect
+  5. WP Post Navigation
 */
 
-$menustack: 1025px; // Special breakpoint for when to stack the top bar menu.
+$menustack: 1060px; // Special breakpoint for when to stack the top bar menu.
 
 // 1. Navigation breakpoints
 // -=-=-=-=-=-=-=-=-=-=-=-=-
@@ -31,11 +32,11 @@ $titlebar-title-font-size: 1.5rem;
       font-size: $titlebar-title-font-size;
       text-decoration: none;
 
-      .mobile-site-logo {
-        
+      .mobile-site-logo {        
         position: relative; 
         left: -1rem;
       }
+
     }
   }
 
@@ -77,6 +78,7 @@ $titlebar-title-font-size: 1.5rem;
       &:hover {
         background-color: rgba(255,255,255,.25);
       } 
+
     }
   }
 
@@ -90,9 +92,10 @@ $titlebar-title-font-size: 1.5rem;
   width: 100%;
   font-size: $titlebar-title-font-size;
   text-align: center;
+  margin: 2rem 0 .75rem;    
   
-  .off-canvas-logo {
-    width: 2rem;
+  .off-canvas-logo {    
+    width: 2.5rem;
   }
 }
 
@@ -139,10 +142,15 @@ $top-bar-active-border: 2px solid $button-tan;
     line-height: rem-calc(100);
     background-color: transparent;
     font-size: 1.4rem;
-    //padding: 0 rem-calc(53);
+    padding: 0 .5rem;
     display: inline-block;
     vertical-align: middle;
     white-space: nowrap;  
+    text-decoration: none;
+  
+    @include breakpoint($menustack) {
+      padding: 0 2rem;
+    }    
 
     .desktop-site-logo {
       height: 100%;
@@ -150,11 +158,7 @@ $top-bar-active-border: 2px solid $button-tan;
   }
 
   .desktop-menu.menu {
-    line-height: rem-calc(32);
-    @include breakpoint(730px)
-    {
-      line-height: rem-calc(49);
-    }
+    line-height: rem-calc(49);
 
     @include breakpoint($menustack)
     {
@@ -249,7 +253,9 @@ $top-bar-active-border: 2px solid $button-tan;
     .nav-cart {
       img {
         width: 2.25rem;
-        vertical-align: -10%;        
+        //vertical-align: -10%;
+        position: relative;
+        top: -.25rem;
       }
     }
 
@@ -263,7 +269,21 @@ $top-bar-active-border: 2px solid $button-tan;
   }
 }
 
-// 4. WP post navigation
+// 4. Top Left Logo Hover Effect
+// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+.top-bar-title a, .title-bar-title a {
+  transition: filter .8s;
+  filter: none;
+  &:hover, 
+  &:focus,
+  &:active {
+    //Almost EXACT match to Button Tan.
+    filter: invert(50%) sepia(100%) hue-rotate(-2deg) saturate(138%) brightness(112%);
+    transition: filter .35s;
+  }
+}
+
+// 5. WP post navigation
 // -=-=-=-=-=-=-=-=-=-=-
 .post-navigation {
   @include clearfix;
