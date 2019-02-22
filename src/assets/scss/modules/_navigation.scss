@@ -30,12 +30,24 @@ $titlebar-title-font-size: 1.5rem;
     a {
       font-size: $titlebar-title-font-size;
       text-decoration: none;
+
+      .mobile-site-logo {
+        
+        position: relative; 
+        left: -1rem;
+      }
     }
+  }
+
+  .title-bar-right {
+    min-width: 5.625rem;
   }
 
   .title-bar-cart {
     width: 2.25rem;
     margin-right: 1.5rem;
+    position: relative; 
+    top: -.2rem;
   }
 
   .menu-icon {
@@ -112,7 +124,7 @@ $top-bar-active-border: 2px solid $button-tan;
   box-sizing: border-box;
   height: rem-calc(100);
   padding:0;
-
+  
   .top-bar-button-reset
   {
     margin: 0;
@@ -125,13 +137,16 @@ $top-bar-active-border: 2px solid $button-tan;
   .top-bar-title a {
     height: rem-calc(100);
     line-height: rem-calc(100);
-    color: $white;    
-    background-color: $black;
+    background-color: transparent;
     font-size: 1.4rem;
-    padding: 0 rem-calc(53);
+    //padding: 0 rem-calc(53);
     display: inline-block;
     vertical-align: middle;
     white-space: nowrap;  
+
+    .desktop-site-logo {
+      height: 100%;
+    }
   }
 
   .desktop-menu.menu {
@@ -234,7 +249,7 @@ $top-bar-active-border: 2px solid $button-tan;
     .nav-cart {
       img {
         width: 2.25rem;
-        vertical-align: -10%;    
+        vertical-align: -10%;        
       }
     }
 

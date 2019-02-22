@@ -61,7 +61,7 @@ if ( ! function_exists( 'bp_poet_carousel' ) ) {
 }
 
 /**
- * Function to return an empty cart class name or an empty string if the current cart is empty for displaying the correct mini cart icon.
+ * Function to return the appropriate mini cart image.
  * 
  * @since ButtonTheme 0.1.0
  */
@@ -73,6 +73,18 @@ if ( ! function_exists( 'bp_mini_cart_src' ) ) {
 		else return get_stylesheet_directory_uri() . apply_filters('bp_cart_src', '/dist/assets/images/theme/cart-icon-full.svg');
 	}
 }
+
+/**
+ * Function to return the site logo image.
+ * 
+ * @since ButtonTheme 1.0.0
+ */
+if ( ! function_exists( 'bp_site_logo_src' ) ) {
+	function bp_site_logo_src() {		
+		return get_stylesheet_directory_uri() . apply_filters('bp_site_logo_src', '/dist/assets/images/theme/button-site-logo.svg');
+	}
+}
+
 
 /**
  * Function to filter out ebooks from onsale price badges.

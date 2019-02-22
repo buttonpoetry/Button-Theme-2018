@@ -26,7 +26,7 @@
 		<div class="site-title-bar title-bar">
 			<div class="title-bar-title">				
 				<span class="site-mobile-title title-bar-title">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="mobile-site-logo" src="<?php echo bp_site_logo_src(); ?>" alt="Button Poetry Home"></a>
 				</span>
 			</div>
 			<div class="title-bar-right">
@@ -46,7 +46,7 @@
 		<nav class="site-navigation top-bar" role="navigation">
 			<div class="top-bar-left">
 				<div class="site-desktop-title top-bar-title">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="desktop-site-logo" src="<?php echo bp_site_logo_src(); ?>" alt="Button Poetry Home"></a></a>
 				</div>
 			</div>
 			<div class="top-bar-right">
