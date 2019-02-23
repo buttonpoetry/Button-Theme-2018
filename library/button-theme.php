@@ -117,7 +117,7 @@ if ( ! function_exists( 'bp_swap_select_options_text' ) )
 	add_filter( 'woocommerce_product_add_to_cart_text', 'bp_swap_select_options_text', 10 );
 	function bp_swap_select_options_text( $text ) {
 		global $product;
-		if ( $product->is_type( 'variable' ) ) {
+		if ( $product->is_type( 'variable' ) && strpos($text, 'Pre-Order Now') === false ) {
 			$text = $product->is_purchasable() ? __( 'Add to cart', 'woocommerce' ) : __( 'Read more', 'woocommerce' );
 		}
 		return $text;
