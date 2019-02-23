@@ -61,8 +61,9 @@
 
 // 1. Top navigation mini-cart
 // =-=-=-=-=-=-=-=-=-=-=-=-=-= 
-.submenu.is-dropdown-submenu .bp-mini-cart {
+.top-bar .submenu.is-dropdown-submenu .bp-mini-cart {
     padding: .5rem;
+
     .mini-shipping-note {
         font-size: .8rem;
         width:100%;
@@ -71,7 +72,21 @@
         display:block;
     }
 
-    & a.button.secondary {
+    a.bp-mini-cart-link {
+        padding: 0;
+        margin: 0;
+        display: inline;
+        background: transparent;
+        text-decoration: underline;
+
+        &:hover {
+            background: transparent;
+            text-decoration: none;
+            color: $button-red;
+        }
+    }
+
+    a.button.secondary {
         &:after {
             position: absolute;
             display: block;

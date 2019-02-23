@@ -18,20 +18,38 @@
     }    
     if ( ! WC()->cart->is_empty() && ! is_cart() ) {
         echo '<table><thead><tr><th>#</th><th>Item</th><th>$</th></thead><tbody>';
-        foreach ( WC()->cart->get_cart() as $cart_item ) {
-            if ( empty( $cart_item[ 'composite_parent' ] ) ) 
-            {                   
+        $cart_contents_count = WC()->cart->get_cart_contents_count();
+        $max_cart_rows = 5; // Don't display more than this many cart items.    
+        $cart_rows_outputted = 0;
+        $cart_qty_outputted = 0;
+        $is_bundle_item = false;
+        foreach ( WC()->cart->get_cart() as $cart_item ) {                
+            if( function_exists('wc_pb_is_bundled_cart_item') ) {
+                $is_bundle_item = wc_pb_is_bundled_cart_item($cart_item);
+            }            
+            if ( empty( $cart_item[ 'composite_parent' ] ) &&  $cart_rows_outputted < $max_cart_rows && ! $is_bundle_item) 
+            {                                   
                 echo '<tr>';
                 echo '<td>' . $cart_item['quantity'] . '</td>'; //qty 
                 
                 echo '<td>' . $cart_item['data']->get_title() . '</td>'; //item
                 
-                echo '<td>$' . $cart_item['data']->get_price() . '</td>'; //price
+                echo '<td>$' . (float) $cart_item['data']->get_price() . '</td>'; //price
                 echo '</tr>';
+                $cart_qty_outputted += $cart_item['quantity'];
+                $cart_rows_outputted++;                 
+            }
+            else if ($cart_rows_outputted == $max_cart_rows)
+            {
+                // Link to cart if that 
+                echo '<tr>';
+                echo '<td colspan="3" align="center"><em>... <a class="bp-mini-cart-link" href="/cart/">and ' . (int) ( $cart_contents_count - $cart_qty_outputted) . ' more in cart</a></em></td>';
+                echo '</tr>';
+                $cart_rows_outputted++;   
             }
         }
         echo '</table>';        
-    ?><a class="button secondary" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php echo sprintf ( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> - <?php echo WC()->cart->get_cart_total(); ?></a>
+    ?><a class="button secondary" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php echo sprintf( _n( '%d item', '%d items', $cart_contents_count ), $cart_contents_count ); ?> - <?php echo WC()->cart->get_cart_total(); ?></a>
     <em class="mini-shipping-note">*Cart total before shipping</em>
     <?php }
     else if ( is_cart() ) {
