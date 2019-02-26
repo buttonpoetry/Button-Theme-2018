@@ -2,6 +2,7 @@
 For FoundationPress changes, refer to [FoundationPress on Github](https://github.com/olefredrik/FoundationPress/).
 
 ## Unreleased
+* Bugfix: Repair Indie and Instalink page tracking (Issue [#2](https://github.com/buttonpoetry/Button-Theme-2018/issues/2#issue-414327359))
 * Meta: Added Changelog.md.
 * Meta: Updated .github default issue template.
 
