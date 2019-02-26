@@ -61,13 +61,13 @@ jQuery(document).ready(function($) {
     // Attach tracking onclick events to every normal link on the page
     // Off-Canvas/Mobile Navigation
     $('.mobile-off-canvas-menu a').each( function () {
-        $(this).attr('onclick',"bp_il_ga_event('" + $(this).attr('href') + "');"); 
+        $(this).attr('onclick',"bp_indies_ga_event('" + $(this).attr('href') + "');"); 
         $(this).attr('target',"_blank"); 
         $(this).attr('rel',"noopener"); 
     });
     // Everything Else
     $('.off-canvas-content a').each( function () {
-        $(this).attr('onclick',"bp_il_ga_event('" + $(this).attr('href') + "');"); 
+        $(this).attr('onclick',"bp_indies_ga_event('" + $(this).attr('href') + "');"); 
         $(this).attr('target',"_blank"); 
         $(this).attr('rel',"noopener"); 
     });
