@@ -54,14 +54,22 @@ jQuery(document).ready(function($) {
     // Don't bother for Administrators
     if(window.bpuserRole == 'administrator')
     {
-        console.log("Tracking error: Administrators cannot fire analytics events.");
+        console.log("Tracking notice: Administrators cannot fire analytics events.");
         return false;
     }
     
     // Attach tracking onclick events to every normal link on the page
-    $('.block-content a').each( function () {
-        $(this).attr('onclick',"bp_indies_ga_event('" + $(this).attr('href') + "');"); 
+    // Off-Canvas/Mobile Navigation
+    $('.mobile-off-canvas-menu a').each( function () {
+        $(this).attr('onclick',"bp_il_ga_event('" + $(this).attr('href') + "');"); 
         $(this).attr('target',"_blank"); 
+        $(this).attr('rel',"noopener"); 
+    });
+    // Everything Else
+    $('.off-canvas-content a').each( function () {
+        $(this).attr('onclick',"bp_il_ga_event('" + $(this).attr('href') + "');"); 
+        $(this).attr('target',"_blank"); 
+        $(this).attr('rel',"noopener"); 
     });
 });
 
