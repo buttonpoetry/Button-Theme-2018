@@ -2,6 +2,8 @@
 For FoundationPress changes, refer to [FoundationPress on Github](https://github.com/olefredrik/FoundationPress/).
 
 ## Unreleased
+* Improvement: Use thumbnail size on front page showcase to reduce page load.
+* Bugfix: Fix odd title attribute display on showcase cover images (Issue [#4](https://github.com/buttonpoetry/Button-Theme-2018/issues/4#issue-414370643))
 * Bugfix: Repair Indie and Instalink page tracking (Issue [#2](https://github.com/buttonpoetry/Button-Theme-2018/issues/2#issue-414327359))
 * Meta: Added Changelog.md.
 * Meta: Updated .github default issue template.
