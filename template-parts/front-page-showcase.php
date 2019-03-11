@@ -37,7 +37,7 @@
             ?> 
             in the Button Shop">
                 <div class="showcase-cover" 
-                    style="background-image: url('<?php echo get_the_post_thumbnail_url($book_id); ?>')">
+                    style="background-image: url('<?php echo get_the_post_thumbnail_url($book_id, 'thumbnail'); ?>')">
                     <div class="showcase-cover-stroke"></div>
                 </div>
                 <span class="title"><?php echo $book_title; ?></span>
