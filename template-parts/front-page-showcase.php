@@ -30,12 +30,8 @@
             $book_author = get_post_meta( $book_id, 'bp_linked_author', true); 
         } else $book_author = null;	?>
         <div class="slick-slide">
-            <a href="<?php echo get_permalink( $book_id ); ?>" class="showcase-book" title="Go to 
-            <?php 
-                echo $book_title;
-                if( $book_author ) echo " by " . $book_author;
-            ?> 
-            in the Button Shop">
+            <a href="<?php echo get_permalink( $book_id ); ?>" class="showcase-book" title="Go to <?php echo $book_title;
+                if( $book_author ) echo " by " . $book_author; ?> in the Button Shop">
                 <div class="showcase-cover" 
                     style="background-image: url('<?php echo get_the_post_thumbnail_url($book_id, 'thumbnail'); ?>')">
                     <div class="showcase-cover-stroke"></div>
