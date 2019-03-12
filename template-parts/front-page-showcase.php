@@ -33,7 +33,7 @@
             <a href="<?php echo get_permalink( $book_id ); ?>" class="showcase-book" title="Go to <?php echo $book_title;
                 if( $book_author ) echo " by " . $book_author; ?> in the Button Shop">
                 <div class="showcase-cover" 
-                    style="background-image: url('<?php echo get_the_post_thumbnail_url($book_id, 'thumbnail'); ?>')">
+                    style="background-image: url('<?php echo get_the_post_thumbnail_url($book_id, 'woocommerce_thumbnail'); ?>')">
                     <div class="showcase-cover-stroke"></div>
                 </div>
                 <span class="title"><?php echo $book_title; ?></span>
