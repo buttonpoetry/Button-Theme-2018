@@ -1,8 +1,9 @@
 # Button Theme Change Log
 For FoundationPress changes, refer to [FoundationPress on Github](https://github.com/olefredrik/FoundationPress/).
 
-## Unreleased
-* Improvement: Use thumbnail size on front page showcase to reduce page load. (Issue [#3](https://github.com/buttonpoetry/Button-Theme-2018/issues/3))
+## 1.1.2
+### 2019-03-11
+* Tweak: Use thumbnail size on front page showcase to reduce page load. (Issue [#3](https://github.com/buttonpoetry/Button-Theme-2018/issues/3))
 * Bugfix: Fix odd title attribute display on showcase cover images. (Issue [#4](https://github.com/buttonpoetry/Button-Theme-2018/issues/4))
 * Bugfix: Restore auto p tagging for featured products on poet pages. (Issue [#5](https://github.com/buttonpoetry/Button-Theme-2018/issues/5))
 * Bugfix: Retrieve correct button/buy now text on poet featured and carousel products. (Issue [#6](https://github.com/buttonpoetry/Button-Theme-2018/issues/6))
