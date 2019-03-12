@@ -32,28 +32,31 @@ if ( ! function_exists( 'bp_poet_carousel' ) ) {
 				<?php if( ! $archive ) { echo "<h2 class='poet-product-carousel-title'>" . get_the_title() . $titleSuffix . "</h2>"; }?>
 				<div class="grid-x grid-margin-x grid-margin-y">
 				<?php 
-			
-				foreach ( $carousel_products as $product_id) {
-					$product = wc_get_product( $product_id )
+				global $product;
+				$initial_global_product = $product;
+				foreach ( $carousel_products as $product_id) {										
+					$product = wc_get_product( $product_id );
+					$product_link = get_the_permalink($product->get_id());
+					$product_thumbnail_src = get_the_post_thumbnail_url( $product->get_id(), 'post-thumbnail' );
+					$product_button_text = $product->add_to_cart_text();										
+					if($product_button_text === "Add to cart") {
+						$product_button_text = __("Buy Now", "woocoomerce");
+					}
 					?>
 						<div class="<?php echo $cardClass ?>">
 							<div class="grid-x grid-margin-x">
 								<div class="cell shrink">
-									<img src="<?php echo get_the_post_thumbnail_url( $product->get_id(), 'post-thumbnail' ); ?>">
+									<a alt="" href="<?php echo $product_link ?>"><img src="<?php echo $product_thumbnail_src ?>"></a>
 								</div>
 								<div class="cell auto">
 									<h3><?php echo $product->get_title(); ?></h3>
-									<a href="<?php echo get_the_permalink($product->get_id()) ?>"><?php
-										if ( ! $product->is_in_stock() || ! $product->is_purchasable() ) {
-											echo 'READ MORE';
-										} else {
-											echo 'BUY NOW'; 
-										}?></a>
+									<a href="<?php echo $product_link ?>"><?php echo $product_button_text; ?></a>
 								</div>
 							</div>
 						</div>
-					<?php
+					<?php					
 				} 
+				$product = $initial_global_product;
 				?> </div>
 			</section> <?php 
 		}
@@ -114,8 +117,8 @@ if ( ! function_exists( 'bp_no_ebooks_sales_flash' ) ) {
  */
 if ( ! function_exists( 'bp_swap_select_options_text' ) )
 {
-	add_filter( 'woocommerce_product_add_to_cart_text', 'bp_swap_select_options_text', 10 );
-	function bp_swap_select_options_text( $text ) {
+	add_filter( 'woocommerce_product_add_to_cart_text', 'bp_swap_select_options_text', 100 );
+	function bp_swap_select_options_text( $text ) {		
 		global $product;
 		if ( $product->is_type( 'variable' ) && strpos($text, 'Pre-Order Now') === false ) {
 			$text = $product->is_purchasable() ? __( 'Add to cart', 'woocommerce' ) : __( 'Read more', 'woocommerce' );

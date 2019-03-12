@@ -96,14 +96,24 @@
 	<div class="main-container">
 		<div class="main-grid">
 			<div class="main-content-full-width"><?php
+				global $product;
+				$initial_global_product = $product;				
 				$featuredID = get_post_meta( get_the_ID(), 'bp_featured_product', true );
-				$fProduct = wc_get_product( $featuredID ); ?>
+				$product = wc_get_product( $featuredID ); ?>
 				<section class="poet-featured-item grid-container">
 					<div class="grid-x">
 						<div class="poet-featured-item-copy cell small-12 medium-8 medium-order-1 small-order-2">
-							<h2><?php echo $fProduct->get_name(); ?></h2>
-							<?php echo $fProduct->get_description(); ?>
-							<a class="button poet-featured-item-buy-button" href="<?php echo get_permalink( $featuredID ) ?>">Buy Now</a>
+							<h2><?php echo $product->get_name(); ?></h2>
+							<?php echo apply_filters('woocommerce_short_description', $product->get_description()); ?>
+							<a class="button poet-featured-item-buy-button" href="<?php echo get_permalink( $featuredID ) ?>"><?php 
+							
+							$fButtonText = $product->add_to_cart_text();
+							if($fButtonText == "Add to cart") {
+								echo "Buy Now";
+							}
+							else { 
+								echo $fButtonText;
+							} ?></a>
 						</div>
 						<div class="poet-featured-item-pic cell small-12 medium-4 medium-order-2 small-order-1">
 							<a href="<?php echo get_permalink( $featuredID ) ?>"><img src="<?php echo get_the_post_thumbnail_url( $featuredID, 'full' ) ?>"></a>
@@ -114,7 +124,8 @@
 		</div>
 	</div>
 </div>		
-<?php endif ?>
+<?php $product = $initial_global_product;
+endif ?>
 
 <div class="main-container">
 	<div class="main-grid">
