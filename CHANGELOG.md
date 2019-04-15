@@ -1,6 +1,10 @@
 # Button Theme Change Log
 For FoundationPress changes, refer to [FoundationPress on Github](https://github.com/olefredrik/FoundationPress/).
 
+## Unreleased
+### TBD
+* New Feature: Custom Shop Template
+
 ## 1.1.2
 ### 2019-03-11
 * Tweak: Use thumbnail size on front page showcase to reduce page load. (Issue [#3](https://github.com/buttonpoetry/Button-Theme-2018/issues/3))
