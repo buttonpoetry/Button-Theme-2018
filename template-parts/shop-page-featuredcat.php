@@ -8,5 +8,7 @@
 
 ?>
 <section class="featured-category-row">
-Featured Hero
+    <div class="featured-category-row--content">
+        Featured Hero
+    </div>
 </section>

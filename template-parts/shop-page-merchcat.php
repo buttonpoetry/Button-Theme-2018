@@ -9,5 +9,7 @@
 ?>
 
 <section class="merchandise-category-row">
-Merchandise Hero
+    <div class="merchandise-category-row--content">
+        Merchandise Hero
+    </div>
 </section>

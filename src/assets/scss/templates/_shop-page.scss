@@ -1,0 +1,27 @@
+.merchandise-category-row {
+    background-size: cover;
+    background-repeat: none;
+    background-color: rgba(0,0,0,.1);
+    background-image: url('');
+    
+    .merchandise-category-row--content {
+        
+        @include breakpoint(medium) {
+            padding: 100px;
+        }
+    }
+}
+
+.featured-category-row {
+    background-size: cover;
+    background-repeat: none;
+    background-color: rgba(0,0,0,.1);
+    background-image: url('');
+
+    .featured-category-row--content {
+        
+        @include breakpoint(medium) {
+            padding: 100px;
+        }
+    }
+}
