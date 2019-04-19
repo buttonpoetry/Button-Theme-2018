@@ -2,16 +2,22 @@
 /**
  * The template for displaying the Shop Page featured category row.
  *
+ * Uses the following theme mods:
+ *  shop-page-feature-title
+ *  shop-page-feature-copy
+ *  shop-page-feature-url
+ *  shop-page-feature-cta
+ *  
  * @package ButtonTheme
- * @since ButtonTheme 0.1.0
+ * @since ButtonTheme 1.2.0
  */
 
 ?>
 <section class="featured-category-row">
     <div class="featured-category-row--content">
      <span class="feature-section-title">Featured</span>
-     <h1>2018 Books Bundle</h1>
-     <p>Save on some great books by getting our whole 2018 catalog at a big discount!</p>
-     <a href="#" class="button">Shop Now</a>
+     <h1><?php echo get_theme_mod('shop-page-feature-title', "Button Poetry Gift Cards"); ?></h1>
+     <p><?php echo get_theme_mod('shop-page-feature-copy', 'Give the gift of poetry to someone special with store credit that never expires!'); ?></p>
+     <a href="<?php echo get_theme_mod('shop-page-feature-url', '/product/gift-certificate/'); ?>" class="button"><?php echo get_theme_mod('shop-page-feature-cta', 'Buy Now'); ?></a>
     </div>
 </section>

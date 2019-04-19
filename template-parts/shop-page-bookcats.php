@@ -3,27 +3,14 @@
  * The template for displaying the Shop page book showcase and categories.
  * It includes some functions only used on the Shop page.
  *
+ * Uses the following theme mods:
+ * shop-page-bookcat1
+ * shop-page-bookcat2
+ * shop-page-bookcat3
+ * 
  * @package ButtonTheme
- * @since ButtonTheme 0.1.0
+ * @since ButtonTheme 1.2.0
  */
-
-if ( !function_exists('bp_wc_cat_short_slug') ) {
-    function bp_wc_cat_short_slug( $catTitle ) {
-        $catSlogans = array(
-            'Books'             => 'From the stage to the page, our authors are among the best and most innovative poets working today.',
-            'E-Books'           => 'Just like books, but they weigh less!',
-            'Featured'          => 'Our featured items. Bundle deals, new books, and more!',
-            'Bundles'           => 'Get more poetry for less with our discount packages.',
-            'Merchandise'       => 'Share your love of poetry with the world.',
-            'Forthcoming Books' => 'Be the first to read our upcoming books!');
-                    
-        if( array_key_exists($catTitle, $catSlogans) )
-        {
-	        return $catSlogans[$catTitle];
-        }
-        else return null;
-    }
-}
 
 /**
  * Function to display the shop list of category cards.
@@ -77,7 +64,7 @@ if ( ! function_exists( 'bp_shop_bookcats' ) ) {
 
 <section class="showcase">
 <h1>Books</h1>
-<p>From the stage to the page, our authors are among the best and most innovative poets working today.</p>
+<p><?php echo bp_wc_cat_short_slug('Books'); ?></p>
 <br>
 <?php 
     get_template_part('template-parts/book-showcase'); 
