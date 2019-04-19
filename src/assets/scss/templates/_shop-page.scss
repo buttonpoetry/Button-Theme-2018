@@ -1,27 +1,132 @@
-.merchandise-category-row {
-    background-size: cover;
-    background-repeat: none;
-    background-color: rgba(0,0,0,.1);
-    background-image: url('');
-    
-    .merchandise-category-row--content {
-        
-        @include breakpoint(medium) {
-            padding: 100px;
-        }
-    }
-}
-
 .featured-category-row {
     background-size: cover;
     background-repeat: none;
     background-color: rgba(0,0,0,.1);
-    background-image: url('');
+    background-image: url('../images/theme/shop-feature-bg.jpg');
+    padding: 4rem 8%; 
+    margin-bottom: 4rem;
+    
+    @include breakpoint(medium) {
+        text-align: center;
+        padding:0;
+    }
 
     .featured-category-row--content {
-        
+        background-color: $white;
+        padding: 2rem 1rem 0 1rem;
+
+        .button {
+            min-width: 100%;
+            margin-top: 1rem;
+        }
+
         @include breakpoint(medium) {
+            margin: 100px;
+            text-align: center;
+            display: inline-block;
+            padding: 2.5rem;
+            max-width: 60%;
+
+            p {
+                font-size: 1.2rem;
+            }
+
+            .button {
+                min-width: 70%;
+            }
+        }
+        @include breakpoint(large) {
+            margin: 100px 0;
+            max-width: 50%;
+        }
+        @include breakpoint(xlarge) {
+            margin: 150px 0;
+            max-width: 40%;
+        }
+        @include breakpoint(xxlarge) {
+            margin: 150px;
+            max-width: 38%;
+        }
+    }
+}
+
+.bookcats {
+    margin-top: rem-calc(15);
+    margin-bottom: rem-calc(20);
+
+    @include breakpoint(large) {
+        margin-top: rem-calc(50);
+        margin-bottom: rem-calc(100);
+    }
+
+    .grid-container .grid-x .cell {        
+        border-color: $button-light-tan;
+        box-shadow: $slight-shadow;
+
+        .cell {
+            box-shadow: none;
+        }
+
+        img {        
+            max-height: 150px;
+        }
+    }
+}
+
+.merchandise-category-row {
+    width: 100%;    
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: black;    
+    background-image: url('../images/theme/shop-merch-bg.jpg');
+
+    @include breakpoint(large) {        
+        background-position: top left;
+        text-align: right;
+    }
+
+    .merchandise-category-row--content {
+        display: inline-block;
+        color: $white;
+        background-color: black;
+        padding: 2rem 1rem 1rem 1rem;
+        width: 100%;
+        margin-top: 100vw;
+        .button {
+            margin-left: auto; 
+            margin-right: auto;
+            display: block; 
+        }
+
+        @include breakpoint(medium) {            
+            text-align: left;            
+            margin-top: 16rem;  
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,.9) 40%, rgba(0,0,0,.95) 80%, black 100%);
             padding: 100px;
+            p {
+                font-size: 1.2rem;
+            }
+
+            .button {
+                display: inline-block;
+                margin-left: unset;
+                margin-right: unset;
+                min-width: 50%;
+                margin-top: 1rem;
+            }
+        }
+        @include breakpoint(large) {
+            width: unset;
+            background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 20%);
+            margin: 0;
+            text-align: left;
+            display: inline-block;
+            padding: 175px 100px;
+            .button {
+                min-width: 85%;
+                margin-top: 1rem;
+            }
         }
     }
 }

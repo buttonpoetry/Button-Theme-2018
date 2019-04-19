@@ -97,6 +97,15 @@
 }
 
 // Featured
+.feature-section-title {
+  font-size: 1rem;
+  font-family: $body-font-family;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: $button-tan;
+}
+
 .feature-row {
   margin-bottom:3.5rem;
   background-color: $button-light-tan;
@@ -140,13 +149,7 @@
         margin-bottom: 1.25rem;    
       }
 
-      .feature-section-title {
-        font-size: 1rem;
-        font-family: $body-font-family;
-        letter-spacing: 0.15rem;
-        text-transform: uppercase;
-        font-weight: bold;
-        color: $button-tan;
+      .feature-section-title {    
 
         .edit-link {
           font-size: .8rem;

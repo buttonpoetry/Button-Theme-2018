@@ -336,3 +336,14 @@ nav.gridlist-toggle {
         }
     }
 }
+
+.bp-free-shipping-banner
+{
+    width: 100%;
+    font-size: 1.2rem;
+    letter-spacing: .05rem;
+    background: rgb(255, 225, 225);
+    color: $button-red;
+    padding: .8rem;
+    text-align: center;
+}

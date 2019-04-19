@@ -3,7 +3,9 @@ For FoundationPress changes, refer to [FoundationPress on Github](https://github
 
 ## Unreleased
 ### TBD
-* New Feature: Custom Shop Template
+* New Feature: Custom Shop Template.
+* Fix Regression: Location dependent free shipping offer restored to shop page.
+* Tweak: Refactored some front page CSS to share styling with new shop page.
 
 ## 1.1.2
 ### 2019-03-11
