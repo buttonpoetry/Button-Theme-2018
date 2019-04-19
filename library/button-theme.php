@@ -283,3 +283,26 @@ if( ! function_exists( 'bp_add_linked_author_bio' ) ) {
 		else return $the_content;
 	}
 }
+
+/**
+ * Function to conditionally show the Free Shipping offer on the Store page. 
+ *
+ * @since ButtonTheme 1.2.0
+ */
+
+if(!function_exists('bp_shipping_banner')) {
+	function bp_shipping_banner() {
+	  $location = WC_Geolocation::geolocate_ip();
+	  $country = $location['country'];
+	  if($country == 'US') {			
+			$offer = "Free " . $country . " shipping over $35";
+			$titlemsg = null;
+	  }
+	  else {		  
+			$offer = "Free " . $country . " shipping over $50";
+			$titlemsg = " Please note that bundle deals are not eligible for international free shipping.";
+	  }
+	  $html = '<div class="bp-free-shipping-banner" title="OMG FREE SHIPPING!' . $titlemsg. '">' . $offer . '</div>';
+	  echo $html;
+	}
+  }

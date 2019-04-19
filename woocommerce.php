@@ -10,11 +10,12 @@
 
 get_header(); 
 
-if(is_shop() && false) {	?>
+if(is_shop()) {	?>
 <div class="main-container full-width">
-	<div class="main-grid">
+	<?php bp_shipping_banner() ?>
+	<div class="main-grid" style="margin-top:0;">
 		<div class="main-content-full-width">
-		<?php
+		<?php		
 		get_template_part('template-parts/shop-page-featuredcat');
 		get_template_part('template-parts/shop-page-bookcats');
 		get_template_part('template-parts/shop-page-merchcat');
