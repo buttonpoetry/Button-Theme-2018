@@ -1,7 +1,7 @@
 # Button Theme Change Log
 For FoundationPress changes, refer to [FoundationPress on Github](https://github.com/olefredrik/FoundationPress/).
 
-## Unreleased
+## Unreleased 1.2.0
 ### TBD
 * New Feature: Custom Shop Template.
 * Fix Regression: Location dependent free shipping offer restored to shop page.

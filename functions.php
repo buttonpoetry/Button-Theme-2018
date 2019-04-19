@@ -51,6 +51,9 @@ require_once( 'library/custom-nav.php' );
 /** Add Front Page Options to Customizer */
 require_once( 'library/custom-front.php' );
 
+/** Add Shop Page Options to Customizer */
+require_once( 'library/custom-shop.php' );
+
 /** Change WP's sticky post class */
 require_once( 'library/sticky-posts.php' );
 
