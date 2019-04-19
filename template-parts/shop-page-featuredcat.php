@@ -13,7 +13,7 @@
  */
 
 ?>
-<section class="featured-category-row">
+<section class="featured-category-row" style="background-image: url('<?php echo get_theme_mod( 'shop-page-feature-image', get_stylesheet_directory_uri() . '/dist/assets/images/theme/shop-feature-bg.jpg' ); ?>');">
     <div class="featured-category-row--content">
      <span class="feature-section-title">Featured</span>
      <h1><?php echo get_theme_mod('shop-page-feature-title', "Button Poetry Gift Cards"); ?></h1>

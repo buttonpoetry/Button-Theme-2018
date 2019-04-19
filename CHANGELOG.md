@@ -1,10 +1,14 @@
 # Button Theme Change Log
 For FoundationPress changes, refer to [FoundationPress on Github](https://github.com/olefredrik/FoundationPress/).
 
+## 1.2.1
+### 2019-04-19
+* Improvement: Added Featured Item image and copy control to the Customizer. (Issue [#14](https://github.com/buttonpoetry/Button-Theme-2018/issues/14)).
+ 
 ## 1.2.0
 ### 2019-04-19
-* New Feature: Custom Shop Template. Currently the template is static, customization options are planned.
-* Fix Regression: Location dependent free shipping offer restored to shop page.
+* New Feature: Custom Shop Template. Currently the template is static, customization options are planned. (Issue [#9](https://github.com/buttonpoetry/Button-Theme-2018/issues/9))
+* Fix Regression: Location dependent free shipping offer restored to shop page. (Issue [#13](https://github.com/buttonpoetry/Button-Theme-2018/issues/13))
 * Tweak: Refactored some front page CSS to share styling with new shop page.
 
 ## 1.1.2
