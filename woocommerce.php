@@ -13,7 +13,7 @@ get_header();
 if(is_shop()) {	?>
 <div class="main-container full-width">
 	<?php bp_shipping_banner() ?>
-	<div class="main-grid" style="margin-top:0;">
+	<div class="main-grid">
 		<div class="main-content-full-width">
 		<?php		
 		get_template_part('template-parts/shop-page-featuredcat');

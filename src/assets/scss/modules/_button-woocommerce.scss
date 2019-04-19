@@ -346,4 +346,7 @@ nav.gridlist-toggle {
     color: $button-red;
     padding: .8rem;
     text-align: center;
+    & + .main-grid {
+        margin-top: 0;
+    }
 }

@@ -17,6 +17,6 @@
     <h1>Merchandise</h1>
      <p><?php echo bp_wc_cat_short_slug('Merchandise'); ?></p>
      <p><em><?php echo get_theme_mod( 'shop_page_merch_caption', 'Pictured: Neil Hilborn "Clatter" Unisex T-shirt' ); ?> </em></p>
-     <a href="#" class="button secondary large">Shop Merch</a>
+     <a href="/product-category/merchandise/" class="button secondary large">Shop Merch</a>
     </div>
 </section>
