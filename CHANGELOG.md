@@ -1,6 +1,10 @@
 # Button Theme Change Log
 For FoundationPress changes, refer to [FoundationPress on Github](https://github.com/olefredrik/FoundationPress/).
 
+## 1.2.2
+### Unreleased
+* Tweak: Don't allow more than 2 products to display on poets archive. (Issue [7](https://github.com/buttonpoetry/Button-Theme-2018/issues/7)).
+
 ## 1.2.1
 ### 2019-04-19
 * Improvement: Added Featured Item image and copy control to the Customizer. (Issue [#14](https://github.com/buttonpoetry/Button-Theme-2018/issues/14)).
