@@ -17,7 +17,8 @@ if ( ! function_exists( 'bp_poet_carousel' ) ) {
 		$carousel_products = get_post_meta( $poet_id, 'bp_carousel_product', false );		
 		if ( $carousel_products )
 		{
-			if( count( $carousel_products ) > 1) {
+			$product_count = count( $carousel_products );
+			if( $product_count > 1) {
 				$titleSuffix = " in the Button Store";				
 				$archive ? $cardClass = 'poet-product-carousel-card cell small-12 large-6' : $cardClass = 'poet-product-carousel-card cell small-12 medium-6 large-4';
 			}
@@ -34,7 +35,8 @@ if ( ! function_exists( 'bp_poet_carousel' ) ) {
 				<?php 
 				global $product;
 				$initial_global_product = $product;
-				foreach ( $carousel_products as $product_id) {										
+				if( $archive && $product_count > 2) { $product_count = 2; } // Prevent more than 2 products displaying on poets archive.
+				foreach ( $carousel_products as $product_id) {
 					$product = wc_get_product( $product_id );
 					$product_link = get_the_permalink($product->get_id());
 					$product_thumbnail_src = get_the_post_thumbnail_url( $product->get_id(), 'post-thumbnail' );
@@ -54,7 +56,9 @@ if ( ! function_exists( 'bp_poet_carousel' ) ) {
 								</div>
 							</div>
 						</div>
-					<?php					
+					<?php	
+					$product_count--;
+					if($product_count <= 0) break;
 				} 
 				$product = $initial_global_product;
 				?> </div>
