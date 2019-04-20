@@ -23,21 +23,22 @@
         $cart_rows_outputted = 0;
         $cart_qty_outputted = 0;
         $is_bundle_item = false;
-        foreach ( WC()->cart->get_cart() as $cart_item ) {                
+        foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {                
+            // Borrowed approach from WooCommerce mini-cart.php line 32
+            $_product = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+
             if( function_exists('wc_pb_is_bundled_cart_item') ) {
                 $is_bundle_item = wc_pb_is_bundled_cart_item($cart_item);
             }            
             if ( empty( $cart_item[ 'composite_parent' ] ) &&  $cart_rows_outputted < $max_cart_rows && ! $is_bundle_item) 
             {                                   
                 echo '<tr>';
-                echo '<td>' . $cart_item['quantity'] . '</td>'; //qty 
-                
-                echo '<td>' . $cart_item['data']->get_title() . '</td>'; //item
-                
-                echo '<td>$' . (float) $cart_item['data']->get_price() . '</td>'; //price
+                echo '<td>' . $cart_item['quantity'] . '</td>'; //qty                 
+                echo '<td>' . $cart_item['data']->get_title() . '</td>'; //item                
+                echo '<td>$' . wc_get_price_excluding_tax( $_product ) . '</td>'; //price
                 echo '</tr>';
                 $cart_qty_outputted += $cart_item['quantity'];
-                $cart_rows_outputted++;                 
+                $cart_rows_outputted++;
             }
             else if ($cart_rows_outputted == $max_cart_rows)
             {
