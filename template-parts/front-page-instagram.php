@@ -10,14 +10,5 @@
 <section class="instagram-row">
 	<h2>Instagram</h2>
 	<div class="yotpo yotpo-pictures-widget"
-		data-album-id="5b333b8dc3eb964c0b2acb79"
-		data-layout="num_of_rows"
-		data-layout-rows="2"
-		data-spacing="0"
-		data-title="0"
-		data-hover-color="#ffffff"
-		data-hover-opacity="0.8"
-		data-hover-icon="true"
-		data-cta-text="Shop Now"
-		data-cta-color="#2f84ed"></div>
-</section>
+    data-gallery-id="5cc0c8d4f1b75c09d31c18bc"> </div>
+</section>wr
