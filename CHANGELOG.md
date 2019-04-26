@@ -40,3 +40,7 @@ For FoundationPress changes, refer to [FoundationPress on Github](https://github
 * Update: Catch up to FoundationPress Master
 * Fix: Add missing alt tags on front page
 * Fix: Make 'Meet the Poets' link on front page fill whole section for hover effects
+
+## 1.0.0
+### 2019-02-15
+* First version ready for release.
