@@ -248,7 +248,11 @@ if( ! function_exists( 'bp_add_yotpo_carousel' ) ) {
 	add_filter( 'woocommerce_after_single_product_summary', 'bp_add_yotpo_carousel', 9);
 	function bp_add_yotpo_carousel() { 
 		global $product;
-		?><div class="yotpo yotpo-slider" data-product-id="<?php echo $product->get_id(); ?>"></div><?php 
+		?><div
+		class="yotpo yotpo-pictures-widget"
+		data-gallery-id="5cc3433fe7a2dc45d0b8b9dd"
+		data-product-id="<?php echo $product->get_id(); ?>">
+   		</div><?php 
 	}
 }
 

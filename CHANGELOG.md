@@ -1,11 +1,16 @@
 # Button Theme Change Log
 For FoundationPress changes, refer to [FoundationPress on Github](https://github.com/olefredrik/FoundationPress/).
 
+## 1.2.3
+### 2019-04-26
+* Update: Replaced Yotpo product code with newer gallery code for product pages.
+* Meta: Added version 1.0.0 and release date to changelog and fixed some typos.
+
 ## 1.2.2
 ### 2019-04-25
 * Tweak: Don't allow more than 2 products to display on poets archive. (Issue [#7](https://github.com/buttonpoetry/Button-Theme-2018/issues/7)).
 * Bugfix: Show wholesale customers the correct price in minicart. (Issue [#1](https://github.com/buttonpoetry/Button-Theme-2018/issues/1))
-* Update: Replace Instagram code with newer YotPo gallery code on the homepage.
+* Update: Replaced Instagram code with newer Yotpo gallery code on the homepage.
 
 ## 1.2.1
 ### 2019-04-19
