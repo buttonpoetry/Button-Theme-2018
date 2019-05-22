@@ -1,6 +1,10 @@
 # Button Theme Change Log
 For FoundationPress changes, refer to [FoundationPress on Github](https://github.com/olefredrik/FoundationPress/).
 
+## 1.2.4
+### 2019-05-22
+* Fixed: Updated WooCommerce email templates so they don't throw errors in WooCommerce 3.6.3.
+
 ## 1.2.3
 ### 2019-04-26
 * Update: Replaced Yotpo product code with newer gallery code for product pages.
