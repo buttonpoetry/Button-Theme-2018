@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
- /* Custom code to scrub emails for customers. */
+ /* Button Theme Custom code to scrub emails for customers. */
  $sent_to_admin = false; 
 
 /*

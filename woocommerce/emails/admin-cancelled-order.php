@@ -12,14 +12,14 @@
  *
  * @see https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce/Templates/Emails
- * @version 3.5.0
+ * @version 3.6.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
- /* Custom code to scrub emails for customers. */
+ /* Button Theme Custom code to scrub emails for customers. */
  $sent_to_admin = false; 
 
 /*
@@ -27,8 +27,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 */
 do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 
-<?php /* translators: %2$s: Customer full name. %1$s: Order numer */ ?>
-<p><?php printf( esc_html__( 'The order #%1$s from %2$s has been cancelled. The order was as follows:', 'woocommerce' ), $order->get_order_number(), $order->get_formatted_billing_full_name() ); ?></p>
+<?php /* translators: %1$s: Order number, %2$s: Customer full name.  */ ?>
+<p><?php printf( esc_html__( 'The order #%1$s from %2$s has been cancelled. The order was as follows:', 'woocommerce' ), esc_html( $order->get_order_number() ), esc_html( $order->get_formatted_billing_full_name() ) ); ?></p>
 
 <?php
 
