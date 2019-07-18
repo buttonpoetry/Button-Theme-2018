@@ -74,6 +74,13 @@
 }
 
 .merchandise-category-row {
+    
+    margin-bottom: rem-calc(20);
+
+    @include breakpoint(large) {
+        margin-bottom: rem-calc(100);
+    }
+
     width: 100%;    
     background-size: contain;
     background-repeat: no-repeat;
@@ -128,5 +135,11 @@
                 margin-top: 1rem;
             }
         }
+    }
+}
+
+.all-products-category-row {
+    .main-grid {
+        margin-top: 1rem;
     }
 }

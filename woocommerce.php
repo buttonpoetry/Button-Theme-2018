@@ -11,19 +11,21 @@
 get_header(); 
 
 if(is_shop()) {	?>
-<div class="main-container full-width">
-	<?php bp_shipping_banner() ?>
-	<div class="main-grid">
-		<div class="main-content-full-width">
-		<?php		
-		get_template_part('template-parts/shop-page-featuredcat');
-		get_template_part('template-parts/shop-page-bookcats');
-		get_template_part('template-parts/shop-page-merchcat');
-		?>
+	<div class="main-container full-width">
+		<?php bp_shipping_banner() ?>
+		<div class="main-grid">
+			<div class="main-content-full-width">
+			<?php		
+			get_template_part('template-parts/shop-page-featuredcat');
+			get_template_part('template-parts/shop-page-bookcats');
+			get_template_part('template-parts/shop-page-merchcat');				
+			?>		
+			</div>
 		</div>
 	</div>
-</div>
-<?php
+	<?php get_template_part('template-parts/shop-page-products'); ?>
+	
+	<?php
 	// Function to trigger the slick slider on the shop page.
 	if ( !function_exists('bp_shop_page_slider') ) {
 

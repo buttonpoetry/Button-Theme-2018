@@ -7,6 +7,8 @@
 // 4. Quantity Input Fixes
 // 5. Product page form fixes
 // 6. Gift Wrap CSS
+// 7. Shop Page Free Shipping Banner
+// 8. Shop Page Yotpo Stars Fix
 // =======================
 
 // 0. Legacy Compatibility Styles
@@ -337,6 +339,8 @@ nav.gridlist-toggle {
     }
 }
 
+// 7. Shop Page Free Shipping Banner
+// -=-=-=-=-=-=-=-=
 .bp-free-shipping-banner
 {
     width: 100%;
@@ -349,4 +353,11 @@ nav.gridlist-toggle {
     & + .main-grid {
         margin-top: 0;
     }
+}
+
+// 8. Shop Page Yotpo Stars Fix
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=
+.post-type-archive .standalone-bottomline{
+	display: block;
+    justify-content: unset;
 }

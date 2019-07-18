@@ -1,8 +1,10 @@
 # Button Theme Change Log
 For FoundationPress changes, refer to [FoundationPress on Github](https://github.com/olefredrik/FoundationPress/).
 
-## Next Release
+## Next Release 1.3.0
+### TBD
 * Update: Re-synced with FoundationPress upstream repository
+* Update: Added WooCommerce product archive loop to shop page.
 
 ## 1.2.4
 ### 2019-05-22
