@@ -18,3 +18,8 @@
 ?></p>
 <?php get_template_part('template-parts/book-showcase'); ?>
 </section>
+<?php
+// If the feature shows first, add a div.
+if(!$showcase_on_top) {
+	echo '<div class="featured-on-top"></div>'; 
+}

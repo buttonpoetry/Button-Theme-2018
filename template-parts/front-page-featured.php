@@ -5,7 +5,7 @@
  * @package ButtonTheme
  * @since ButtonTheme 0.2.0
  */
-  
+
 $feature_slides_query_args = array (
 	'post_type' 	=> array( 'bp_feature_slide' ),
 	'post_status'	=> array( 'publish' ),
@@ -90,7 +90,7 @@ if ( $feature_slides->have_posts() )
 else { 
 	//If no slides exist, put up a functional demo slide.
 	?>
-<section class="feature-row" role="region" aria-label="Button Poetry Featured Content">
+<section class="feature-row <?php echo $extra_class; ?>" role="region" aria-label="Button Poetry Featured Content">
 	<div class="grid-x align-middle feature-slide">
 		<div class="feature-link-cell cell medium-6 large-auto small-order-1 medium-order-2">
 			<a class="feature-link" href="/product/depression-other-magic-tricks/"><img class="feature-hero" src="<?php echo get_stylesheet_directory_uri() . '/dist/assets/images/theme/depression-demo-slide.jpg'; ?>" alt=""></a>
@@ -105,4 +105,9 @@ else {
 		</div>
 	</div>	
 </section>
-<?php } ?>
+<?php }
+
+// If the feature shows first, add a div.
+if(!$showcase_on_top) {
+	echo '<div class="featured-on-top"></div>'; 
+}

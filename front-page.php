@@ -5,21 +5,28 @@
  * @package ButtonTheme
  * @since ButtonTheme 0.1.0
  */
-get_header(); ?>
+get_header(); 
+
+if ( get_theme_mod('front_page_top_section', 'Showcase') == 'Showcase' ) {
+	$showcase_on_top = true;
+} else {
+	$showcase_on_top = false;
+}
+?>
 
 <div class="main-container full-width">
-	<div class="main-grid">
+	<div class="main-grid"<?php if(!$showcase_on_top) { echo ' style="margin-top: 0;"'; } ?>>
 		<div class="main-content-full-width">
 
 <?php 
 
-if ( get_theme_mod('front_page_top_section', 'Showcase') == 'Showcase' ) {
-	get_template_part('template-parts/front-page-showcase'); 
-	get_template_part('template-parts/front-page-featured'); 
+if ( $showcase_on_top ) {
+	get_template_part('template-parts/front-page-showcase');
+	get_template_part('template-parts/front-page-featured');
 }
 else {
-	get_template_part('template-parts/front-page-featured'); 
-	get_template_part('template-parts/front-page-showcase'); 	
+	get_template_part('template-parts/front-page-featured');
+	get_template_part('template-parts/front-page-showcase');	
 }
 ?>
 
@@ -42,6 +49,7 @@ if ( !function_exists('bp_front_page_slider') ) {
 			
 			$("#featured-slider").slick( {
 				arrows: true,
+				dots: true,
 				autoplay: true,
 				autoplaySpeed: 6000,
 				useTransform: false,
@@ -53,7 +61,8 @@ if ( !function_exists('bp_front_page_slider') ) {
 			}); 
 
 			$("#showcase-slider").slick( {
-				arrows: false,
+				arrows: true,
+				dots: true,
 				slidesToShow: 6,
 				adaptiveHeight: true,
 				responsive: [{

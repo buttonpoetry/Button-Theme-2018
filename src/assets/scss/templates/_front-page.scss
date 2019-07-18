@@ -107,9 +107,10 @@
 }
 
 .feature-row {
-  margin-bottom:3.5rem;
+  //padding-bottom: 0.05px; // Hacky fix for collapsing margins.
+  margin-bottom: 3.5rem;
   background-color: $button-light-tan;
-  
+
   .feature-slide {
         
     @include breakpoint(small only) {
@@ -188,6 +189,18 @@
         }
       }
     }
+  }
+}
+
+.featured-on-top {
+  height: 1.5rem;
+
+  @include breakpoint(medium) {
+    height: 2.5rem;
+  }
+
+  @include breakpoint(large) {
+    height: 3.5rem;
   }
 }
 
