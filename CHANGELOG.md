@@ -1,10 +1,13 @@
 # Button Theme Change Log
 For FoundationPress changes, refer to [FoundationPress on Github](https://github.com/olefredrik/FoundationPress/).
 
-## Next Release 1.3.0
-### TBD
+## 1.3.0
+### 2019-07-17
 * Update: Re-synced with FoundationPress upstream repository
 * Update: Added WooCommerce product archive loop to shop page.
+* Tweak: Removed bottom padding on mobile top bar to give content more space on small screens.
+* Tweak: Added conditional formatting to the front page to improve look when the 'Featured' section is set to show on top.
+* Tweak: Added dots to front page sliders.
 
 ## 1.2.4
 ### 2019-05-22
