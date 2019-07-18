@@ -39,3 +39,36 @@ $slick-arrow-color: black !default;
         }        
     }
 }
+
+.slick-dotted.slick-slider {
+    margin-bottom: 45px;
+}
+
+.slick-dots {
+    bottom: -35px;
+}
+
+.slick-dots li {
+    height: 25px;
+    width: 25px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.slick-dots li button:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "•";
+    width: 25px;
+    height: 25px;
+    font-family: "slick";
+    font-size: .75rem;
+    line-height: 25px;
+    text-align: center;
+    color: black;
+    opacity: 0.25;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
