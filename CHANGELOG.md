@@ -1,6 +1,10 @@
 # Button Theme Change Log
 For FoundationPress changes, refer to [FoundationPress on Github](https://github.com/olefredrik/FoundationPress/).
 
+## New Changes
+### TBD
+* Fix: Repair WooCommerce completed orders template
+
 ## 1.3.0
 ### 2019-07-17
 * Update: Re-synced with FoundationPress upstream repository
