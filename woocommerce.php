@@ -17,6 +17,7 @@ if(is_shop()) {	?>
 			<div class="main-content-full-width">
 			<?php		
 			get_template_part('template-parts/shop-page-featuredcat');
+			do_action('bp_shop_after_featuredcat');
 			get_template_part('template-parts/shop-page-bookcats');
 			get_template_part('template-parts/shop-page-merchcat');				
 			?>		

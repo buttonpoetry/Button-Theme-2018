@@ -4,7 +4,7 @@
     background-color: rgba(0,0,0,.1);
     background-image: url('../images/theme/shop-feature-bg.jpg');
     padding: 4rem 8%; 
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
     
     @include breakpoint(medium) {
         text-align: center;
@@ -49,6 +49,30 @@
         }
     }
 }
+
+// Shop Page Quick navigation menu
+// -=-=-=-=-=-=-=-=--=-=-=-=-=-=-=
+.bp-shop-quicknav ul {    
+    margin-bottom: 4rem; 
+
+    li {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    @include breakpoint(large) {
+        li {            
+            margin:.5rem;                    
+        }
+    }
+
+    a {
+        width: 100%;        
+        display: flex !important;
+        align-items: center;
+    }
+}
+
 
 .bookcats {
     margin-top: rem-calc(15);

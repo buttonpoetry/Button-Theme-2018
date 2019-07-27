@@ -1,9 +1,10 @@
 # Button Theme Change Log
 For FoundationPress changes, refer to [FoundationPress on Github](https://github.com/olefredrik/FoundationPress/).
 
-## New Changes
+## 1.3.1
 ### TBD
-* Fix: Repair WooCommerce completed orders template
+* Update: Added a responsive category menu high on the shop page to improve navigation.
+* Fix: Repair WooCommerce completed orders template.
 
 ## 1.3.0
 ### 2019-07-17
