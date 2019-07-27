@@ -2,8 +2,10 @@
 For FoundationPress changes, refer to [FoundationPress on Github](https://github.com/olefredrik/FoundationPress/).
 
 ## 1.3.1
-### TBD
+### 2019-07-26
 * Update: Added a responsive category menu high on the shop page to improve navigation.
+* Tweak: Resumed cache busting via URL version parameter attached to the css call in `enqueue-scripts.php`.  
+* Tweak: Changed the project slug in package-lock.json and package.json from `button-theme-2018` to `button-theme`
 * Fix: Repair WooCommerce completed orders template.
 
 ## 1.3.0
