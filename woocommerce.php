@@ -64,10 +64,30 @@ else {
 	<div class="main-grid">
 		<main class="main-content">
 			<?php
+
+				//Append format attribute to loop product links on the Audiobooks and E-Books pages.
+				if ( ! function_exists('bp_get_format_URL_att') && ( is_product_category('E-Books') || is_product_category('Audiobooks') ) ) { 
+					function bp_get_format_URL_att() {
+						$format_URL_att = "?attribute_format=";
+						if( is_product_category('E-Books') ) { return $format_URL_att .= "E-book"; }
+						else { return $format_URL_att .= "Audiobook"; }								
+					};
+									
+					add_filter('woocommerce_loop_product_link', function( $title ) {
+						return $title . bp_get_format_URL_att();
+					}); 
+
+					add_filter('woocommerce_loop_add_to_cart_link', function( $atc_html ) {
+						$insert_pos = strpos( $atc_html, '" ');
+						$new_atc_html = substr($atc_html, 0, $insert_pos) . bp_get_format_URL_att() . substr($atc_html, $insert_pos);
+						return $new_atc_html;
+					});						
+				}
+					
 				//Add breadcrumbs.
 				if ( function_exists('yoast_breadcrumb') ) {
 					yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
-				}
+				}				
 				woocommerce_content(); ?>				
 		</main>
 	<?php get_sidebar(); ?>
