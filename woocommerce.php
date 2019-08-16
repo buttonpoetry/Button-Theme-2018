@@ -64,7 +64,6 @@ else {
 	<div class="main-grid">
 		<main class="main-content">
 			<?php
-
 				//Append format attribute to loop product links on the Audiobooks and E-Books pages.
 				if ( ! function_exists('bp_get_format_URL_att') && ( is_product_category('E-Books') || is_product_category('Audiobooks') ) ) { 
 					function bp_get_format_URL_att() {
