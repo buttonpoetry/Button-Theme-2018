@@ -126,12 +126,12 @@ if ( ! function_exists( 'bp_shop_category_row' ) ) {
 				'hide_empty'   => $empty
 		);
 		$all_categories = get_categories( $args );
-		echo "<section class='bp-shop-quicknav'><ul class='menu vertical large-horizontal expanded align-center'>";
+		echo "<section class='bp-shop-quicknav'><ul class='menu vertical large-horizontal align-center'>";
 		foreach ($all_categories as $cat) {
 			if($cat->category_parent == 0) {
-				$category_id = $cat->term_id;       
+				$category_id = $cat->term_id;
 				echo '<li><a href="'. get_term_link($cat->slug, 'product_cat') .'" class="button small hollow">'. $cat->name .'</a></li>';
-			}       
+			}
 		}
 		echo "</ul></section>";
 	}
