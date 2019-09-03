@@ -67,9 +67,9 @@ else {
 				//Append format attribute to loop product links on the Audiobooks and E-Books pages.
 				if ( ! function_exists('bp_get_format_URL_att') && ( is_product_category('E-Books') || is_product_category('Audiobooks') ) ) { 
 					function bp_get_format_URL_att() {
-						$format_URL_att = "?attribute_format=";
-						if( is_product_category('E-Books') ) { return $format_URL_att .= "E-book"; }
-						else { return $format_URL_att .= "Audiobook"; }								
+						$format_URL_att = "?attribute_pa_format=";
+						if( is_product_category('E-Books') ) { return $format_URL_att .= "e-book"; }
+						else { return $format_URL_att .= "audiobook"; }								
 					};
 									
 					add_filter('woocommerce_loop_product_link', function( $title ) {
