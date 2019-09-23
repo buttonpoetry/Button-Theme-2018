@@ -1,7 +1,11 @@
 # Button Theme Change Log
 For FoundationPress changes, refer to [FoundationPress on Github](https://github.com/olefredrik/FoundationPress/).
 
-## Next Release 1.3.2
+## 1.4.0
+## 2019-09-23
+* New Feature: Shop page heroes can be added via Admin. The customizer option for shop heroes now serves as a default/fallback option.
+
+## 1.3.2
 ## 2019-08-16
 * New Feature: Category pages for Audiobooks and E-Books product links now link directly to the relevant variations in the URL.
 * Fixed: Updated WooCommerce email templates so they don't throw errors in WooCommerce 3.7.
