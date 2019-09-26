@@ -1,6 +1,10 @@
 # Button Theme Change Log
 For FoundationPress changes, refer to [FoundationPress on Github](https://github.com/olefredrik/FoundationPress/).
 
+## 1.4.1 
+## 2019-09-26
+* New Feature: Shop Hero and Feature Slide listing pages now include a sortable 'Enabled' column.
+ 
 ## 1.4.0
 ## 2019-09-23
 * New Feature: Shop page heroes can be added via Admin. The customizer option for shop heroes now serves as a default/fallback option.

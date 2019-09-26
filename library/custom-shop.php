@@ -108,7 +108,7 @@ if ( ! function_exists( 'bp_shop_hero_post_type' ) ) {
 	function bp_shop_hero_options_html( $post) {
 		wp_nonce_field( '_bp_shop_hero_options_nonce', 'bp_shop_hero_options_nonce' ); ?>
 
-		<p>Set these options and set a hero image to create your shop page hero ad. <br> Images should be 1400x700px and compressed via tinyPNG crisp text/sharp graphics is preferred for Retina/4X/UHD displays.</p>
+		<p>Set these options and set a hero image to create your shop page hero ad. <br> Images should have no text, be designed to frame the white ad content box, and be 1400x700px. Use JPG for most images, but PNG can be used for crisp text/sharp graphics. To minimize file sizes, consider using TinyPNG and uploading the result if the quality is still good.</p>
 
 		<table style="width:100%;">
 			<thead>
@@ -153,6 +153,58 @@ if ( ! function_exists( 'bp_shop_hero_post_type' ) ) {
 	add_action('add_meta_boxes', 'bp_shop_hero_toast_yoast', 100);
 	function bp_shop_hero_toast_yoast() {
 		remove_meta_box('wpseo_meta', 'bp_shop_hero', 'normal');
+	}
+
+	/* Add 'Enabled' as a filterable column */
+	add_filter('manage_bp_shop_hero_posts_columns', 'bp_shop_hero_column_head');
+	function bp_shop_hero_column_head($defaults) {
+    	$defaults['bp_sh_col_enabled'] = 'Enabled';
+    	return $defaults;
+	}
+
+	add_filter('manage_edit-bp_shop_hero_sortable_columns', 'bp_shop_hero_column_makesortable' );
+	function bp_shop_hero_column_makesortable($defaults) {
+    	$defaults['bp_sh_col_enabled'] = 'bp_shop_hero_options_is_enabled';
+    	return $defaults;
+	}
+
+	add_action('manage_bp_shop_hero_posts_custom_column', 'bp_shop_hero_column_content', 10, 2);
+	function bp_shop_hero_column_content($column_name, $post_ID) {
+		if ($column_name == 'bp_sh_col_enabled') {
+			if( bp_shop_hero_options_get_meta("bp_shop_hero_options_is_enabled") == "Yes") {
+				echo '<span class="dashicons dashicons-yes-alt" style="color:green"></span>';
+			}
+			else {
+				echo '<span class="dashicons dashicons-no"></span>';				
+			}
+		}    	
+	}
+
+	add_action( 'pre_get_posts', 'bp_shop_hero_column_sortlogic', 1 );
+	function bp_shop_hero_column_sortlogic( $query ) {
+		/**
+		* We only want our code to run in the main WP query
+		* AND if an orderby query variable is designated.
+		*/
+		if ( $query->is_main_query() && ( $orderby = $query->get( 'orderby' ) ) ) {
+			switch( $orderby ) {
+				// If we're ordering by 'film_rating'
+				case 'bp_shop_hero_options_is_enabled':
+					// set our query's meta_key, which is used for custom fields
+					$query->set( 'meta_key', 'bp_shop_hero_options_is_enabled' );
+					/**
+					 * Tell the query to order by our custom field/meta_key's
+					 * value, in this film rating's case: PG, PG-13, R, etc.
+					 *
+					 * If your meta value are numbers, change 'meta_value'
+					 * to 'meta_value_num'.
+					 */
+					if($query->get( 'order' ) == 'asc') { $meta_order = 'desc'; }
+					else { $meta_order = 'asc'; }
+					$query->set( 'orderby', array('meta_value' => $meta_order, 'post_date' => 'desc', ));
+					break;
+			}
+		}
 	}
 }
 
