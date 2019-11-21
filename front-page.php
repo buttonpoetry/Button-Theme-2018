@@ -19,21 +19,25 @@ if ( get_theme_mod('front_page_top_section', 'Showcase') == 'Showcase' ) {
 		<div class="main-content-full-width">
 
 <?php 
-
+do_action('bp_front_before_content');
 if ( $showcase_on_top ) {
 	get_template_part('template-parts/front-page-showcase');
+	do_action('bp_front_after_section_one');
 	get_template_part('template-parts/front-page-featured');
 }
 else {
 	get_template_part('template-parts/front-page-featured');
+	do_action('bp_front_after_section_one');
 	get_template_part('template-parts/front-page-showcase');	
 }
-?>
 
-<?php get_template_part('template-parts/front-page-bulletin'); ?>
+do_action('bp_front_after_section_two');
+get_template_part('template-parts/front-page-bulletin'); 
 
-<?php get_template_part('template-parts/front-page-instagram'); ?>
+do_action('bp_front_after_section_three');
+get_template_part('template-parts/front-page-instagram'); 
 
+do_action('bp_front_after_content'); ?>
 </div></div></div>
 
 <div id="y-badges" class="yotpo yotpo-badge badge-init">&nbsp;</div>

@@ -1,16 +1,25 @@
 # Button Theme Change Log
 For FoundationPress changes, refer to [FoundationPress on Github](https://github.com/olefredrik/FoundationPress/).
 
+## Next Release
+## 2019-11-xx
+* New Feature: Added hooks to the Front Page template: 
+  * bp_front_before_content
+  * bp_front_after_section_one
+  * bp_front_after_section_two
+  * bp_front_after_section_three
+  * bp_front_after_content
+
 ## 1.4.1 
-## 2019-09-26
+### 2019-09-26
 * New Feature: Shop Hero and Feature Slide listing pages now include a sortable 'Enabled' column.
  
 ## 1.4.0
-## 2019-09-23
+### 2019-09-23
 * New Feature: Shop page heroes can be added via Admin. The customizer option for shop heroes now serves as a default/fallback option.
 
 ## 1.3.2
-## 2019-08-16
+### 2019-08-16
 * New Feature: Category pages for Audiobooks and E-Books product links now link directly to the relevant variations in the URL.
 * Fixed: Updated WooCommerce email templates so they don't throw errors in WooCommerce 3.7.
 
