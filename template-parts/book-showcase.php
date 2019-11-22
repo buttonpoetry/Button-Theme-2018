@@ -38,7 +38,7 @@
 </div>
 <?php 
 if (is_shop()) : ?>
-    <a class="button large" href="/product-category/chapbooks/">Shop all books</a>
+    <a class="button large" href="/product-category/chapbooks/">View all books</a>
 <?php else : ?>
-    <a class="button large" href="<?php echo get_permalink('88'); ?>">Shop all books</a>
+    <a class="button large" href="<?php echo get_permalink('88'); ?>">Shop Now</a>
 <?php endif ?>

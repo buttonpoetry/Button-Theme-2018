@@ -9,6 +9,7 @@ For FoundationPress changes, refer to [FoundationPress on Github](https://github
   * bp_front_after_section_two
   * bp_front_after_section_three
   * bp_front_after_content
+* Tweak: Differentiate book showcase call to action on Shop and Front pages
 
 ## 1.4.1 
 ### 2019-09-26
