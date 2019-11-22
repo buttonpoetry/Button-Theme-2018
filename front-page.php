@@ -65,7 +65,7 @@ if ( !function_exists('bp_front_page_slider') ) {
 			}); 
 
 			$("#showcase-slider").slick( {
-				arrows: true,
+				arrows: false,
 				dots: true,
 				slidesToShow: 6,
 				adaptiveHeight: true,

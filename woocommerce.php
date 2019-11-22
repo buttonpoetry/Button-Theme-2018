@@ -36,6 +36,7 @@ if(is_shop()) {	?>
 				
 				$("#showcase-slider").slick( {
 					arrows: false,
+					dots: true,
 					slidesToShow: 6,
 					adaptiveHeight: true,
 					responsive: [{

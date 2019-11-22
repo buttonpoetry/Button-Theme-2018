@@ -10,7 +10,8 @@ For FoundationPress changes, refer to [FoundationPress on Github](https://github
   * bp_front_after_section_three
   * bp_front_after_content
 * Tweak: Differentiate book showcase call to action on Shop and Front pages
-
+* Tweak: Hide arrows and show dots on all book showcase slider to add consistency and help maintain page width on mobile. 
+ 
 ## 1.4.1 
 ### 2019-09-26
 * New Feature: Shop Hero and Feature Slide listing pages now include a sortable 'Enabled' column.
