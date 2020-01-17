@@ -3,9 +3,9 @@
     background-repeat: none;
     background-color: rgba(0,0,0,.1);
     background-image: url('../images/theme/shop-feature-bg.jpg');
-    padding: 4rem 8%; 
+    padding: 4rem 8%;
     margin-bottom: 1rem;
-    
+
     @include breakpoint(medium) {
         text-align: center;
         padding:0;
@@ -50,10 +50,10 @@
     }
 }
 
-// Shop Page Quick navigation menu
+// Shop Page Quick Navigation menu
 // -=-=-=-=-=-=-=-=--=-=-=-=-=-=-=
-.bp-shop-quicknav ul {    
-    margin-bottom: 4rem; 
+.bp-shop-quicknav ul {
+    margin-bottom: 4rem;
 
     li {
         margin-left: 1rem;
@@ -61,18 +61,53 @@
     }
 
     @include breakpoint(large) {
-        li {            
-            margin:.5rem;                    
+        li {
+            margin:.5rem;
         }
     }
 
     a {
-        width: 100%;        
+        width: 100%;
         display: flex !important;
         align-items: center;
     }
 }
 
+/* Fix for the arrow hover effect overlapping text on the category row buttons and corresponding sizing issues*/
+@media screen and (min-width: 1025px) {
+	.theme-Button-Theme .bp-shop-quicknav ul li a {
+		padding-right: 1.5rem !important;
+		padding-left: 1.5rem !important;
+	}
+}
+
+@media screen and (min-width: 900px) and (max-width: 1025px) {
+	.theme-Button-Theme .bp-shop-quicknav ul li a {
+		padding-right: 1.25rem !important;
+		padding-left: 1.25rem !important;
+	}
+
+	.theme-Button-Theme .bp-shop-quicknav ul li {
+		margin: .2rem;
+	}
+}
+
+@media screen and (max-width: 899px) {
+	.theme-Button-Theme .bp-shop-quicknav ul li a.button.hollow {
+		border-top: 0px !important;
+		margin: 0;
+	}
+
+	.theme-Button-Theme .bp-shop-quicknav ul li:first-child {
+		border-top: 1px solid black !important;
+	}
+}
+
+// Additional quick navigation styles for displaying the category row on the homepage
+.home .bp-shop-quicknav ul {
+	margin-bottom: 1rem;
+}
+// End Quick Navigation styles
 
 .bookcats {
     margin-top: rem-calc(15);
@@ -83,7 +118,7 @@
         margin-bottom: rem-calc(100);
     }
 
-    .grid-container .grid-x .cell {        
+    .grid-container .grid-x .cell {
         border-color: $button-light-tan;
         box-shadow: 2px 2px 12px -2px rgba(0,0,0,0.15);
 
@@ -91,28 +126,28 @@
             box-shadow: none;
         }
 
-        img {        
+        img {
             max-height: 150px;
         }
     }
 }
 
 .merchandise-category-row {
-    
+
     margin-bottom: rem-calc(20);
 
     @include breakpoint(large) {
         margin-bottom: rem-calc(100);
     }
 
-    width: 100%;    
+    width: 100%;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center top;
-    background-color: black;    
+    background-color: black;
     background-image: url('../images/theme/shop-merch-bg.jpg');
 
-    @include breakpoint(large) {        
+    @include breakpoint(large) {
         background-position: top left;
         text-align: right;
     }
@@ -125,14 +160,14 @@
         width: 100%;
         margin-top: 100vw;
         .button {
-            margin-left: auto; 
+            margin-left: auto;
             margin-right: auto;
-            display: block; 
+            display: block;
         }
 
-        @include breakpoint(medium) {            
-            text-align: left;            
-            margin-top: 16rem;  
+        @include breakpoint(medium) {
+            text-align: left;
+            margin-top: 16rem;
             background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,.9) 40%, rgba(0,0,0,.95) 80%, black 100%);
             padding: 100px;
             p {

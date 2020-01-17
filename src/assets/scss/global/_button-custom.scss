@@ -6,6 +6,9 @@
 // 4. Widget Customizations
 // 5. Mailchimp for WordPress Customization
 // 6. Read More Customization
+// 7. Plugin Compatibility CSS
+// 8. Video Contest Button
+// 9. Contest Winners Styling
 // ---------------------------
 
 // 1.A Title Text Font/Size for all screens
@@ -53,7 +56,7 @@ $bp-feature-side-timing: default;
 .bp-feature-slide-in-right {
     @include mui-slide(in, $direction : left, $duration: $bp-feature-slide-speed, $timing: $bp-feature-side-timing);
 }
-  
+
 .bp-feature-slide-out-right {
     @include mui-slide(out, $direction : right, $duration: $bp-feature-slide-speed, $timing: $bp-feature-side-timing);
 }
@@ -61,7 +64,7 @@ $bp-feature-side-timing: default;
 .bp-feature-slide-in-left {
     @include mui-slide(in, $direction : right, $duration: $bp-feature-slide-speed, $timing: $bp-feature-side-timing);
 }
-  
+
 .bp-feature-slide-out-left {
     @include mui-slide(out, $direction : left, $duration: $bp-feature-slide-speed, $timing: $bp-feature-side-timing);
 }
@@ -100,7 +103,7 @@ $bp-feature-side-timing: default;
         box-shadow: 2px 2px 12px -2px rgba(0,0,0,0.15);
         list-style:none;
         margin:0;
-     
+
         .current-cat {
             background-color: rgba($button-light-tan, .5);
             transition: .2s;
@@ -109,12 +112,12 @@ $bp-feature-side-timing: default;
         .cat-item {
             font-size: 1rem;
             padding: .5rem 2rem;
-            transition: .2s;            
+            transition: .2s;
 
             &:hover {
                 background-color: $button-light-tan;
                 transition: .2s;
-            }            
+            }
         }
     }
 }
@@ -131,4 +134,46 @@ $bp-feature-side-timing: default;
 .read-more {
     font-weight: bold;
     text-transform: uppercase;
+}
+
+// 7. Plugin Compatibility CSS
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-
+/*  Plugin: Popup Maker
+    Custom style for the T-shirt sizing chart created in Popup Maker. */
+.sizing-chart {
+  text-decoration: underline;
+  transition: .2s;
+}
+
+.sizing-chart:hover {
+  text-decoration: none;
+  color: red;
+}
+
+/*  Plugin: WooThumbs
+    Fix gap between single product image and gallery. */
+ .iconic-woothumbs-images.slick-initialized.slick-slider.slick-dotted {
+	margin-bottom: 0;
+}
+
+// 8. Video Contest Button
+// -=-=-=-=-=-=-=-=-=-=-=-
+
+// Make a red button for the Video Contest page
+.video-contest-link {
+  background-color: $button-red;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: darkred;
+  }
+}
+
+// 9. Contest Winners Styling
+// -=-=-=-=-=-=-=-=-=-=-=-=-=
+
+// Slight styling to improve display of contest winners on small screens.
+.bp-contest-winners {
+	margin-bottom: 0;
 }

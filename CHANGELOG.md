@@ -2,20 +2,21 @@
 For FoundationPress changes, refer to [FoundationPress on Github](https://github.com/olefredrik/FoundationPress/).
 
 ## Next Release
-## 2019-11-xx
-* New Feature: Added hooks to the Front Page template: 
+## 2020-01-17
+* New Feature: Added hooks to the Front Page template:
   * bp_front_before_content
   * bp_front_after_section_one
   * bp_front_after_section_two
   * bp_front_after_section_three
   * bp_front_after_content
 * Tweak: Differentiate book showcase call to action on Shop and Front pages
-* Tweak: Hide arrows and show dots on all book showcase slider to add consistency and help maintain page width on mobile. 
- 
-## 1.4.1 
+* Tweak: Hide arrows and show dots on all book showcase slider to add consistency and help maintain page width on mobile.
+* Tweak: Pulled in PHP from Code Snippets and CSS from the Customizer that should be in the core theme.
+
+## 1.4.1
 ### 2019-09-26
 * New Feature: Shop Hero and Feature Slide listing pages now include a sortable 'Enabled' column.
- 
+
 ## 1.4.0
 ### 2019-09-23
 * New Feature: Shop page heroes can be added via Admin. The customizer option for shop heroes now serves as a default/fallback option.
@@ -28,7 +29,7 @@ For FoundationPress changes, refer to [FoundationPress on Github](https://github
 ## 1.3.1
 ### 2019-07-26
 * Update: Added a responsive category menu high on the shop page to improve navigation.
-* Tweak: Resumed cache busting via URL version parameter attached to the css call in `enqueue-scripts.php`.  
+* Tweak: Resumed cache busting via URL version parameter attached to the css call in `enqueue-scripts.php`.
 * Tweak: Changed the project slug in package-lock.json and package.json from `button-theme-2018` to `button-theme`
 * Fix: Repair WooCommerce completed orders template.
 
@@ -58,7 +59,7 @@ For FoundationPress changes, refer to [FoundationPress on Github](https://github
 ## 1.2.1
 ### 2019-04-19
 * Improvement: Added Featured Item image and copy control to the Customizer. (Issue [#14](https://github.com/buttonpoetry/Button-Theme-2018/issues/14)).
- 
+
 ## 1.2.0
 ### 2019-04-19
 * New Feature: Custom Shop Template. Currently the template is static, customization options are planned. (Issue [#9](https://github.com/buttonpoetry/Button-Theme-2018/issues/9))
@@ -76,7 +77,7 @@ For FoundationPress changes, refer to [FoundationPress on Github](https://github
 * Meta: Updated .github default issue template.
 
 ## 1.1.1
-### 2019-02-22 
+### 2019-02-22
 * Tweak: Improve mini cart. Cart now displays up to 5 items, and a 'see more' link if needed.
 * Tweak: Numerous small responsive & spacing improvements to top bar, title bar, and off-canvas menus.
 * Fix: Prevent individual bundle items from displaying in mini-cart.
