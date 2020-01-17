@@ -39,8 +39,11 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		// Set WooCommerce styles as dependencies for our stylesheet, so ours load later.
 		$css_dependencies = class_exists( 'WooCommerce' ) ? array( 'woocommerce-layout', 'woocommerce-smallscreen', 'woocommerce-general' ) : array();
 
+		// Set the theme version to overcome caching.
+		$bp_theme_version = '1.5.0b1';
+
 		// Enqueue the main Stylesheet.
-		wp_enqueue_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/' . foundationpress_asset_path( 'app.css' ), $css_dependencies, '1.5.0b1', 'all' );
+		wp_enqueue_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/' . foundationpress_asset_path( 'app.css' ), $css_dependencies, $bp_theme_version, 'all' );
 
 		// Deregister the jquery version bundled with WordPress.
 		wp_deregister_script( 'jquery' );
