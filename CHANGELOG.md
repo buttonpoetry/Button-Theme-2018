@@ -1,7 +1,7 @@
 # Button Theme Change Log
 For FoundationPress changes, refer to [FoundationPress on Github](https://github.com/olefredrik/FoundationPress/).
 
-## Next Release
+## Next Release (1.5.0)
 ## 2020-01-17
 * New Feature: Added hooks to the Front Page template:
   * bp_front_before_content
