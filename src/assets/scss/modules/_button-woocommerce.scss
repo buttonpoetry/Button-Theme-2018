@@ -11,6 +11,7 @@
 // 8. Shop Page Yotpo Stars Fix
 // 9. Product Image Black Borders
 // 10. Spacing Above H3 in Product Descriptions
+// 11. Advanced Product Loop Card Styling
 // =======================
 
 // 0. Legacy Compatibility Styles
@@ -438,4 +439,138 @@ ul.products.list li.product .bp-wc-thumb-border img {
 
 .woocommerce-Tabs-panel--description h3 {
 	margin-top: 2rem;
+}
+
+// 11. Advanced Product Loop Card Styling
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// This code is vanilla CSS. Could be refactored to SCSS.
+// This code mostly depends on the WooCommerce Grid/List View plugin
+
+/* Card Borders */
+.woocommerce ul.products li.product {
+	box-shadow:3px 3px 6px rgba(196,196,196, .75), -1px -1px 3px rgba(196,196,196, .25);
+}
+
+/* List Cleanup Code */
+.woocommerce ul.products.list li {
+	padding-right: 0.5rem;
+}
+
+.woocommerce ul.products.list li.product .gridlist-buttonwrap {
+	margin-bottom:.5rem;
+}
+
+.woocommerce ul.products.list li.product .gridlist-buttonwrap a {
+	margin-bottom:0;
+	margin-top:.5rem;
+}
+
+.woocommerce ul.products.list li.product .bp-wc-thumb-border {
+	margin-bottom:0
+}
+
+/* Grid Cleanup Code */
+.woocommerce ul.products.grid li
+.bp-wc-thumb-border,
+.woocommerce ul.products.grid li .attachment-woocommerce_thumbnail.size-woocommerce_thumbnail{
+	display: block;
+	margin-bottom:0;
+}
+
+.woocommerce ul.products.grid li a
+h2.woocommerce-loop-product__title {
+	overflow: hidden;
+	padding-left: .5rem;
+	padding-right: .5rem;
+}
+
+.woocommerce ul.products.grid li a
+.availability_date {
+	display:inline;
+}
+
+.woocommerce ul.products.grid li
+.bp-wc-preorder-message {
+	display:block;
+	font-size: .75rem;
+	overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.woocommerce ul.products.grid li
+.yotpo.bottomLine.yotpo-small {
+	margin-top:.5rem;
+	margin-bottom:.5rem;
+}
+
+.woocommerce ul.products.grid li
+.gridlist-buttonwrap {
+	display:none;
+	margin-top: 0.25rem;
+}
+
+.woocommerce ul.products.grid li
+.gridlist-buttonwrap a {
+	margin:0;
+	padding-left:1rem;
+	padding-right:1rem;
+}
+
+.woocommerce ul.products.grid li a.woocommerce-LoopProduct-link {
+position: relative;
+	width:100%;
+	display:block;
+}
+
+.woocommerce ul.products.grid li a .bp-product-info-wrap {
+  overflow:hidden;
+	position:absolute;
+	width:100%;
+	height:100%;
+	bottom:0;
+}
+
+.woocommerce ul.products.grid li a .bp-product-info {
+	position:absolute;
+	width:100%;
+	background-color: rgba(255,255,255, 1);
+	transition: .25s ease-in 0s;
+	opacity:.25;
+	bottom: -100%;
+}
+
+.woocommerce ul.products.grid li a.woocommerce-LoopProduct-link:hover .bp-product-info,
+.woocommerce ul.products.grid li a.woocommerce-LoopProduct-link:active  .bp-product-info,
+.woocommerce ul.products.grid li a.woocommerce-LoopProduct-link:focus  .bp-product-info {
+	transition: .15s cubic-bezier(0,.5,.5,1) 0s;
+	opacity: 1;
+	bottom: 0;
+}
+
+.woocommerce ul.products.grid li a.woocommerce-LoopProduct-link {
+	color:black;
+}
+
+.woocommerce ul.products.grid li
+.yotpo-clr:only-child:after {
+	content:"Reviews incoming!";
+}
+
+@media screen and (min-width: 900px) {
+.woocommerce ul.products.grid li
+  .gridlist-buttonwrap a {
+    margin-bottom:0;
+    padding-left:2rem;
+    padding-right:2rem;
+  }
+}
+
+/* Pre-order badge */
+.woocommerce span.onsale.bp_pre-order-badge {
+	background-color: #f03030;
+	border-radius:2px;
+	padding:5px;
+	min-height:0 !important;
+	line-height: 1rem;
 }

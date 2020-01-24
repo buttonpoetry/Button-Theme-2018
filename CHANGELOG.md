@@ -9,6 +9,7 @@ For FoundationPress changes, refer to [FoundationPress on Github](https://github
   * bp_front_after_section_two
   * bp_front_after_section_three
   * bp_front_after_content
+* New Feature: Significantly updated visual styles on product loop cards, especially in the grid view
 * Tweak: Differentiate book showcase call to action on Shop and Front pages
 * Tweak: Hide arrows and show dots on all book showcase slider to add consistency and help maintain page width on mobile.
 * Tweak: Pulled in PHP from Code Snippets and CSS from the Customizer that should be in the core theme.

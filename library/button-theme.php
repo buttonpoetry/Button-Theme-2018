@@ -402,3 +402,29 @@ if( !function_exists('bp_outline_shop_thumbs')) {
 	  return "<div class='bp-wc-thumb-border'>" . $imageHTML . "</div>";
 	}
 }
+
+/**
+ * Enable hover effects on product cards
+ * Wraps some items in loop product cards with a wrapper div for targeted styling
+ *
+ * @since ButtonTheme 1.5.0
+ */
+if( !function_exists("bp_before_loop_product") ) {
+	add_action("woocommerce_before_shop_loop_item_title", "bp_before_loop_product", 11);
+	function bp_before_loop_product() {
+			?>
+		<div class="bp-product-info-wrap">
+				<div class="bp-product-info">
+		<?php
+	}
+}
+
+if( !function_exists("bp_after_loop_product") ) {
+	add_action("woocommerce_after_shop_loop_item_title", "bp_after_loop_product", 100);
+	function bp_after_loop_product() {
+			?>
+			</div>
+		</div>
+		<?php
+	}
+}
