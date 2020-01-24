@@ -428,3 +428,43 @@ if( !function_exists("bp_after_loop_product") ) {
 		<?php
 	}
 }
+
+/**
+ * Pre-order badges
+ * Add pre-order customization classes to posts and badges to thumbnails
+ * Code adapted from: https://nicola.blog/2018/02/01/customize-pre-order-products/﻿
+ *
+ * @since ButtonTheme 1.5.0
+ */
+if( !function_exists("bp_add_preorder_class") ) {
+  function bp_add_preorder_class( $classes ) {
+	  global $post;
+
+	  $product = wc_get_product( $post->ID );
+	  if ( $product && 'yes' === get_post_meta( $product->get_id(), '_wc_pre_orders_enabled', true ) ) {
+		  $classes[] = 'bp_pre-order';
+	  }
+
+	  return $classes;
+  }
+
+  add_filter( 'body_class', 'bp_add_preorder_class' );
+  add_filter( 'post_class', 'bp_add_preorder_class' );
+}
+
+if( !function_exists('bp_show_preorder_badge') ) {
+
+  add_action( 'woocommerce_before_shop_loop_item_title', 'bp_show_preorder_badge' );
+  add_action( 'woocommerce_before_single_product_summary', 'bp_show_preorder_badge' );
+
+  function bp_show_preorder_badge() {
+	  global $post, $product;
+
+	  ?>
+	  <?php if ( 'yes' === get_post_meta( $product->get_id(), '_wc_pre_orders_enabled', true ) ) : ?>
+
+		  <?php echo '<span class="onsale bp_pre-order-badge">' . esc_html__( 'Pre-Order!', 'domain' ) . '</span>'; ?>
+
+	  <?php endif;
+  }
+}

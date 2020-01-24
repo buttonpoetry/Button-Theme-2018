@@ -12,6 +12,7 @@
 // 9. Product Image Black Borders
 // 10. Spacing Above H3 in Product Descriptions
 // 11. Advanced Product Loop Card Styling
+// 12. Pre-order badge styling
 // =======================
 
 // 0. Legacy Compatibility Styles
@@ -566,7 +567,9 @@ position: relative;
   }
 }
 
-/* Pre-order badge */
+// 12. Pre-order badge styling
+// =-=-=-=-=-=-=-=-=-=-=-=-=-=
+
 .woocommerce span.onsale.bp_pre-order-badge {
 	background-color: #f03030;
 	border-radius:2px;

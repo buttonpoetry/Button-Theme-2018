@@ -40,7 +40,7 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		$css_dependencies = class_exists( 'WooCommerce' ) ? array( 'woocommerce-layout', 'woocommerce-smallscreen', 'woocommerce-general' ) : array();
 
 		// Set the theme version to overcome caching.
-		$bp_theme_version = '1.5.0b1';
+		$bp_theme_version = '1.5.0';
 
 		// Enqueue the main Stylesheet.
 		wp_enqueue_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/' . foundationpress_asset_path( 'app.css' ), $css_dependencies, $bp_theme_version, 'all' );

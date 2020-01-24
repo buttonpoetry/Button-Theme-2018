@@ -1,8 +1,8 @@
 # Button Theme Change Log
 For FoundationPress changes, refer to [FoundationPress on Github](https://github.com/olefredrik/FoundationPress/).
 
-## Next Release (1.5.0)
-## 2020-01-17
+## 1.5.0
+## 2020-01-24
 * New Feature: Added hooks to the Front Page template:
   * bp_front_before_content
   * bp_front_after_section_one
@@ -10,9 +10,10 @@ For FoundationPress changes, refer to [FoundationPress on Github](https://github
   * bp_front_after_section_three
   * bp_front_after_content
 * New Feature: Significantly updated visual styles on product loop cards, especially in the grid view
+* New Feature: Pre-order products now have a badge based on the Sale badge
 * Tweak: Differentiate book showcase call to action on Shop and Front pages
 * Tweak: Hide arrows and show dots on all book showcase slider to add consistency and help maintain page width on mobile.
-* Tweak: Pulled in PHP from Code Snippets and CSS from the Customizer that should be in the core theme.
+* Maintenance Update: Pulled numerous PHP and CSS snippets from the production site back into the core theme.
 
 ## 1.4.1
 ### 2019-09-26
