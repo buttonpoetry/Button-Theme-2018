@@ -5,6 +5,7 @@ For FoundationPress changes, refer to [FoundationPress on Github](https://github
 ## 2020-02-XX
 * New Feature: Hide Shop Page Content when product order or page is changed
 * New Feature: Added action hook to header.php before all on-canvas content: bp_above_header
+* New Feature: Improved compatibility with WooCommerce's native Store Notice system
 
 ## 1.5.0
 ## 2020-01-24

@@ -9,6 +9,7 @@
 // 7. Plugin Compatibility CSS
 // 8. Video Contest Button
 // 9. Contest Winners Styling
+// 10. Store Notice Styling
 // ---------------------------
 
 // 1.A Title Text Font/Size for all screens
@@ -176,4 +177,24 @@ $bp-feature-side-timing: default;
 // Slight styling to improve display of contest winners on small screens.
 .bp-contest-winners {
 	margin-bottom: 0;
+}
+
+// 10. Store Notice Styling
+// -=-=-=-=-=-=-=-=-=-=-=-=-=
+.off-canvas-content
+{
+  .woocommerce-store-notice {
+    background-color: $button-red !important; /* Button Red*/
+    padding:.5rem;
+    font-size:1.2em !important;
+    position: static;
+    position: sticky;
+  }
+
+  .woocommerce-store-notice__dismiss-link {
+    text-decoration:none !important;
+    font-style:italic;
+    font-size:.8em;
+    color: rgba(255,255,255,.7) !important;
+  }
 }

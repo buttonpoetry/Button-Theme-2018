@@ -320,20 +320,7 @@ This is CSS taken and modified from old Headway CSS.
 }
 
 /* 5. Store Notice customization */
-.woocommerce-store-notice {
-    background-color: #0071BC !important; /* Vote Blue*/
-    /*background-color: #af2828 !important; /* Button Red*/
-    padding:5px;
-    font-size:1.2em !important;
-}
-
-.woocommerce-store-notice__dismiss-link {
-    text-decoration:none !important;
-    font-style:italic;
-    font-size:.8em;
-    color: rgba(255,255,255,.7) !important;
-}
-/* End Store Notice customization */
+// Moved in 1.5.1 to _button-custom.scss
 
 /* 6. Footer advertisement*/
 .attention {
