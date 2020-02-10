@@ -19,18 +19,19 @@
 	<body <?php body_class(); ?>>
 
 	<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
-	
+	<?php do_action( 'bp_above_header' ); ?>
+
 	<div class="limit-width-wrap">
 
 	<header class="site-header" role="banner">
 		<div class="site-title-bar title-bar">
-			<div class="title-bar-title">				
+			<div class="title-bar-title">
 				<span class="site-mobile-title title-bar-title">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="mobile-site-logo" src="<?php echo bp_site_logo_src(); ?>" alt="Button Poetry Home"></a>
 				</span>
 			</div>
 			<div class="title-bar-right">
-			<?php /* This code is an in-progress/potential feature for a mini-cart on hover on small through medium screens. 
+			<?php /* This code is an in-progress/potential feature for a mini-cart on hover on small through medium screens.
 				set_query_var( 'bp_titlebar', true );
 				ob_start();
 				get_template_part('template-parts/bp-mini-cart', null, ['titlebar' => true]);
