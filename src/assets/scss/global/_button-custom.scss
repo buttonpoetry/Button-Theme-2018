@@ -184,17 +184,18 @@ $bp-feature-side-timing: default;
 .off-canvas-content
 {
   .woocommerce-store-notice {
-    background-color: $button-red !important; /* Button Red*/
-    padding:.5rem;
-    font-size:1.2em !important;
+    background-color: $button-red; /* Button Red*/
+    // background-color: #0071bc; /* Voting Blue */
+    padding: 1rem;
+    font-size:1.2em;
     position: static;
     position: sticky;
   }
 
   .woocommerce-store-notice__dismiss-link {
-    text-decoration:none !important;
+    text-decoration:none;
     font-style:italic;
     font-size:.8em;
-    color: rgba(255,255,255,.7) !important;
+    color: rgba(255,255,255,.7);
   }
 }
