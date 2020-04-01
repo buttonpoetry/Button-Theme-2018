@@ -1,8 +1,8 @@
 # Button Theme Change Log
 For FoundationPress changes, refer to [FoundationPress on Github](https://github.com/olefredrik/FoundationPress/).
 
-## NEXT RELEASE 1.5.1
-## 2020-02-XX
+## 1.5.1
+## 2020-03-31
 * New Feature: Hide Shop Page Content when product order or page is changed
 * New Feature: Added action hook to header.php before all on-canvas content: bp_above_header
 * New Feature: Improved compatibility with WooCommerce's native Store Notice system
